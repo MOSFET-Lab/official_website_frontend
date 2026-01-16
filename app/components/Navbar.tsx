@@ -27,7 +27,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-18">
           {links.map((link) => (
             <Link
               key={link.href}
