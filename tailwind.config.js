@@ -14,7 +14,7 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        jost: ["Jost", "sans-serif"],
+       // jost: ["Jost", "sans-serif"],
         caladea: ["Caladea", "sans-serif"], 
       },
     },
