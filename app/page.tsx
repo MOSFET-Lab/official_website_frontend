@@ -56,21 +56,21 @@ useEffect(() => {
       text: "This company provided reliable service and clear communication throughout my project. They clearly understood the requirements and delivered accurate results on time. I highly recommend them to everyone for their excellent service and professionalism from start to finish",
       name: "Keshan Dinethma",
       title: "Business Founder",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/606013878_1391748055922353_5028411218304048568_n.jpg?stp=c0.331.1045.1045a_cp6_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=52bb43&_nc_eui2=AeHcBuoY6wwxFrwHIZzVSwiAJoUaTfZnU-EmhRpN9mdT4VW20MIUD-TeNe3S7K9IIfFSAwH9Vd8Z1ZMHZ-BbbXw9&_nc_ohc=mLj_AmWyMCEQ7kNvwHH501G&_nc_oc=AdmP6-h0PTpxgivDE5IuAgth9j_o0-GL9MtM8XnNt2fr9Z8BZTS1dyRBO9m76YDEH-U&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=Hhwsl5FJFxpLSqinqtIKxQ&oh=00_AfoCOneEcg6s-IrkIASouI7liiO-jyMJuSBineRCJN_YqQ&oe=697E858D", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/606013878_1391748055922353_5028411218304048568_n.jpg?stp=c0.331.1045.1045a_cp6_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=52bb43&_nc_eui2=AeHcBuoY6wwxFrwHIZzVSwiAJoUaTfZnU-EmhRpN9mdT4VW20MIUD-TeNe3S7K9IIfFSAwH9Vd8Z1ZMHZ-BbbXw9&_nc_ohc=M0SYuryEtxQQ7kNvwEgtQKH&_nc_oc=AdlIasfL2H034efDDxbB03gxucswhxv_YL4CKw6_aCcg6z9B4aPf0jGTSz8XNgiQ2Es&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=5fFV78LYHlvntm07_pxFvw&oh=00_AftwD8nx3LdXfnEBNd1JOzvKsCK3GquAsI3kAHOCcAVLhw&oe=69866E8D", // Placeholder avatar
     },
     {
       id: 2,
       text: "I’m extremely satisfied with the service I received. The team handled my project with great efficiency, kept me updated at every step, and delivered results that were truly top quality. Everything was smooth, professional, and 0 stress from start to finish. I highly recommend their services to anyone looking for reliable and top notch work.",
       name: "Ushan Nilindu",
       title: "Japan",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/326728993_3171376406487885_919101361625192623_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpi8WmmBDobfudghUUdHpBNIdhJKCxGaY0h2EkoLEZppESvkr_z4rJQfkXRo-hP5TvJNCV0s4fu9TdjNI1LDAO&_nc_ohc=a3DTT4vZEmgQ7kNvwEhQUd9&_nc_oc=Adnkg5U0IR6CLt8w0TSy-ymhuFZjXkb4KkUCNEAzl0WFtZ2Pqlp6isqhb-Tf2YU15JU&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=YGAFk911SHwZ65WpItXxVw&oh=00_AfoC-nmoHDLOtdFrzRUxkfJLQYpxWe88ucPrOXdXo1GJtA&oe=697E7645", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/326728993_3171376406487885_919101361625192623_n.jpg?stp=cp0_dst-jpg_p60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpi8WmmBDobfudghUUdHpBNIdhJKCxGaY0h2EkoLEZppESvkr_z4rJQfkXRo-hP5TvJNCV0s4fu9TdjNI1LDAO&_nc_ohc=OpxuF8OmRH8Q7kNvwG-jJQZ&_nc_oc=Admx39gcAcXWBmVylbQf-kE3OGq31HJnwjiQgJnhzcHDWppecaLAnZzN6otuPVlMOug&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=OVRP5QasvyHoGbz02kLIYw&oh=00_Afv2qP4uRkLbutbO_R26pGN7NseRPXmgoIcEcukSEsT7yQ&oe=69869785", // Placeholder avatar
     },
     {
       id: 3,
       text: "Hi there, The expert performed excellently and exceeded my expectations. Thank you for your input, time and resources in helping me complete this my job. Very professional and would fix my confusion. Very organized and met all my requirements. The quality of the work was excellent.",
       name: "Isuru Sandaruwan",
       title: "Geo Technical Engineer",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/452119484_7766353170152556_5930903102327738637_n.jpg?stp=cp6_dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHWo-P5Q-kFVL7oNOeM560XSkHWbzXJl1dKQdZvNcmXV_3QT2z9pa08uEYQ6ndJaBR0M95DRpaugthQ6_XG_WkP&_nc_ohc=jIe87qoCp0kQ7kNvwGhKurU&_nc_oc=Adl8l_W0Cwmz-EKTTHp3o51u5zDuzIWRf_95WguvdLBWiv4F3vGA0HUGwvs0pCZNlro&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=Y7RpJDV8QNUPHG3qKEUnFg&oh=00_AfpiEvIi-2v5PWzFMwy4z47IxPRw1hof1T_s8Pz_XHTF4w&oe=697E9C07", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/452119484_7766353170152556_5930903102327738637_n.jpg?stp=cp6_dst-jpg_s100x100_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHWo-P5Q-kFVL7oNOeM560XSkHWbzXJl1dKQdZvNcmXV_3QT2z9pa08uEYQ6ndJaBR0M95DRpaugthQ6_XG_WkP&_nc_ohc=-snAE2w4lYgQ7kNvwHJfdur&_nc_oc=AdmtmDJR3CkZWippLTrxDSXucoyCbc9Te1QYgwmtkR_chNh4an1LyfRpYn16vWypyqY&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=BVt5FqwY9ETZX_4Xn91TbA&oh=00_Aft1VpIbxrFW0Nb5HcBzwatw9sXO5Z0aovB_-DkIJfBmmQ&oe=69868507", // Placeholder avatar
     },
   ];
 
