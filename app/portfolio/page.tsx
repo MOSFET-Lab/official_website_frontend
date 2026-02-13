@@ -92,6 +92,7 @@ const Constellations = () => {
 };
 
 export default function Contact() {
+
   // 1. Setup State for filtering
   const [filter, setFilter] = useState("ALL");
 
@@ -120,6 +121,7 @@ export default function Contact() {
   const filteredProjects = filter === "ALL" 
     ? allProjects 
     : allProjects.filter(project => project.category === filter);
+
 
   return (
     <>
