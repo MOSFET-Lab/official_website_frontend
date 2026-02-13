@@ -2,12 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import AICore from "./components/AICore";
-import { motion, AnimatePresence } from "framer-motion";
-
-
-
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
+
 
   // ===== CAROUSEL STATE (MOVE HERE) =====
 const [current, setCurrent] = useState(0);
@@ -16,8 +15,8 @@ const slides = [
   { title: "Collaborative Innovation", img: "https://whatismyipaddress.com/wp-content/uploads/W301-1024x682.jpg" },
   { title: "Unlock Potential", img: "https://img.freepik.com/premium-photo/3d-printer-creating-complex-objects-emphasizing-innovation-manufacturing-technology_875755-8619.jpg" },
   { title: "AI That Works For You", img: "https://i.all3dp.com/wp-content/uploads/2022/08/30155305/cool-oderik-via-thingiverse-220830.jpg" },
-  { title: "Seamless Experiences", img: "https://images.cults3d.com/MKwmzzwBJ99Qhnh2FuYxVlcdnXw=/790x395/filters:no_upscale()/https://fbi.cults3d.com/uploads/collection/shot_en/169/Kawaii.jpg" },
-  { title: "3D Reality", img: "https://www.yankodesign.com/images/design_news/2022/05/top-10-3d-printed/3d_printed_top_10_designs_yanko_design_01.jpg" }
+  { title: "Seamless Experiences", img: "https://gitexasia.com/Uploads/Posts/NewsArticle/humanoid-robot-interacts-with-computer-screen-filled-with-data-1.jpg" },
+  { title: "3D Reality", img: "https://images.stockcake.com/public/d/a/f/daf87618-1783-440e-a3ab-26017466aee5_large/virtual-reality-wonderland-stockcake.jpg" }
 ];
 
 useEffect(() => {
@@ -56,21 +55,21 @@ useEffect(() => {
       text: "This company provided reliable service and clear communication throughout my project. They clearly understood the requirements and delivered accurate results on time. I highly recommend them to everyone for their excellent service and professionalism from start to finish",
       name: "Keshan Dinethma",
       title: "Business Founder",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/606013878_1391748055922353_5028411218304048568_n.jpg?stp=c0.331.1045.1045a_cp6_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=52bb43&_nc_eui2=AeHcBuoY6wwxFrwHIZzVSwiAJoUaTfZnU-EmhRpN9mdT4VW20MIUD-TeNe3S7K9IIfFSAwH9Vd8Z1ZMHZ-BbbXw9&_nc_ohc=mLj_AmWyMCEQ7kNvwHH501G&_nc_oc=AdmP6-h0PTpxgivDE5IuAgth9j_o0-GL9MtM8XnNt2fr9Z8BZTS1dyRBO9m76YDEH-U&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=Hhwsl5FJFxpLSqinqtIKxQ&oh=00_AfoCOneEcg6s-IrkIASouI7liiO-jyMJuSBineRCJN_YqQ&oe=697E858D", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/606013878_1391748055922353_5028411218304048568_n.jpg?stp=c0.331.1045.1045a_cp6_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=52bb43&_nc_eui2=AeHcBuoY6wwxFrwHIZzVSwiAJoUaTfZnU-EmhRpN9mdT4VW20MIUD-TeNe3S7K9IIfFSAwH9Vd8Z1ZMHZ-BbbXw9&_nc_ohc=M0SYuryEtxQQ7kNvwEgtQKH&_nc_oc=AdlIasfL2H034efDDxbB03gxucswhxv_YL4CKw6_aCcg6z9B4aPf0jGTSz8XNgiQ2Es&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=5fFV78LYHlvntm07_pxFvw&oh=00_AftwD8nx3LdXfnEBNd1JOzvKsCK3GquAsI3kAHOCcAVLhw&oe=69866E8D", // Placeholder avatar
     },
     {
       id: 2,
       text: "I’m extremely satisfied with the service I received. The team handled my project with great efficiency, kept me updated at every step, and delivered results that were truly top quality. Everything was smooth, professional, and 0 stress from start to finish. I highly recommend their services to anyone looking for reliable and top notch work.",
       name: "Ushan Nilindu",
       title: "Japan",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/326728993_3171376406487885_919101361625192623_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpi8WmmBDobfudghUUdHpBNIdhJKCxGaY0h2EkoLEZppESvkr_z4rJQfkXRo-hP5TvJNCV0s4fu9TdjNI1LDAO&_nc_ohc=a3DTT4vZEmgQ7kNvwEhQUd9&_nc_oc=Adnkg5U0IR6CLt8w0TSy-ymhuFZjXkb4KkUCNEAzl0WFtZ2Pqlp6isqhb-Tf2YU15JU&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=YGAFk911SHwZ65WpItXxVw&oh=00_AfoC-nmoHDLOtdFrzRUxkfJLQYpxWe88ucPrOXdXo1GJtA&oe=697E7645", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/326728993_3171376406487885_919101361625192623_n.jpg?stp=cp0_dst-jpg_p60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpi8WmmBDobfudghUUdHpBNIdhJKCxGaY0h2EkoLEZppESvkr_z4rJQfkXRo-hP5TvJNCV0s4fu9TdjNI1LDAO&_nc_ohc=OpxuF8OmRH8Q7kNvwG-jJQZ&_nc_oc=Admx39gcAcXWBmVylbQf-kE3OGq31HJnwjiQgJnhzcHDWppecaLAnZzN6otuPVlMOug&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=OVRP5QasvyHoGbz02kLIYw&oh=00_Afv2qP4uRkLbutbO_R26pGN7NseRPXmgoIcEcukSEsT7yQ&oe=69869785", // Placeholder avatar
     },
     {
       id: 3,
       text: "Hi there, The expert performed excellently and exceeded my expectations. Thank you for your input, time and resources in helping me complete this my job. Very professional and would fix my confusion. Very organized and met all my requirements. The quality of the work was excellent.",
       name: "Isuru Sandaruwan",
       title: "Geo Technical Engineer",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/452119484_7766353170152556_5930903102327738637_n.jpg?stp=cp6_dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHWo-P5Q-kFVL7oNOeM560XSkHWbzXJl1dKQdZvNcmXV_3QT2z9pa08uEYQ6ndJaBR0M95DRpaugthQ6_XG_WkP&_nc_ohc=jIe87qoCp0kQ7kNvwGhKurU&_nc_oc=Adl8l_W0Cwmz-EKTTHp3o51u5zDuzIWRf_95WguvdLBWiv4F3vGA0HUGwvs0pCZNlro&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=Y7RpJDV8QNUPHG3qKEUnFg&oh=00_AfpiEvIi-2v5PWzFMwy4z47IxPRw1hof1T_s8Pz_XHTF4w&oe=697E9C07", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/452119484_7766353170152556_5930903102327738637_n.jpg?stp=cp6_dst-jpg_s100x100_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHWo-P5Q-kFVL7oNOeM560XSkHWbzXJl1dKQdZvNcmXV_3QT2z9pa08uEYQ6ndJaBR0M95DRpaugthQ6_XG_WkP&_nc_ohc=-snAE2w4lYgQ7kNvwHJfdur&_nc_oc=AdmtmDJR3CkZWippLTrxDSXucoyCbc9Te1QYgwmtkR_chNh4an1LyfRpYn16vWypyqY&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=BVt5FqwY9ETZX_4Xn91TbA&oh=00_Aft1VpIbxrFW0Nb5HcBzwatw9sXO5Z0aovB_-DkIJfBmmQ&oe=69868507", // Placeholder avatar
     },
   ];
 
@@ -84,15 +83,49 @@ const slideVariants = {
 };
 
 
+//dancing
+const DancingItem = ({ children, highlight = false }) => {
+  const controls = useAnimation();
 
+  const moveRandomly = async () => {
+    while (true) {
+      await controls.start({
+        x: Math.random() * 1000 - 400,   // adjust to header width
+        y: Math.random() * 400 - 200,   // adjust to header height
+        rotate: Math.random() * 360,
+        scale: 0.6 + Math.random() * 1.4,
+        transition: {
+          duration: 4 + Math.random() * 4,
+          ease: "linear"
+        }
+      });
+    }
+  };
 
+  useEffect(() => {
+    moveRandomly();
+  }, []);
 
-
+  return (
+    <motion.div
+      animate={controls}
+      initial={{
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`
+      }}
+      className={`absolute pointer-events-none ${
+        highlight ? "opacity-100" : "opacity-50"
+      }`}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
   return (
   // <div className="xyz">
   <div className="bg-white dark:bg-zinc-950 min-h-screen">
-      
+
       {/* --- HERO SECTION WITH AI IMAGE & GRADIENT --- */}
       <section className="relative overflow-hidden rounded-[40px] bg-[#0a0a0c] min-h-[500px] flex items-center">
         {/* Background Glows */}
@@ -101,7 +134,69 @@ const slideVariants = {
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/10 blur-[100px] rounded-full"></div>
         </div>
 
-        <div className="px-[100px] relative z-10 grid md:grid-cols-2 gap-10 items-center w-full px-10 md:px-15 py-20">
+                
+            {/* --- 10 RESPONSIVE DANCING SHAPES --- */}
+          {/* 1. Neon Cyan Square (Top Left) */}
+          <DancingItem x="5vw" y="10vh" highlight>
+            <div className="w-8 h-8 md:w-12 md:h-12 border-2 border-cyan-400 rounded-lg shadow-[0_0_20px_#22d3ee]" />
+          </DancingItem>
+
+          {/* 2. Large Purple 'X' (Top Right) */}
+          <DancingItem x="80vw" y="5vh" delay={0} highlight>
+            <div className="text-purple-500 text-6xl md:text-9xl font-thin drop-shadow-[0_0_20px_#a855f7]">×</div>
+          </DancingItem>
+
+          {/* 3. Glowing Blue Triangle (Middle Left) */}
+          <DancingItem x="10vw" y="45vh" delay={0} highlight>
+            <div className="w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[25px] md:border-b-[45px] border-b-blue-600 shadow-[0_0_30px_#3b82f6]" />
+          </DancingItem>
+
+          {/* 4. Cyber Circle (Bottom Right) */}
+          <DancingItem x="85vw" y="80vh" delay={0} highlight>
+            <div className="w-12 h-12 md:w-20 md:h-20 border-2 border-cyan-500/50 rounded-full shadow-[0_0_25px_#22d3ee] flex items-center justify-center">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-ping" />
+            </div>
+          </DancingItem>
+
+          {/* 5. Neon Plus (Center Right) */}
+          <DancingItem x="90vw" y="35vh" delay={0} highlight>
+            <div className="text-blue-400 text-5xl md:text-7xl font-bold drop-shadow-[0_0_15px_#3b82f6]">+</div>
+          </DancingItem>
+
+          {/* 6. Play Button (Mid Top) */}
+          <DancingItem x="55vw" y="12vh" delay={0} highlight>
+            <div className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] md:border-l-[40px] border-l-blue-500 border-b-[15px] border-b-transparent drop-shadow-[0_0_20px_#3b82f6]" />
+          </DancingItem>
+
+          {/* 7. Rotating Diamond (Bottom Left) */}
+          <DancingItem x="8vw" y="85vh" delay={0} highlight>
+            <div className="w-10 h-10 md:w-16 md:h-16 border-2 border-purple-400 rotate-45 shadow-[0_0_20px_#a855f7]" />
+          </DancingItem>
+
+          {/* 8. Glowing Vertical Bar (Far Left) */}
+          <DancingItem x="2vw" y="30vh" delay={0} highlight>
+            <div className="w-1 h-20 md:h-40 bg-gradient-to-b from-transparent via-cyan-400 to-transparent shadow-[0_0_20px_#22d3ee]" />
+          </DancingItem>
+
+          {/* 9. Tech Frame (Bottom Center) */}
+          <DancingItem x="45vw" y="90vh" delay={0} highlight>
+            <div className="w-10 h-10 md:w-14 md:h-14 border-2 border-white/30 p-1 shadow-[0_0_15px_#fff]">
+              <div className="w-full h-full border border-white/10" />
+            </div>
+          </DancingItem>
+
+          {/* 10. Double Dot (Middle Right) */}
+          <DancingItem x="75vw" y="55vh" delay={0} highlight>
+            <div className="flex flex-col gap-3">
+              <div className="w-3 h-3 md:w-5 md:h-5 bg-cyan-400 rounded-sm shadow-[0_0_15px_#22d3ee]" />
+              <div className="w-3 h-3 md:w-5 md:h-5 bg-blue-500 rounded-sm shadow-[0_0_15px_#3b82f6]" />
+            </div>
+          </DancingItem>
+
+
+
+{/* header part top */}
+        <div className="px-[100px] relative z-10 grid md:grid-cols-2 gap-10 items-center w-full px-10 md:px-12 py-20">
           {/* Left Side: Text */}
           <div>
             <span className="mx-[100px]  inline-block px-10 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium border border-blue-500/50 mb-6">
@@ -129,7 +224,7 @@ const slideVariants = {
       <div className="absolute w-[350px] h-[350px] bg-blue-500/20 blur-[120px] rounded-full"></div>
 
       <img
-        src="https://aamolddesignandtool.com/wp-content/uploads/3d-product-design.webp"
+        src="/head.png"
         alt="3D Engineering Design"
         className="relative w-[490px] max-w-full
         animate-float
@@ -161,8 +256,6 @@ const slideVariants = {
 
 
 
-
-
 {/* ================= FEATURE CARDS SECTION ================= */}
 <div className="mt-24 px-[100px] md:px-[150px]">
   <div className="grid md:grid-cols-2 gap-10">
@@ -184,18 +277,20 @@ const slideVariants = {
           <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white font-medium">
             Learn more
           </button>
-          <button className="border border-blue-500 px-6 py-2 rounded-full text-blue-600 dark:text-blue-400 font-medium">
-            Buy
-          </button>
+          <Link href={`/product/smart-ai-lighting`}> 
+    <button className="border border-blue-500 px-6 py-2 rounded-full text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-zinc-800 transition-colors">
+      Buy
+    </button>
+  </Link>
         </div>
       </div>
 
       {/* 3D LAMP */}
       <img
-        src="https://joyboxfactory.com/cdn/shop/files/5_42afd036-8533-4c72-8186-043633a1331f.png?v=1689500258&width=1445"
-        alt="3D Lamp"
-        className="absolute -bottom-20 right-55 w-[300px] lamp-3d"
-      />
+  src="https://media.printables.com/media/prints/721759/images/5691337_b81da326-41d2-4320-80bf-63ff911c94fb_c19b47f6-47f6-4639-ae8e-39d4c65c82c0/thumbs/inside/1600x1200/png/bild4.webp"
+  alt="3D Lamp"
+  className="absolute bottom-0 left-17 w-[250px] aspect-square object-cover rounded-2xl" 
+/>
     </div>
 
     {/* RIGHT CARD */}
@@ -204,7 +299,7 @@ const slideVariants = {
       {/* Text */}
       <div className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
-          Night Light Illusion
+          Majestic Dragon 
         </h2>
         <p className="mt-4 text-zinc-600 dark:text-zinc-400 max-w-md">
           Experience precision lighting with immersive 3D visualization
@@ -215,17 +310,19 @@ const slideVariants = {
           <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white font-medium">
             Learn more
           </button>
-          <button className="border border-blue-500 px-6 py-2 rounded-full text-blue-600 dark:text-blue-400 font-medium">
-            Buy
-          </button>
+          <Link href={`/product/majestic-dragon`}> 
+    <button className="border border-blue-500 px-6 py-2 rounded-full text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-zinc-800 transition-colors">
+      Buy
+    </button>
+  </Link>
         </div>
       </div>
 
       {/* 3D LAMP */}
       <img
-        src="https://m.media-amazon.com/images/I/61-SnVqJP4L._AC_UF350,350_QL80_.jpg"
+        src="https://i.etsystatic.com/58083831/r/il/2fc3e5/7314911297/il_1588xN.7314911297_ht2r.jpg"
         alt="3D Lamp"
-        className="absolute -bottom-24 right-60 w-[280px] lamp-3d-slow"
+         className="absolute bottom-0 left-17 w-[250px] aspect-square object-cover rounded-2xl" 
       />
     </div>
 
@@ -463,7 +560,7 @@ const slideVariants = {
 
 
 
-      {/* --- CUSTOMERS SECTION --- */}
+      {/* --- Happy CUSTOMERS  --- */}
       <div className="mt-15 text-center px-[50px] mb-32">
         <div className="text-4xl md:text-5xl text-zinc-800 dark:text-zinc-200 tracking-tighter mb-16 font-black">Happy Customers</div>
         <div className="flex justify-center items-center -space-x-12"> {/* Overlapping magic here */}
@@ -486,7 +583,7 @@ const slideVariants = {
               className="relative group"
             >
               <div className="w-48 h-48 rounded-full bg-white border border-zinc-200 shadow-xl flex flex-col items-center justify-center p-6 transition-transform group-hover:-translate-y-4 bg-white z-10">
-                <img src={tech.img} alt={tech.name} className="w-26 h-26 group-hover:sepia-0 transition-all" />
+                <img src="https://scontent-bom5-2.xx.fbcdn.net/v/t39.30808-1/599653719_122109109203098789_2141480115708873470_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeFh6ZWMPc2bkdNkvVrgzAr8XAh-XTmjljZcCH5dOaOWNgfC8hlnybraR5knX893QRyxP9y_uu34leAkxzwNyz0f&_nc_ohc=0L0HfRfc3IoQ7kNvwEVpaCa&_nc_oc=AdlHCQvFoADP9ypKD2-35-rSq42NFKqFKnZeNlXqNulY-Vt2UljMMVTZgbg0F5LFAAM&_nc_zt=24&_nc_ht=scontent-bom5-2.xx&_nc_gid=qTkuiDwzomZlC_NgyyODPw&oh=00_Aft31ITau1sg1P-oEccae59v0iCDoEBvSD8qHaJB8RJRDA&oe=698CFA83" alt={tech.name} className="w-26 h-26 group-hover:sepia-0 transition-all" />
                 {/* sepia */}
                 <p className="mt-4 text-[10px] font-black tracking-tighter text-black">{tech.name}</p>
               </div>

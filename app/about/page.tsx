@@ -97,7 +97,7 @@ export default function Contact() {
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
+    <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
         
         
@@ -157,7 +157,7 @@ export default function Contact() {
               <div className="bg-white rounded-[40px] p-12 aspect-square flex items-center justify-center shadow-2xl">
                 {/* Replace with your actual logo path */}
                 <img 
-                  src="https://scontent-bom5-2.xx.fbcdn.net/v/t39.30808-6/599653719_122109109203098789_2141480115708873470_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFh6ZWMPc2bkdNkvVrgzAr8XAh-XTmjljZcCH5dOaOWNgfC8hlnybraR5knX893QRyxP9y_uu34leAkxzwNyz0f&_nc_ohc=PamEf5JaQGgQ7kNvwFWAPGl&_nc_oc=Adnzaj1xMpTV1bRx2Stz_pHsxTxe3_HeAHzq9D2sFewBOs0Hu7ef_Yofe05ZttNe0S0&_nc_zt=23&_nc_ht=scontent-bom5-2.xx&_nc_gid=taWc2DmiN16jhvuZ4qYijA&oh=00_AfsvgQkax7r_KbN4H3Mzp6C7wUBXxXaCmthg8lxXpqbuCg&oe=698784E8" 
+                  src="./about.jpg" 
                   alt="Zfrozen Logo" 
                   className="w-full h-auto object-contain scale-110" 
                 />

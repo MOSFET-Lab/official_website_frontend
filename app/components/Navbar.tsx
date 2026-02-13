@@ -22,9 +22,19 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-black dark:text-white hover:opacity-80 transition">
-          MOSFET
-        </Link>
+        <Link href="/" className="flex items-center gap-3 text-2xl font-bold text-black dark:text-white hover:opacity-80 transition group">
+  {/* The Logo */}
+  <div className="relative w-10 h-10 overflow-hidden rounded-lg border border-white/10 shadow-lg">
+    <img 
+      src="/mos.png" 
+      alt="MOSFET Logo"
+      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+    />
+  </div>
+
+  {/* The Text */}
+  <span className="tracking-tighter">MOSFET</span>
+</Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-18">
@@ -95,7 +105,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="rounded-full bg-black px-6 py-2 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition w-max"
+            className="rounded-full bg-blue-400 px-6 py-2 text-sm font-medium text-white "
             onClick={() => setIsOpen(false)}
           >
             Get In Touch

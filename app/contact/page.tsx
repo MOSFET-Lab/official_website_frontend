@@ -106,7 +106,7 @@ export default function Contact() {
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
+  <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
         
         <Constellations />
