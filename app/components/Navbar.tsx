@@ -24,17 +24,12 @@ export default function Navbar() {
         
         {/* Logo - THIS IS YOUR HOME BUTTON */}
         <Link href="/" className="flex items-center gap-3 text-2xl font-bold text-black dark:text-white">
-          <div className="relative w-10 h-10 overflow-hidden rounded-lg border border-white/10 shadow-lg">
            <Image 
-              src="/mos.png" 
+              src="/MOSFET.webp" 
               alt="MOSFET Logo"
-              width={35}  
-              height={35} 
-              className="object-cover"
-              priority 
+              width={95}  
+              height={95} 
             />
-          </div>
-          <span className="tracking-tighter">MOSFET</span>
         </Link>
 
         {/* Desktop Menu - No "Home" word anymore */}
