@@ -130,7 +130,7 @@ export default function Contact() {
     <>
       {/* ================= HERO SECTION ================= */}
       <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
         
         <Constellations />
 
@@ -202,7 +202,7 @@ export default function Contact() {
                 className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex items-end p-6">
                 <h3 className="text-white text-xl font-bold tracking-tight">
                   {project.title}
                 </h3>
