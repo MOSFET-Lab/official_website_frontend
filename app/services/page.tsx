@@ -128,7 +128,7 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#030014] text-white overflow-x-hidden pb-20">
       {/* ================= HERO SECTION ================= */}
       <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
         
         <Constellations />
 
@@ -155,13 +155,13 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
             {/* LEFT SIDE: IMAGES (Safari Optimized) */}
-            <div className="col-span-12 lg:col-span-6 relative h-[500px] md:h-[600px] [isolation:isolate]">
+            <div className="col-span-12 lg:col-span-6 relative h-125 md:h-150 isolate">
               <motion.div 
                 className="absolute top-0 left-0 w-[75%] aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-0 transform-gpu"
                 style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
               >
                 <img src={service.bgImg} className="w-full h-full object-cover opacity-70" alt="bg" />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#9b8aff]/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-[#9b8aff]/60 to-transparent" />
               </motion.div>
 
               <motion.div 
