@@ -518,8 +518,8 @@ export default function Home() {
 
       {/* --- Happy CUSTOMERS  --- */}
       <div className="mt-30 text-center px-[50px] mb-32">
-        <div className="text-4xl md:text-5xl text-zinc-800 dark:text-zinc-200 tracking-tighter mb-16 font-black">Happy Customers</div>
-        <div className="flex justify-center items-center -space-x-12"> {/* Overlapping magic here */}
+        <div className="text-white font-semibold lg:text-[50px] sm:text-[40px] text-[40px]">Happy Customers</div>
+        <div className="flex justify-center items-center -space-x-12 pt-8"> {/* Overlapping magic here */}
           {expertise.map((tech, index) => (
             <motion.div
               key={index}
