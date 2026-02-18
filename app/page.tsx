@@ -8,6 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, MeshTransmissionMaterial, ContactShadows } from "@react-three/drei";
 import { MeshDistortMaterial } from "@react-three/drei";
 import WorkingProcess from "./components/WorkingProcess";
+import PortfolioSection from "./components/PortfolioSection";
 
 
 export default function Home() {
@@ -434,7 +435,8 @@ export default function Home() {
 
 
 
-
+      {/* ================= PORTFOLIO SECTION ================= */}
+      <PortfolioSection />
 
       {/* ================= OUR PROCESS SECTION ================= */}
       <div className="mt-24">
@@ -559,7 +561,7 @@ export default function Home() {
           <p className="text-zinc-500 flex justify-center items-center gap-2">
             {/* (50 reviews) */}
             {/* remove the above comment if you want to add the number of reviews in here Soiba Aiye */}
-            
+
           </p>
         </div>
         <div className="flex justify-center flex-col items-center mb-5 xl:px-32">
@@ -595,6 +597,8 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+
 
 
 
