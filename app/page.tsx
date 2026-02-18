@@ -420,15 +420,46 @@ export default function Home() {
 
 
 
-
-
-      {/* ================= PORTFOLIO SECTION ================= */}
-      <PortfolioSection />
+      {/* --- Happy CUSTOMERS  --- */}
+      <div className="mt-30 text-center px-[50px] mb-32">
+        <div className="text-white font-semibold lg:text-[50px] sm:text-[40px] text-[40px]">Happy Customers</div>
+        <div className="flex justify-center items-center -space-x-12 pt-8"> {/* Overlapping magic here */}
+          {expertise.map((tech, index) => (
+            <motion.div
+              key={index}
+              initial={{ scale: 0, opacity: 0, x: 0 }}
+              whileInView={{
+                scale: 1,
+                opacity: 1,
+                // This spreads them from the center
+                x: (index - 2) * 20
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                delay: index * 0.1
+              }}
+              viewport={{ once: true }}
+              className="relative group"
+            >
+              <div className="w-48 h-48 rounded-full bg-white border border-zinc-200 shadow-xl flex flex-col items-center justify-center p-6 transition-transform group-hover:-translate-y-4 bg-white z-10">
+                <img src="/mos_black.png" alt={tech.name} className="w-26 h-26 group-hover:sepia-0 transition-all" />
+                {/* sepia */}
+                <p className="mt-4 text-[10px] font-black tracking-tighter text-black">{tech.name}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
       {/* ================= OUR PROCESS SECTION ================= */}
       <div className="mt-24">
         <WorkingProcess />
       </div>
+
+
+      {/* ================= PORTFOLIO SECTION ================= */}
+      <PortfolioSection />
 
 
 
@@ -505,37 +536,7 @@ export default function Home() {
 
 
 
-      {/* --- Happy CUSTOMERS  --- */}
-      <div className="mt-30 text-center px-[50px] mb-32">
-        <div className="text-white font-semibold lg:text-[50px] sm:text-[40px] text-[40px]">Happy Customers</div>
-        <div className="flex justify-center items-center -space-x-12 pt-8"> {/* Overlapping magic here */}
-          {expertise.map((tech, index) => (
-            <motion.div
-              key={index}
-              initial={{ scale: 0, opacity: 0, x: 0 }}
-              whileInView={{
-                scale: 1,
-                opacity: 1,
-                // This spreads them from the center
-                x: (index - 2) * 20
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                delay: index * 0.1
-              }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="w-48 h-48 rounded-full bg-white border border-zinc-200 shadow-xl flex flex-col items-center justify-center p-6 transition-transform group-hover:-translate-y-4 bg-white z-10">
-                <img src="/mos_black.png" alt={tech.name} className="w-26 h-26 group-hover:sepia-0 transition-all" />
-                {/* sepia */}
-                <p className="mt-4 text-[10px] font-black tracking-tighter text-black">{tech.name}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+
 
 
 
