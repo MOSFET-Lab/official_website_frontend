@@ -4,12 +4,24 @@ import React, { useState, useEffect } from "react";
 import AICore from "./components/AICore";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import Link from "next/link";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Float, Environment, MeshTransmissionMaterial, ContactShadows } from "@react-three/drei";
+import { MeshDistortMaterial } from "@react-three/drei";
 
 export default function Home() {
 
-
+  //cactus
+const [broken, setBroken] = useState(false);
   // ===== CAROUSEL STATE (MOVE HERE) =====
 const [current, setCurrent] = useState(0);
+
+//cactus
+useEffect(() => {
+    if (broken) {
+      const timer = setTimeout(() => setBroken(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [broken]); 
 
 const slides = [
   { title: "Collaborative Innovation", img: "https://whatismyipaddress.com/wp-content/uploads/W301-1024x682.jpg" },
@@ -27,12 +39,12 @@ useEffect(() => {
 }, []);
 
 
-  // const stats = [
-  //   { value: "400+", label: "Happy Clients", img: "https://cdn-icons-png.flaticon.com/512/9321/9321410.png" },
-  //   { value: "77+", label: "Ready Projects", img: "https://cdn-icons-png.freepik.com/512/7445/7445647.png" },
-  //   { value: "65+", label: "Active Clients", img: "https://cdn-icons-png.freepik.com/512/14245/14245713.png" },
-  //   { value: "381+", label: "Projects Done", img: "https://cdn-icons-png.flaticon.com/512/2304/2304298.png" },
-  // ];
+  const stats = [
+    { value: "50+", label: "Happy Clients", img: "https://cdn-icons-png.flaticon.com/512/9321/9321410.png" },
+    { value: "30+", label: "Ready Projects", img: "https://cdn-icons-png.freepik.com/512/7445/7445647.png" },
+    { value: "70+", label: "Projects Done", img: "https://cdn-icons-png.flaticon.com/512/2304/2304298.png" },
+    { value: "1+", label: "Year Experience", img: "https://cdn-icons-png.flaticon.com/512/7871/7871110.png" },
+  ];
 
   // const services = [
   //   { title: "IoT & AI", image: "https://thumbs.dreamstime.com/b/vector-computer-electronic-chip-ai-icon-microchip-processor-artificial-intelligence-cpu-iot-big-data-isolated-white-vector-312443620.jpg" },
@@ -55,25 +67,81 @@ useEffect(() => {
       text: "This company provided reliable service and clear communication throughout my project. They clearly understood the requirements and delivered accurate results on time. I highly recommend them to everyone for their excellent service and professionalism from start to finish",
       name: "Keshan Dinethma",
       title: "Business Founder",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/606013878_1391748055922353_5028411218304048568_n.jpg?stp=c0.331.1045.1045a_cp6_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=52bb43&_nc_eui2=AeHcBuoY6wwxFrwHIZzVSwiAJoUaTfZnU-EmhRpN9mdT4VW20MIUD-TeNe3S7K9IIfFSAwH9Vd8Z1ZMHZ-BbbXw9&_nc_ohc=M0SYuryEtxQQ7kNvwEgtQKH&_nc_oc=AdlIasfL2H034efDDxbB03gxucswhxv_YL4CKw6_aCcg6z9B4aPf0jGTSz8XNgiQ2Es&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=5fFV78LYHlvntm07_pxFvw&oh=00_AftwD8nx3LdXfnEBNd1JOzvKsCK3GquAsI3kAHOCcAVLhw&oe=69866E8D", // Placeholder avatar
+      avatar: "https://scontent-bom5-2.xx.fbcdn.net/v/t39.30808-1/615246710_1405047984592360_3135147869531169571_n.jpg?stp=cp6_dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeF05pdJNAl5YasY36GjKeGz0iMR0__YHefSIxHT_9gd50rn8CY4egmtxPEHWCs9DfkbaTtpaU7rFDdkIRlqpKSi&_nc_ohc=dH_DXb6KZ8cQ7kNvwF_XltM&_nc_oc=Adnir08Er7o2FDWSfoqgb9bJGDXax8Bp0Tw8z3JWdZTbYx5u6e0eTOO2j_IzIGGvt6k&_nc_zt=24&_nc_ht=scontent-bom5-2.xx&_nc_gid=LG4NXdQNauDRa5D54ucnlg&oh=00_AfuOfi0F3NOYt1Bpc0CIVynTdZoZeTrutqJz7i0ctl93VA&oe=699B14B2", // Placeholder avatar
     },
     {
       id: 2,
       text: "I’m extremely satisfied with the service I received. The team handled my project with great efficiency, kept me updated at every step, and delivered results that were truly top quality. Everything was smooth, professional, and 0 stress from start to finish. I highly recommend their services to anyone looking for reliable and top notch work.",
       name: "Ushan Nilindu",
       title: "Japan",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/326728993_3171376406487885_919101361625192623_n.jpg?stp=cp0_dst-jpg_p60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpi8WmmBDobfudghUUdHpBNIdhJKCxGaY0h2EkoLEZppESvkr_z4rJQfkXRo-hP5TvJNCV0s4fu9TdjNI1LDAO&_nc_ohc=OpxuF8OmRH8Q7kNvwG-jJQZ&_nc_oc=Admx39gcAcXWBmVylbQf-kE3OGq31HJnwjiQgJnhzcHDWppecaLAnZzN6otuPVlMOug&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=OVRP5QasvyHoGbz02kLIYw&oh=00_Afv2qP4uRkLbutbO_R26pGN7NseRPXmgoIcEcukSEsT7yQ&oe=69869785", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/326728993_3171376406487885_919101361625192623_n.jpg?stp=cp0_dst-jpg_p60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpi8WmmBDobfudghUUdHpBNIdhJKCxGaY0h2EkoLEZppESvkr_z4rJQfkXRo-hP5TvJNCV0s4fu9TdjNI1LDAO&_nc_ohc=i84iZvVra1QQ7kNvwHRRgYf&_nc_oc=Adnh8J0BN_6VrR_aL1PIX71072vXOoeIaU6nS7Yu6eQg_a9fyTINUASSHULxGRbdvPo&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=JTr3E6zlLAqgx8JTbnYfEg&oh=00_AftGnR8pIKrxuK3bInZwQS7OMXriL8HFSKpTB9odf-S98w&oe=699B3F05", // Placeholder avatar
     },
     {
       id: 3,
       text: "Hi there, The expert performed excellently and exceeded my expectations. Thank you for your input, time and resources in helping me complete this my job. Very professional and would fix my confusion. Very organized and met all my requirements. The quality of the work was excellent.",
       name: "Isuru Sandaruwan",
       title: "Geo Technical Engineer",
-      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/452119484_7766353170152556_5930903102327738637_n.jpg?stp=cp6_dst-jpg_s100x100_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHWo-P5Q-kFVL7oNOeM560XSkHWbzXJl1dKQdZvNcmXV_3QT2z9pa08uEYQ6ndJaBR0M95DRpaugthQ6_XG_WkP&_nc_ohc=-snAE2w4lYgQ7kNvwHJfdur&_nc_oc=AdmtmDJR3CkZWippLTrxDSXucoyCbc9Te1QYgwmtkR_chNh4an1LyfRpYn16vWypyqY&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=BVt5FqwY9ETZX_4Xn91TbA&oh=00_Aft1VpIbxrFW0Nb5HcBzwatw9sXO5Z0aovB_-DkIJfBmmQ&oe=69868507", // Placeholder avatar
+      avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/452119484_7766353170152556_5930903102327738637_n.jpg?stp=cp6_dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHWo-P5Q-kFVL7oNOeM560XSkHWbzXJl1dKQdZvNcmXV_3QT2z9pa08uEYQ6ndJaBR0M95DRpaugthQ6_XG_WkP&_nc_ohc=rNKiK9a-sBAQ7kNvwH9gDHd&_nc_oc=AdlMjVxJLj5zm-zc84nYgNqv58iLG9eRwC3NRk9pPlAwbzq-npPO2oaHr-k4pwp3G2c&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=lzZo6-B8sRzYyEZrikn3IA&oh=00_Afuo_22kT-nhkF4y6WRuiAK6uLgk0mhkhDxJS_jY-1TD-Q&oe=699B2C87", // Placeholder avatar
     },
   ];
 
-  const tickerWords = ["AI Tech", "AI Experts", "AI Generator", "Innovation", "Future Tech"];
+   
+  const stepData = [
+    {
+      id: "01",
+      title: "Research",
+      desc: "Delve into in-depth analysis and exploration to identify opportunities and solutions that shape the foundation.",
+      icon: (
+       <img 
+        src="https://zfrozen.com/research-icon.png" 
+       className="w-14 h-14 object-contain"
+        alt="Research"
+      />
+      )
+    },
+    {
+      id: "02",
+      title: "Design",
+      desc: "Transforming insights into user-centric blueprints and aesthetic interfaces that define your brand identity.",
+      icon: (
+        <img 
+        src="https://zfrozen.com/design-icon.png" 
+        className="w-14 h-14 object-contain"
+        alt="Research"
+      />
+      )
+    },
+    {
+      id: "03",
+      title: "Develop",
+      desc: "Bringing the vision to life with robust development practices and high-performance, scalable code.",
+      icon: (
+        <img 
+        src="https://zfrozen.com/development-icon.png" 
+        className="w-14 h-14 object-contain"
+        alt="Research"
+      />
+      )
+    },
+    {
+      id: "04",
+      title: "Launch",
+      desc: "Final deployment and ongoing technical support to ensure your product thrives and evolves.",
+      icon: (
+        <img 
+        src="https://zfrozen.com/test-icon.png" 
+        className="w-14 h-14 object-contain"
+        alt="Research"
+      />
+      )
+    }
+  ];
+
+
+
+
+
+const tickerWords = ["AI Tech", "AI Experts", "AI Generator", "Innovation", "Future Tech"];
 
   
 const slideVariants = {
@@ -84,27 +152,17 @@ const slideVariants = {
 
 
 //dancing
-const DancingItem = ({ children, highlight = false }) => {
+const DancingItem = ({ children, highlight = false, x = "50%", y = "50%" }) => {
   const controls = useAnimation();
 
-  const moveRandomly = async () => {
-    while (true) {
-      await controls.start({
-        x: Math.random() * 1000 - 400,   // adjust to header width
-        y: Math.random() * 400 - 200,   // adjust to header height
-        rotate: Math.random() * 360,
-        scale: 0.6 + Math.random() * 1.4,
-        transition: {
-          duration: 4 + Math.random() * 4,
-          ease: "linear"
-        }
-      });
-    }
-  };
-
   useEffect(() => {
+    let isMounted = true;
+
+    
+
     moveRandomly();
-  }, []);
+    return () => { isMounted = false; }; // Cleanup function
+  }, [controls]);
 
   return (
     <motion.div
@@ -134,64 +192,7 @@ const DancingItem = ({ children, highlight = false }) => {
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/10 blur-[100px] rounded-full"></div>
         </div>
 
-                
-            {/* --- 10 RESPONSIVE DANCING SHAPES --- */}
-          {/* 1. Neon Cyan Square (Top Left) */}
-          <DancingItem x="5vw" y="10vh" highlight>
-            <div className="w-8 h-8 md:w-12 md:h-12 border-2 border-cyan-400 rounded-lg shadow-[0_0_20px_#22d3ee]" />
-          </DancingItem>
-
-          {/* 2. Large Purple 'X' (Top Right) */}
-          <DancingItem x="80vw" y="5vh" delay={0} highlight>
-            <div className="text-purple-500 text-6xl md:text-9xl font-thin drop-shadow-[0_0_20px_#a855f7]">×</div>
-          </DancingItem>
-
-          {/* 3. Glowing Blue Triangle (Middle Left) */}
-          <DancingItem x="10vw" y="45vh" delay={0} highlight>
-            <div className="w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[25px] md:border-b-[45px] border-b-blue-600 shadow-[0_0_30px_#3b82f6]" />
-          </DancingItem>
-
-          {/* 4. Cyber Circle (Bottom Right) */}
-          <DancingItem x="85vw" y="80vh" delay={0} highlight>
-            <div className="w-12 h-12 md:w-20 md:h-20 border-2 border-cyan-500/50 rounded-full shadow-[0_0_25px_#22d3ee] flex items-center justify-center">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-ping" />
-            </div>
-          </DancingItem>
-
-          {/* 5. Neon Plus (Center Right) */}
-          <DancingItem x="90vw" y="35vh" delay={0} highlight>
-            <div className="text-blue-400 text-5xl md:text-7xl font-bold drop-shadow-[0_0_15px_#3b82f6]">+</div>
-          </DancingItem>
-
-          {/* 6. Play Button (Mid Top) */}
-          <DancingItem x="55vw" y="12vh" delay={0} highlight>
-            <div className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] md:border-l-[40px] border-l-blue-500 border-b-[15px] border-b-transparent drop-shadow-[0_0_20px_#3b82f6]" />
-          </DancingItem>
-
-          {/* 7. Rotating Diamond (Bottom Left) */}
-          <DancingItem x="8vw" y="85vh" delay={0} highlight>
-            <div className="w-10 h-10 md:w-16 md:h-16 border-2 border-purple-400 rotate-45 shadow-[0_0_20px_#a855f7]" />
-          </DancingItem>
-
-          {/* 8. Glowing Vertical Bar (Far Left) */}
-          <DancingItem x="2vw" y="30vh" delay={0} highlight>
-            <div className="w-1 h-20 md:h-40 bg-gradient-to-b from-transparent via-cyan-400 to-transparent shadow-[0_0_20px_#22d3ee]" />
-          </DancingItem>
-
-          {/* 9. Tech Frame (Bottom Center) */}
-          <DancingItem x="45vw" y="90vh" delay={0} highlight>
-            <div className="w-10 h-10 md:w-14 md:h-14 border-2 border-white/30 p-1 shadow-[0_0_15px_#fff]">
-              <div className="w-full h-full border border-white/10" />
-            </div>
-          </DancingItem>
-
-          {/* 10. Double Dot (Middle Right) */}
-          <DancingItem x="75vw" y="55vh" delay={0} highlight>
-            <div className="flex flex-col gap-3">
-              <div className="w-3 h-3 md:w-5 md:h-5 bg-cyan-400 rounded-sm shadow-[0_0_15px_#22d3ee]" />
-              <div className="w-3 h-3 md:w-5 md:h-5 bg-blue-500 rounded-sm shadow-[0_0_15px_#3b82f6]" />
-            </div>
-          </DancingItem>
+          
 
 
 
@@ -217,22 +218,54 @@ const DancingItem = ({ children, highlight = false }) => {
           </div>
 
 
-          {/* RIGHT SIDE — FLOATING IMAGE */}
-    <div className="relative flex justify-center items-center">
-      
-      {/* Glow behind image */}
-      <div className="absolute w-[350px] h-[350px] bg-blue-500/20 blur-[120px] rounded-full"></div>
 
-      <img
-        src="/head.png"
-        alt="3D Engineering Design"
-        className="relative w-[490px] max-w-full
-        animate-float
-        opacity-90
-        mix-blend-lighten
-        drop-shadow-[0_40px_80px_rgba(59,130,246,0.35)]"
-      />
-    </div>
+<div style={{ width: '100%', height: '500px' }}>
+  <Canvas 
+    shadows 
+    gl={{ alpha: true, antialias: true }} 
+    camera={{ position: [0, 1, 5], fov: 45 }}
+    onCreated={({ gl }) => gl.setClearColor(0x000000, 0)} // Makes the background 100% transparent
+  >
+    {/* Lighting to bring out the colors */}
+    <ambientLight intensity={1} />
+    <pointLight position={[5, 5, 5]} intensity={2} />
+
+    {/* The Colorful Cactus Group */}
+    <group rotation={[0, 0.5, 0]}>
+      
+      {/* Main Body - Colorful 'Normal' Material */}
+      <mesh castShadow>
+        <capsuleGeometry args={[0.5, 1.5, 10, 20]} />
+        <meshNormalMaterial /> 
+      </mesh>
+
+      {/* Right Arm */}
+      <mesh position={[0.7, 0.5, 0]} rotation={[0, 0, Math.PI / 4]}>
+        <capsuleGeometry args={[0.2, 0.6, 10, 20]} />
+        <meshNormalMaterial />
+      </mesh>
+
+      {/* Left Arm */}
+      <mesh position={[-0.6, -0.2, 0]} rotation={[0, 0, -Math.PI / 3]}>
+        <capsuleGeometry args={[0.18, 0.5, 10, 20]} />
+        <meshNormalMaterial />
+      </mesh>
+
+      {/* Colorful Pot */}
+      <mesh position={[0, -1.3, 0]}>
+        <cylinderGeometry args={[0.6, 0.4, 0.7, 32]} />
+        <meshNormalMaterial />
+      </mesh>
+    </group>
+
+    {/* Allows you to drag and spin the colorful cactus */}
+    <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={4} />
+  </Canvas>
+</div>
+ 
+        
+
+       
 
         </div>
       </section>
@@ -409,81 +442,61 @@ const DancingItem = ({ children, highlight = false }) => {
 
 
       {/* ================= WORKING PROCESS SECTION ================= */}
-<div className="mt-5 px-6 md:px-[80px] py-16 relative ">
-  {/* Background World Map Pattern */}
-  <div 
-    className="absolute inset-0 opacity-10 pointer-events-none"
-    style={{
-      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230f172a' strokeWidth='1'%3E%3Cpath d='M11 49.2L27 33.2 43 49.2M11 11.2L27 27.2 43 11.2'/%3E%3C/g%3E%3C/svg%3E")`,
-      backgroundSize: '60px 60px'
-    }}
-  ></div>
-
-  {/* Header */}
-  <div className="text-center mb-12">
-    <span className="inline-block px-4 py-1 text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-100 rounded-full mb-4">
-      Working Process
-    </span>
-    <h2 className="text-4xl md:text-5xl font-black text-zinc-800 dark:text-white leading-tight">
-      Get your IT solutions in <br />
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">3 Easy Steps</span>
-    </h2>
-  </div>
-
-  {/* Steps Grid */}
-  <div className="grid md:grid-cols-3 gap-8 items-start relative">
-
-    {/* Step 1 */}
-    <div className="relative flex flex-col items-center text-center group">
-      <div className="relative w-full max-w-[300px] h-[200px] rounded-xl overflow-hidden mb-6 border-3 border-purple-500 shadow-lg group-hover:scale-105 transition-transform duration-300">
-        <img 
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-          alt="Understanding Your Story"
-          className="w-full h-full object-cover"
+      <section className="relative mt-24 px-6 md:px-[150px] py-20 overflow-hidden">
+        {/* Background Pattern */}
+        <div 
+          className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230f172a' strokeWidth='1'%3E%3Cpath d='M11 49.2L27 33.2 43 49.2M11 11.2L27 27.2 43 11.2'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}
         />
-        <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm">01</div>
-      </div>
-      <h3 className="text-xl font-bold text-zinc-800 dark:text-white mb-3">Understanding Your Story</h3>
-      <p className="text-zinc-600 dark:text-zinc-300 text-1xl leading-relaxed">
-        We listen to the story and objectives of your brand, and conduct analysis to plan for successful partnering.
-      </p>
-    </div>
 
-    {/* Step 2 */}
-    <div className="relative flex flex-col items-center text-center group">
-      <div className="relative w-full max-w-[300px] h-[200px] rounded-xl overflow-hidden mb-6 border-3 border-purple-500 shadow-lg group-hover:scale-105 transition-transform duration-300">
-        <img 
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-          alt="Tailoring Software Solutions"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm">02</div>
-      </div>
-      <h3 className="text-xl font-bold text-zinc-800 dark:text-white mb-3">Tailoring Software Solutions</h3>
-      <p className="text-zinc-600 dark:text-zinc-300 text-1xl leading-relaxed">
-        We identify your software needs and quickly develop enhancements to provide you with improvements.
-      </p>
-    </div>
+        <div className="text-center mb-16 relative z-10">
+          <span className="inline-block px-4 py-1 text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-100 rounded-full mb-4">
+            Working Process
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-zinc-800 dark:text-white leading-tight">
+            Get your IT solutions in <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">4 Easy Steps</span>
+          </h2>
+        </div>
 
-    {/* Step 3 */}
-    <div className="relative flex flex-col items-center text-center group">
-      <div className="relative w-full max-w-[300px] h-[200px] rounded-xl overflow-hidden mb-6 border-3 border-purple-500 shadow-lg group-hover:scale-105 transition-transform duration-300">
-        <img 
-          src="https://media.istockphoto.com/id/1911521660/photo/call-center-workers.jpg?s=612x612&w=0&k=20&c=jZr-CasP4ScJvlIW2V3D3KY5OLYEYPY2PYA_mP7NML8=" 
-          alt="Provide Ongoing Support"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm">03</div>
-      </div>
-      <h3 className="text-xl font-bold text-zinc-800 dark:text-white mb-3">Provide Ongoing Support</h3>
-      <p className="text-zinc-600 dark:text-zinc-300 text-1xl leading-relaxed">
-        Our team of experts provides ongoing technical support to help you maximize customer engagement.
-      </p>
-    </div>
+        {/* Grid adjusted to 4 columns on desktop (lg:grid-cols-4) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+          {stepData.map((step, idx) => (
+            <div 
+              key={idx}
+              className="group relative bg-[#4A99E9] p-7 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col items-start min-h-[350px]"
+            >
+              <div className="w-full flex justify-between items-start mb-6">
+                <div className="bg-black p-4 rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
+                  {step.icon}
+                </div>
+                <span className="text-5xl font-black text-black/10 group-hover:text-black/30 transition-colors">
+                  {step.id}
+                </span>
+              </div>
 
-  </div>
-
-</div>
+              <div>
+                <h3 className="text-xl font-black text-zinc-900 mb-2 uppercase tracking-tighter leading-tight">
+                  {step.title}
+                </h3>
+                <div className="flex gap-1 mb-4">
+                  <div className="h-1.5 w-10 bg-black rounded-full" />
+                  <div className="h-1.5 w-3 bg-black/30 rounded-full" />
+                </div>
+                <p className="text-zinc-900 text-sm font-semibold leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+              
+              {/* Card Decoration */}
+              <div className="absolute inset-x-0 bottom-0 h-3 bg-black/5 rounded-b-[2.5rem]" />
+            </div>
+          ))}
+        </div>
+      </section>
 
 
 
@@ -514,8 +527,8 @@ const DancingItem = ({ children, highlight = false }) => {
 
 
 
-{/* Happy Clients */}
-      {/* <div className="mx-[150px] mt-20 relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-400 via-indigo-00 to-blue-400 mt-20">   
+{/* Happy Clients , experience, projects, */}
+      <div className="mx-[150px] mt-20 relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-400">   
    
         <div className="grid md:grid-cols-2 items-center ">
           
@@ -525,18 +538,17 @@ const DancingItem = ({ children, highlight = false }) => {
               Who We Bring
             </p>
 
-            <h1 className=" text-4xl md:text-5xl font-bold mt-4 leading-tight ">
-              Let’s Start ... <br />
-              We Are On <br />
-              Building Of Dream 
+            <h1 className=" text-4xl md:text-5xl font-bold mt-5 leading-tight ">
+              Let’s Build the Next <br />Generation of Smart Technology
+            
             </h1>
           </div>
 
          
-          <div className="mx-[110px] bg-white rounded-3xl m-6 p-8 grid grid-cols-2 gap-8 ">
+          <div className="mx-[90px] bg-white rounded-3xl m-6 p-8 grid grid-cols-2 gap-8 ">
             {stats.map((item, index) => (
               <div key={index} className="flex items-center gap-4">
-                <div className="w-50 h-16 rounded-xl bg-indigo-50 flex items-center justify-center overflow-hidden p-2">
+                <div className="w-150 h-16 rounded-xl bg-indigo-50 flex items-center justify-center overflow-hidden p-2">
                 
                   <img 
                     src={item.img} 
@@ -554,14 +566,14 @@ const DancingItem = ({ children, highlight = false }) => {
             ))}
           </div>
         </div>
-      </div> */}
+      </div> 
 
 
 
 
 
       {/* --- Happy CUSTOMERS  --- */}
-      <div className="mt-15 text-center px-[50px] mb-32">
+      <div className="mt-30 text-center px-[50px] mb-32">
         <div className="text-4xl md:text-5xl text-zinc-800 dark:text-zinc-200 tracking-tighter mb-16 font-black">Happy Customers</div>
         <div className="flex justify-center items-center -space-x-12"> {/* Overlapping magic here */}
           {expertise.map((tech, index) => (

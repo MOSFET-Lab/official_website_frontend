@@ -173,6 +173,8 @@ export default function Contact() {
          { title: "AI-based spaghetti failure detection system for 3D printers", img: "/four.jpg" },
         { title: "AI-based IoT Greenhouse", img: "/five.jpg" },
         { title: "Fake Banknote Recognition AI model", img: "/six.jpg" },
+        { title: "SmartVision: Multi-Class Segmentation AI", img: "/thirteen.jpg" },
+        
         // { title: "Toxic Comment Classification System using Deep Learning", img: "https://i.ytimg.com/vi/lbmzacBDOew/hqdefault.jpg" },
         // { title: "Skin Disease Detection System Using CNN", img: "https://miro.medium.com/1*FuRkv9Xr-HlTRqbouOYXww.jpeg" },
         // { title: "Signature Verification System Using CNN", img: "https://imageio.forbes.com/specials-images/imageserve/64d245bfa0bd804d8ede498f/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" },

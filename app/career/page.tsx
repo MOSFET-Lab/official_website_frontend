@@ -142,43 +142,36 @@ export default function Contact() {
   >
     {/* Title - Centered */}
     <h3 className="text-2xl sm:text-2xl font-bold text-gray-800 text-center leading-tight">
-      Front End <span className="block">Developer</span>
+     Product Designer
+      {/* <span className="block">Developer</span> */}
     </h3>
 
-    {/* ICON AREA: Dead Center Box */}
+{/* ICON AREA: Dead Center Box */}
     <div className="
       flex-shrink-0
       w-20 h-20 sm:w-24 sm:h-24 
-      /* This centers the SVG inside this gray box */
+      /* This centers the image inside this gray box */
       flex items-center justify-center 
       rounded-3xl bg-gray-50 border border-gray-100
+      overflow-hidden
     ">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        stroke="currentColor"
-        /* Fixed size prevents jumping */
-        className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
-        />
-      </svg>
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/014/768/945/non_2x/product-design-line-icon-vector.jpg"
+        alt="Product Design Icon"
+        className="w-14 h-14 sm:w-16 sm:h-16 object-contain mix-blend-multiply"
+      />
     </div>
 
     {/* Button - Spans full width inside the square */}
+    <Link href="/career/frontend-dev" className="w-full">
     <button className="
       w-full py-4
-      rounded-2xl bg-blue-500  
-      text-base font-bold text-white 
-      hover:bg-purple-900 transition-all
+      rounded-2xl bg-[#4299e1]  
+      text-base font-bold text-black 
+      hover:bg-[#7cde9b] transition-all
     ">
       Apply Now
-    </button>
+    </button></Link>
     
   </motion.div>
 </div>

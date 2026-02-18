@@ -50,7 +50,24 @@ export const projectsData = [
     image: "/six.jpg",
     category: "AI and ML"
   },
+
+   {
+    // ----15----
+    id: "smartvision-multi-class-segmentation-ai",
+    title: "SmartVision: Multi-Class Segmentation AI",
+    description: "SmartVision is an advanced AI-integrated solution that combines multi-class segmentation with IoT embedded systems to enable high-precision automation. By deploying optimized deep learning models to the edge, the system performs real-time, pixel-level object classification, allowing automated hardware to perceive and respond to complex environments with superior accuracy.",
+    image: "/thirteen.jpg",
+    category: "AI and ML"
+  },
  
+
+  
+
+
+
+
+
+
    {
     // ----27----
     id: "raspberry-pi-4-enclosure",
@@ -85,23 +102,20 @@ export const projectsData = [
     category: "3D"
   },
 
-
-
-
   {
     // ----27----
-    id: "elemnta",
-    title: "Elemnta",
-    description: "A smart doorbell system using Raspberry Pi that detects visitors without physical touch, ensuring hygiene and safety using ultrasonic sensors.",
-    image: "https://www.elementadesign.com.au/wp-content/uploads/2024/08/Elementa_Eclipse_Table_Lamp_front_2.webp",
+    id: "mechanical-part-with-servo-mount",
+    title: "Mechanical Part with Servo Mount",
+    description: "SmartVision is an advanced AI framework that utilizes multi-class segmentation to drive IoT automation through precise, pixel-level object identification. Optimized for real-time edge processing, it empowers automated systems to interpret complex environments with high accuracy, streamlining workflows in industrial monitoring and smart infrastructure.",
+    image: "/eleven.jpg",
     category: "3D"
   },
   {
     // ----28----
-    id: "skull-3d-lamp",
-    title: "IOT Industry Automation Using Raspberry Pi",
-    description: "An intelligent chatbot designed to provide preliminary medical diagnoses and health advice using Natural Language Processing.",
-    image: "https://encompassco.com/wp-content/uploads/2021/04/2d-modern-design-skull-illusion-lamp.jpg",
+    id: "smart-sun-tracking-system",
+    title: "Smart Sun Tracking System",
+    description: "Smart Sun Tracking System is an eco-efficient energy solution featuring a custom-engineered 3D-printed chassis manufactured from durable, sustainable PLA. By integrating intelligent light-sensing technology with precision-printed mechanical components, the system dynamically aligns solar panels with the sun’s trajectory, maximizing photovoltaic efficiency while showcasing the power of rapid prototyping in renewable energy hardware.",
+    image: "/twelve.jpg",
     category: "3D"
   },
   {

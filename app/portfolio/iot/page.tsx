@@ -173,6 +173,9 @@ export default function Contact() {
         { title: "Expressway Vehicle Monitoring System for Speed Limit Violations", img: "/one.jpg" },
         { title: "Smart Home Water Quality Monitor Unit", img: "/two.jpg" },
         { title: "Smart Home Hub", img: "/three.jpg" },
+        
+
+        
         // { title: "IOT Smart Parking System", img: "https://nevonprojects.com/wp-content/uploads/2022/04/iot-smart-parking-smpg.jpg" },
         // { title: "IOT Temperature Mask Scan Entry Barrier", img: "https://nevonprojects.com/wp-content/uploads/2021/10/iot-temp-mask-scan-barrier.jpg" },
         // { title: "IOT IV Bag Monitor and Alerting System", img: "https://nevonprojects.com/wp-content/uploads/2022/04/iot-iv-bag-measure-alert-sm.jpg" },

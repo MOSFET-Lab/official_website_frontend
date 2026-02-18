@@ -1,5 +1,6 @@
 // 1. Import the icons at the very top
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from "react-icons/fa";
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -105,11 +106,12 @@ export default function Footer() {
           <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
 
           <ul className="space-y-3 text-sm">
-            <li>Our Services</li>
-            <li>Portfolio</li>
-            <li>Career</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/services">Our Services</Link></li>
+          <li><Link href="/portfolio">Portfolio</Link></li>
+          <li><Link href="/career">Career</Link></li>
+          <li><Link href="/about">About Us</Link></li>
+          <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
 

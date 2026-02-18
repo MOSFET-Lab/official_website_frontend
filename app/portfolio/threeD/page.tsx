@@ -175,8 +175,8 @@ export default function Contact() {
         { title: "Raspberry Pi 5 Desktop Enclosure", img: "/nine.jpg" },
         { title: "Wearable Device Enclosure", img: "/ten.jpg" },
         
-        { title: "Elemnta", img: "https://www.elementadesign.com.au/wp-content/uploads/2024/08/Elementa_Eclipse_Table_Lamp_front_2.webp" },
-        { title: "Skull 3D Lamp", img: "https://encompassco.com/wp-content/uploads/2021/04/2d-modern-design-skull-illusion-lamp.jpg" },
+        { title: "Mechanical Part with Servo Mount", img: "/eleven.jpg" },
+        { title: "Smart Sun Tracking System", img: "/twelve.jpg" },
         { title: "Leaf Lamp", img: "https://preview.redd.it/i-designed-those-3d-printed-lamps-and-thought-some-of-you-v0-kgq2lu4t6sae1.jpg?width=640&crop=smart&auto=webp&s=60254865b65cbf6d29abc808299680a331a416f5" },
         { title: "Night Lamp", img: "https://giftmebazar.com/uploads/items/19672/largeNight-Lamp-Base-Leaf-Rgb-red.jpg" },
         { title: "Yoga Poses Detection using OpenPose", img: "https://loxidesign.com/cdn/shop/products/image-1_1ff43f84-f6e5-411e-9192-6b0f5c6a58cf.png?v=1681856511" },
