@@ -55,13 +55,13 @@ export default function WorkingProcess() {
       </div>
 
       {/* Large Screen (Default Grid Layout) */}
-      <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8 lg:px-32">
+      <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8 lg:px-32 ">
         {items.map((item) => (
           <div
             key={item.id}
-            className="bg-white p-6 w-full max-w-100 min-h-80 h-auto rounded-[25px] shadow-lg relative overflow-hidden"
+            className="bg-white p-6 w-full max-w-100 min-h-80 h-auto rounded-[25px] shadow-lg relative overflow-hidden transition-transform duration-500 hover:scale-105"
           >
-            <div className="flex justify-between items-start">
+            <div className="flex justify-between items-start ">
               <div className="bg-black rounded-[25px] text-white">
                 <img
                   src={item.image}
