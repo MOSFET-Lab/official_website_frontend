@@ -559,7 +559,7 @@ export default function Home() {
           <p className="text-zinc-500 flex justify-center items-center gap-2">
             {/* (50 reviews) */}
             {/* remove the above comment if you want to add the number of reviews in here Soiba Aiye */}
-            <span className="text-yellow-500 text-xl">★★★★★</span>
+            
           </p>
         </div>
         <div className="flex justify-center flex-col items-center mb-5 xl:px-32">
@@ -578,11 +578,12 @@ export default function Home() {
 
               {/* THE CONTENT CARD */}
               <div className="relative z-10 h-full bg-white dark:bg-zinc-900 rounded-[30px] p-10 flex flex-col items-center text-center">
-                <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8 italic text-lg">
+                <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5 italic text-lg">
                   "{review.text}"
                 </p>
+                <span className="text-yellow-500 text-xl">★★★★★</span>
 
-                <div className="mt-auto flex flex-col items-center gap-3">
+                <div className="mt-5 flex flex-col items-center gap-3">
                   <img src={review.avatar} alt={review.name} className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md" />
                   <div>
                     <h4 className="font-bold text-white text-lg uppercase tracking-tight">{review.name}</h4>
