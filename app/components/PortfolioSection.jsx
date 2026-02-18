@@ -24,7 +24,7 @@ const PortfolioSection = () => {
     }, [selectedID]);
 
     return (
-        <section className="bg-zinc-950 pt-24 px-6 py-16 md:px-[150px]">
+        <section className="bg-zinc-950 pt-24 px-6 py-16 md:px-37.5">
 
             {/* Heading */}
             <div className="text-center">
