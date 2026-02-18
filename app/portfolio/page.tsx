@@ -3,7 +3,8 @@
 import React, { useMemo, useState } from "react"; // Added useState
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { projectsData } from "../data/project"; 
+import { easeOut } from "framer-motion";
+
 
 /* ================= ANIMATION VARIANTS ================= */
 const container = {
@@ -20,7 +21,7 @@ const item = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.7, ease: easeOut },
   },
 };
 
