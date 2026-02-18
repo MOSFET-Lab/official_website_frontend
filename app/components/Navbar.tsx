@@ -54,10 +54,10 @@ export default function Navbar() {
         {/* CTA Button */}
         <Link
           href="/contact"
-          className="hidden md:inline-block rounded-full bg-black px-6 py-2 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition"
-        >
+          className="hidden md:inline-block bg-white text-black px-4 py-2 rounded text-[14px] font-[500] hover:bg-gray-100 hover:text-black transition">
           Get In Touch
         </Link>
+
 
         {/* Mobile Hamburger */}
         <button onClick={toggleMenu} className="md:hidden flex flex-col gap-1.5 p-2">
@@ -74,7 +74,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-lg ${pathname === link.href ? "text-black dark:text-white font-bold" : "text-zinc-500"}`}
+              className={`text-lg pl-6 ${pathname === link.href ? "text-black dark:text-white font-bold" : "text-white"}`}
               onClick={() => setIsOpen(false)}
             >
               {link.name}
@@ -82,7 +82,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="rounded-xl bg-blue-500 py-3 text-center text-sm font-bold text-white shadow-lg shadow-blue-500/30"
+            className="bg-white text-black px-4 py-2 rounded text-12px text-center md:text-[14px] lg:text-[16px] font-[500] hover:bg-gray-100 hover:text-black transition"
             onClick={() => setIsOpen(false)}
           >
             Get In Touch
