@@ -186,9 +186,7 @@ export default function Home() {
     // <div className="xyz">
     <div className="bg-white dark:bg-zinc-950 min-h-screen">
 
-      {/* --- HERO SECTION WITH AI IMAGE & GRADIENT --- */}
-      <section className="relative overflow-hidden rounded-[40px] bg-[#0a0a0c] min-h-[500px] flex items-center">
-        {/* Background Glows */}
+      {/* <section className="relative overflow-hidden rounded-[40px] bg-[#0a0a0c] min-h-[500px] flex items-center">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full animate-pulse-slow"></div>
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/10 blur-[100px] rounded-full"></div>
@@ -198,9 +196,7 @@ export default function Home() {
 
 
 
-        {/* header part top */}
         <div className="px-[100px] relative z-10 grid md:grid-cols-2 gap-10 items-center w-full px-10 md:px-12 py-20">
-          {/* Left Side: Text */}
           <div>
             <span className="mx-[100px]  inline-block px-10 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium border border-blue-500/50 mb-6">
               Unleash the Future
@@ -226,41 +222,34 @@ export default function Home() {
               shadows
               gl={{ alpha: true, antialias: true }}
               camera={{ position: [0, 1, 5], fov: 45 }}
-              onCreated={({ gl }) => gl.setClearColor(0x000000, 0)} // Makes the background 100% transparent
+              onCreated={({ gl }) => gl.setClearColor(0x000000, 0)} 
             >
-              {/* Lighting to bring out the colors */}
               <ambientLight intensity={1} />
               <pointLight position={[5, 5, 5]} intensity={2} />
 
-              {/* The Colorful Cactus Group */}
               <group rotation={[0, 0.5, 0]}>
 
-                {/* Main Body - Colorful 'Normal' Material */}
                 <mesh castShadow>
                   <capsuleGeometry args={[0.5, 1.5, 10, 20]} />
                   <meshNormalMaterial />
                 </mesh>
 
-                {/* Right Arm */}
                 <mesh position={[0.7, 0.5, 0]} rotation={[0, 0, Math.PI / 4]}>
                   <capsuleGeometry args={[0.2, 0.6, 10, 20]} />
                   <meshNormalMaterial />
                 </mesh>
 
-                {/* Left Arm */}
                 <mesh position={[-0.6, -0.2, 0]} rotation={[0, 0, -Math.PI / 3]}>
                   <capsuleGeometry args={[0.18, 0.5, 10, 20]} />
                   <meshNormalMaterial />
                 </mesh>
 
-                {/* Colorful Pot */}
                 <mesh position={[0, -1.3, 0]}>
                   <cylinderGeometry args={[0.6, 0.4, 0.7, 32]} />
                   <meshNormalMaterial />
                 </mesh>
               </group>
 
-              {/* Allows you to drag and spin the colorful cactus */}
               <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={4} />
             </Canvas>
           </div>
@@ -270,24 +259,22 @@ export default function Home() {
 
 
         </div>
-      </section>
+      </section> */}
 
 
-      {/* --- MOVING TICKER SECTION --- */}
+      {/* --- MOVING TICKER SECTION ---
       <div className="mt-20 py-10 bg-zinc-950 overflow-hidden border-y border-zinc-800">
         <div className="animate-ticker flex items-center gap-12">
-          {/* Repeat twice for a seamless loop */}
           {[...tickerWords, ...tickerWords, ...tickerWords].map((word, i) => (
             <div key={i} className="flex items-center gap-12">
               <span className="abc text-4xl md:text-6xl font-bold text-blue-400/80 tracking-tight whitespace-nowrap">
                 {word}
               </span>
-              {/* Star Icon from your image */}
               <span className="text-3xl text-green-200 animate-pulse">🔗</span>
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
 
 
@@ -473,8 +460,8 @@ export default function Home() {
 
 
 
-{/* Happy Clients , experience, projects, */}
-      <div className="mx-[150px] mt-20 relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-400">
+      {/* Happy Clients , experience, projects, */}
+      {/* <div className="mx-[150px] mt-20 relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-400">
 
         <div className="grid md:grid-cols-2 items-center ">
 
@@ -512,7 +499,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 
