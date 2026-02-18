@@ -56,12 +56,11 @@ export default function Home() {
   // ];
 
   const expertise = [
-    // { name: "ITEC Engineering", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBkVD9aKjoFSOJSBda5346qbQCM4fUiYd88g&s" },
-    { img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
-    { img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
-    { img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
-    { img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
-    { img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
+    { name: "Partner 1", img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
+    { name: "Partner 2", img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
+    { name: "Partner 3", img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
+    { name: "Partner 4", img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
+    { name: "Partner 5", img: "https://media.licdn.com/dms/image/v2/D560BAQGDwBDPd60_CA/company-logo_200_200/B56Zsvvds_I0AI-/0/1766032531504?e=1770249600&v=beta&t=_DgZWnWLbPiUz7QQ3f7rW0pOV2KwTb_JOkSQ_FaBe3w" },
   ];
 
   const reviews = [
@@ -155,15 +154,26 @@ export default function Home() {
 
 
   //dancing
-  const DancingItem = ({ children, highlight = false, x = "50%", y = "50%" }) => {
+  const DancingItem = ({ children, highlight = false, x = "50%", y = "50%" }: { children: React.ReactNode; highlight?: boolean; x?: string; y?: string }) => {
     const controls = useAnimation();
+
+    const moveRandomly = async () => {
+      while (true) {
+        await controls.start({
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          transition: { duration: Math.random() * 3 + 2 }
+        });
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    };
 
     useEffect(() => {
       let isMounted = true;
 
-
-
-      moveRandomly();
+      if (isMounted) {
+        moveRandomly();
+      }
       return () => { isMounted = false; }; // Cleanup function
     }, [controls]);
 
