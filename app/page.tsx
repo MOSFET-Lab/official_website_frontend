@@ -541,7 +541,7 @@ export default function Home() {
               className="relative group"
             >
               <div className="w-48 h-48 rounded-full bg-white border border-zinc-200 shadow-xl flex flex-col items-center justify-center p-6 transition-transform group-hover:-translate-y-4 bg-white z-10">
-                <img src="https://scontent-bom5-2.xx.fbcdn.net/v/t39.30808-1/599653719_122109109203098789_2141480115708873470_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeFh6ZWMPc2bkdNkvVrgzAr8XAh-XTmjljZcCH5dOaOWNgfC8hlnybraR5knX893QRyxP9y_uu34leAkxzwNyz0f&_nc_ohc=0L0HfRfc3IoQ7kNvwEVpaCa&_nc_oc=AdlHCQvFoADP9ypKD2-35-rSq42NFKqFKnZeNlXqNulY-Vt2UljMMVTZgbg0F5LFAAM&_nc_zt=24&_nc_ht=scontent-bom5-2.xx&_nc_gid=qTkuiDwzomZlC_NgyyODPw&oh=00_Aft31ITau1sg1P-oEccae59v0iCDoEBvSD8qHaJB8RJRDA&oe=698CFA83" alt={tech.name} className="w-26 h-26 group-hover:sepia-0 transition-all" />
+                <img src="/mos_black.png" alt={tech.name} className="w-26 h-26 group-hover:sepia-0 transition-all" />
                 {/* sepia */}
                 <p className="mt-4 text-[10px] font-black tracking-tighter text-black">{tech.name}</p>
               </div>
