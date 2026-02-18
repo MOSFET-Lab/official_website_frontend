@@ -21,15 +21,15 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        
+
         {/* Logo - THIS IS YOUR HOME BUTTON */}
         <Link href="/" className="flex items-center gap-3 text-2xl font-bold text-black dark:text-white">
-           <Image 
-              src="/MOSFET.webp" 
-              alt="MOSFET Logo"
-              width={95}  
-              height={95} 
-            />
+          <Image
+            src="/MOSFET.webp"
+            alt="MOSFET Logo"
+            width={95}
+            height={95}
+          />
         </Link>
 
         {/* Desktop Menu - No "Home" word anymore */}
@@ -38,16 +38,14 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`group relative text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white transition ${
-                pathname === link.href ? "font-semibold text-black dark:text-white" : "font-normal"
-              }`}
+              className={`group relative text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white transition ${pathname === link.href ? "font-semibold text-black dark:text-white" : "font-normal"
+                }`}
             >
               {link.name}
               {/* Underline animation */}
               <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-black dark:bg-white transition-all duration-300 ${
-                  pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
-                }`}
+                className={`absolute left-0 -bottom-1 h-0.5 bg-black dark:bg-white transition-all duration-300 ${pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
               ></span>
             </Link>
           ))}
