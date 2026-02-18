@@ -68,7 +68,7 @@ export default function Home() {
       id: 1,
       text: "This company provided reliable service and clear communication throughout my project. They clearly understood the requirements and delivered accurate results on time. I highly recommend them to everyone for their excellent service and professionalism from start to finish",
       name: "Keshan Dinethma",
-      title: "Business Founder",
+      title: "HR Executive",
       avatar: "https://scontent-bom5-2.xx.fbcdn.net/v/t39.30808-1/615246710_1405047984592360_3135147869531169571_n.jpg?stp=cp6_dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeF05pdJNAl5YasY36GjKeGz0iMR0__YHefSIxHT_9gd50rn8CY4egmtxPEHWCs9DfkbaTtpaU7rFDdkIRlqpKSi&_nc_ohc=dH_DXb6KZ8cQ7kNvwF_XltM&_nc_oc=Adnir08Er7o2FDWSfoqgb9bJGDXax8Bp0Tw8z3JWdZTbYx5u6e0eTOO2j_IzIGGvt6k&_nc_zt=24&_nc_ht=scontent-bom5-2.xx&_nc_gid=LG4NXdQNauDRa5D54ucnlg&oh=00_AfuOfi0F3NOYt1Bpc0CIVynTdZoZeTrutqJz7i0ctl93VA&oe=699B14B2", // Placeholder avatar
     },
     {
@@ -82,7 +82,7 @@ export default function Home() {
       id: 3,
       text: "Hi there, The expert performed excellently and exceeded my expectations. Thank you for your input, time and resources in helping me complete this my job. Very professional and would fix my confusion. Very organized and met all my requirements. The quality of the work was excellent.",
       name: "Isuru Sandaruwan",
-      title: "Geo Technical Engineer",
+      title: "Geo Technical Engineer at Terra Firma",
       avatar: "https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-1/452119484_7766353170152556_5930903102327738637_n.jpg?stp=cp6_dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHWo-P5Q-kFVL7oNOeM560XSkHWbzXJl1dKQdZvNcmXV_3QT2z9pa08uEYQ6ndJaBR0M95DRpaugthQ6_XG_WkP&_nc_ohc=rNKiK9a-sBAQ7kNvwH9gDHd&_nc_oc=AdlMjVxJLj5zm-zc84nYgNqv58iLG9eRwC3NRk9pPlAwbzq-npPO2oaHr-k4pwp3G2c&_nc_zt=24&_nc_ht=scontent-bom5-1.xx&_nc_gid=lzZo6-B8sRzYyEZrikn3IA&oh=00_Afuo_22kT-nhkF4y6WRuiAK6uLgk0mhkhDxJS_jY-1TD-Q&oe=699B2C87", // Placeholder avatar
     },
   ];
@@ -291,13 +291,11 @@ export default function Home() {
 
 
       {/* ================= FEATURE CARDS SECTION ================= */}
-      <div className="mt-24 px-[100px] md:px-[150px]">
+      {/* <div className="mt-24 px-[100px] md:px-[150px]">
         <div className="grid md:grid-cols-2 gap-10">
 
-          {/* LEFT CARD */}
           <div className="relative overflow-hidden rounded-[36px] bg-zinc-100 dark:bg-zinc-900 p-16 min-h-[520px] flex flex-col justify-between">
 
-            {/* Text */}
             <div className="relative z-10">
               <h2 className="ttext-4xl md:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
                 Smart AI Lighting
@@ -319,7 +317,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 3D LAMP */}
             <img
               src="https://media.printables.com/media/prints/721759/images/5691337_b81da326-41d2-4320-80bf-63ff911c94fb_c19b47f6-47f6-4639-ae8e-39d4c65c82c0/thumbs/inside/1600x1200/png/bild4.webp"
               alt="3D Lamp"
@@ -327,10 +324,8 @@ export default function Home() {
             />
           </div>
 
-          {/* RIGHT CARD */}
           <div className="relative overflow-hidden rounded-[36px] bg-zinc-100 dark:bg-zinc-900 p-16 min-h-[520px] flex flex-col justify-between">
 
-            {/* Text */}
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
                 Majestic Dragon
@@ -352,7 +347,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 3D LAMP */}
             <img
               src="https://i.etsystatic.com/58083831/r/il/2fc3e5/7314911297/il_1588xN.7314911297_ht2r.jpg"
               alt="3D Lamp"
@@ -361,7 +355,7 @@ export default function Home() {
           </div>
 
         </div>
-      </div>
+      </div> */}
 
 
       {/* ================= CINEMATIC PEEK CAROUSEL ================= */}
@@ -442,7 +436,7 @@ export default function Home() {
 
 
 
-      {/* ================= WORKING PROCESS SECTION ================= */}
+      {/* ================= OUR PROCESS SECTION ================= */}
       <div className="mt-24">
         <WorkingProcess />
       </div>
@@ -557,24 +551,30 @@ export default function Home() {
 
 
       {/* --- CUSTOMER REVIEWS (The Default Moving Border Design) --- */}
-      <div className="mt-10 px-10 md:px-[150px]">
-        <div className="text-center mb-16">
-          <h2 className="text-7xl md:text-5xl text-zinc-900 dark:text-white tracking-tighter font-black mb-4">
-            Customer Reviews
-          </h2>
+      <div className="mt-10 px-10 md:px-37.5">
+        <div className="text-center mb-5">
+          <p className="text-white font-semibold lg:text-[50px] sm:text-[40px] text-[40px]">
+            Client Testimonials
+          </p>
           <p className="text-zinc-500 flex justify-center items-center gap-2">
             {/* (50 reviews) */}
             {/* remove the above comment if you want to add the number of reviews in here Soiba Aiye */}
             <span className="text-yellow-500 text-xl">★★★★★</span>
           </p>
         </div>
+        <div className="flex justify-center flex-col items-center mb-5 xl:px-32">
+          <p className="text-[28px] font-normal text-white text-center">
+            Testimonials That <br /> Speak to
+            <span className="text-yellow-500"> Our Results</span>
+          </p>
+        </div>
 
         <div className="grid gap-10 md:grid-cols-3">
           {reviews.map((review) => (
-            <div key={review.id} className="relative rounded-[32px] overflow-hidden p-[2px] h-full shadow-2xl">
+            <div key={review.id} className="relative rounded-4xl overflow-hidden p-0.5 h-full shadow-2xl">
 
               {/* THE DARK BLUE MOVING BORDER (Visible by Default) */}
-              <div className="absolute inset-[-1000%] bg-[conic-gradient(from_90deg_at_50%_50%,#00008B_0%,#1e3a8a_25%,transparent_50%)] animate-border-spin"></div>
+              <div className="absolute inset-[-1000%] bg-[conic-gradient(from_90deg_at_50%_50%,#9f9fa9_0%,#9f9fa9_25%,transparent_50%)] animate-border-spin"></div>
 
               {/* THE CONTENT CARD */}
               <div className="relative z-10 h-full bg-white dark:bg-zinc-900 rounded-[30px] p-10 flex flex-col items-center text-center">
@@ -585,7 +585,7 @@ export default function Home() {
                 <div className="mt-auto flex flex-col items-center gap-3">
                   <img src={review.avatar} alt={review.name} className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md" />
                   <div>
-                    <h4 className="font-bold text-blue-600 text-lg uppercase tracking-tight">{review.name}</h4>
+                    <h4 className="font-bold text-white text-lg uppercase tracking-tight">{review.name}</h4>
                     <p className="text-xs text-zinc-400 font-bold uppercase tracking-widest">{review.title}</p>
                   </div>
                 </div>
