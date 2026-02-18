@@ -94,7 +94,7 @@ const Constellations = () => {
 export default function ServicesPage() {
  const [iotOpen, setIotOpen] = useState(false);
 
- const [hoveredSection, setHoveredSection] = useState(null);
+ const [hoveredSection, setHoveredSection] = useState<string | null>(null);
 
   const services = [
     {
