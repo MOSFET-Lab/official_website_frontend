@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <Link
           href="/contact"
-          className="hidden md:inline-block bg-white text-black px-4 py-2 rounded text-[14px] font-[500] hover:bg-gray-100 hover:text-black transition">
+          className="hidden md:inline-block bg-white text-black px-4 py-2 rounded text-[14px] font-medium hover:bg-gray-100 hover:text-black transition">
           Get In Touch
         </Link>
 
@@ -82,7 +82,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="bg-white text-black px-4 py-2 rounded text-12px text-center md:text-[14px] lg:text-[16px] font-[500] hover:bg-gray-100 hover:text-black transition"
+            className="bg-white text-black px-4 py-2 rounded text-12px text-center md:text-[14px] lg:text-[16px] font-medium hover:bg-gray-100 hover:text-black transition"
             onClick={() => setIsOpen(false)}
           >
             Get In Touch
