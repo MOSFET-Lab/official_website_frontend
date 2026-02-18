@@ -379,7 +379,7 @@ export default function Home() {
                   return (
                     <motion.div
                       key={`${slide.title}-${i}`}
-                      className="relative flex-shrink-0 w-[65vw] md:w-[75vw] h-[300px] md:h-[580px] shadow-2xl"
+                      className="relative shrink-0 w-[65vw] md:w-[75vw] h-75 md:h-145 shadow-2xl"
                       animate={{
                         scale: isCenter ? 1 : 0.92,
                         opacity: isCenter ? 1 : 0.6,
@@ -400,7 +400,7 @@ export default function Home() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ delay: 0.1 }}
-                            className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16"
+                            className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16"
                           >
                             <h2 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter">
                               {slide.title}
@@ -421,7 +421,7 @@ export default function Home() {
 
 
       {/* --- Happy CUSTOMERS  --- */}
-      <div className="mt-30 text-center px-[50px] mb-32">
+      <div className="mt-30 text-center px-12.5 mb-32">
         <div className="text-white font-semibold lg:text-[50px] sm:text-[40px] text-[40px]">Happy Customers</div>
         <div className="flex justify-center items-center -space-x-12 pt-8"> {/* Overlapping magic here */}
           {expertise.map((tech, index) => (
@@ -442,7 +442,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative group"
             >
-              <div className="w-48 h-48 rounded-full bg-white border border-zinc-200 shadow-xl flex flex-col items-center justify-center p-6 transition-transform group-hover:-translate-y-4 bg-white z-10">
+              <div className="w-48 h-48 rounded-full bg-white border border-zinc-200 shadow-xl flex flex-col items-center justify-center p-6 transition-transform group-hover:-translate-y-4 z-10">
                 <img src="/mos_black.png" alt={tech.name} className="w-26 h-26 group-hover:sepia-0 transition-all" />
                 {/* sepia */}
                 <p className="mt-4 text-[10px] font-black tracking-tighter text-black">{tech.name}</p>
@@ -595,11 +595,11 @@ export default function Home() {
 
 
       {/* ================= AI CORE SECTION ================= */}
-      <div className="relative mt-[0px]">
+      <div className="relative mt-0">
 
         {/* AI CORE — BACKGROUND */}
-        <div className="sticky top-[80px] flex justify-center items-center z-0 pointer-events-none">
-          <div className="relative w-full aspect-square max-w-[550px] flex items-center justify-center">
+        <div className="sticky top-20 flex justify-center items-center z-0 pointer-events-none">
+          <div className="relative w-full aspect-square max-w-137.5 flex items-center justify-center">
             <AICore />
 
             {/* Floor Glow */}
@@ -608,7 +608,7 @@ export default function Home() {
         </div>
 
         {/* HEY CARD — CENTERED ON CIRCLE  =------------------------430 mean height from the previous component*/}
-        <div className="relative z-10 flex justify-center px-6 md:px-[150px] -mt-[430px]">
+        <div className="relative z-10 flex justify-center px-6 md:px-37.5 -mt-107.5">
           <div
             className="
         w-full
