@@ -20,7 +20,7 @@ const item = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.7, ease: [0.6, 0.01, 0.05, 0.95] as const },
   },
 };
 
@@ -63,7 +63,7 @@ const Constellations = () => {
               x2: [`${line.to.x}%`, `${line.to.x + line.to.driftX}%`, `${line.to.x}%`],
               y2: [`${line.to.y}%`, `${line.to.y + line.to.driftY}%`, `${line.to.y}%`],
             }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 15, repeat: Infinity, ease: [0, 0, 1, 1] as const }}
           />
         ))}
       </svg>
@@ -84,7 +84,7 @@ const Constellations = () => {
             opacity: [0.4, 1, 0.4],
             scale: [1, 1.4, 1],
           }}
-          transition={{ duration: star.duration, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: star.duration, repeat: Infinity, ease: [0.6, 0.01, 0.05, 0.95] as const }}
         />
       ))}
     </div>
@@ -98,7 +98,7 @@ export default function Contact() {
     <>
       {/* ================= HERO SECTION ================= */}
     <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
         
         
         <Constellations />
@@ -135,7 +135,7 @@ export default function Contact() {
 
 
  {/* <div className="max-w-[1225px] mx-auto relative z-10"></div> */}
-        <div className="max-w-[1225px] mx-auto relative z-10">
+        <div className="max-w-306.25 mx-auto relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ export default function Contact() {
             className="flex flex-col md:flex-row items-center md:items-start gap-12"
           >
             {/* Logo Card - Pulled to the left margin */}
-            <motion.div variants={item} className="w-full md:w-[450px] shrink-0">
+            <motion.div variants={item} className="w-full md:w-112.5 shrink-0">
               <div className="bg-white rounded-[40px] p-12 aspect-square flex items-center justify-center shadow-2xl">
                 {/* Replace with your actual logo path */}
                 <img 
@@ -201,7 +201,7 @@ export default function Contact() {
 
 
  {/* <div className="max-w-[1225px] mx-auto relative z-10"></div> */}
-        <div className="max-w-[1225px] mx-auto relative z-10">
+        <div className="max-w-306.25 mx-auto relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +219,7 @@ export default function Contact() {
             className="flex flex-col md:flex-row items-center md:items-start gap-12"
           >
             {/* Logo Card - Pulled to the left margin */}
-           <motion.div variants={item} className="w-full md:w-[450px] shrink-0">
+           <motion.div variants={item} className="w-full md:w-112.5 shrink-0">
               <div className="bg-white rounded-[40px] aspect-square flex items-center justify-center shadow-2xl overflow-hidden relative">
                 {/* Removed p-12 so the image hits the edges */}
                 <img 
@@ -238,8 +238,8 @@ export default function Contact() {
               </div>
               
               <p className="text-white text-lg md:text-xl leading-relaxed font-light opacity-90 text-justify">
-                &quot;Empowering innovation, enriching lives" 
-                <span> Our Vision is to be a leading provider of transformative IT solutions, pushing boundaries and enriching lives through innovation and excellence.&quot;</span>
+                &quot;Empowering innovation, enriching lives&quot; 
+                <span> Our Vision is to be a leading provider of transformative IT solutions, pushing boundaries and enriching lives through innovation and excellence.</span>
               </p>
             </motion.div>
           </motion.div>
@@ -261,7 +261,7 @@ export default function Contact() {
 
 
  {/* <div className="max-w-[1225px] mx-auto relative z-10"></div> */}
-        <div className="max-w-[1225px] mx-auto relative z-10">
+        <div className="max-w-306.25 mx-auto relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -279,7 +279,7 @@ export default function Contact() {
             className="flex flex-col md:flex-row items-center md:items-start gap-12"
           >
             {/* Logo Card - Pulled to the left margin */}
-           <motion.div variants={item} className="w-full md:w-[450px] shrink-0">
+           <motion.div variants={item} className="w-full md:w-112.5 shrink-0">
               <div className="bg-white rounded-[40px] aspect-square flex items-center justify-center shadow-2xl overflow-hidden relative">
                 {/* Removed p-12 so the image hits the edges */}
                 <img 
