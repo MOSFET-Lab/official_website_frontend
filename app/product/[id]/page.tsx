@@ -44,8 +44,8 @@ const PRODUCT_DATA = {
 
 export default function ProductDetail() {
  const params = useParams();
-  const productId = params.id;
-  const product = PRODUCT_DATA[productId] || PRODUCT_DATA["smart-ai-lighting"];
+  const productId = Array.isArray(params.id) ? params.id[0] : params.id || "smart-ai-lighting";
+  const product = PRODUCT_DATA[productId as keyof typeof PRODUCT_DATA] || PRODUCT_DATA["smart-ai-lighting"];
 
   const [selectedSize, setSelectedSize] = useState('M');
   const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
@@ -68,7 +68,7 @@ export default function ProductDetail() {
            >
             <ArrowLeft size={14} /> Back
            </button>
-           <div className="h-3 w-[1px] bg-zinc-300"></div>
+           <div className="h-3 w-px bg-zinc-300"></div>
            {/* Breadcrumbs */}
            <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-zinc-400">
              <span className="hover:text-blue-500 cursor-pointer">Home</span>
@@ -89,7 +89,7 @@ export default function ProductDetail() {
                 <button 
                   key={i} 
                   onClick={() => setActiveImg(imgUrl)}
-                  className={`aspect-[3/4] border overflow-hidden transition-all ${
+                  className={`aspect-3/4 border overflow-hidden transition-all ${
                     activeImg === imgUrl 
                     ? 'border-blue-500 ring-2 ring-blue-500/20' 
                     : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-400'
@@ -102,7 +102,7 @@ export default function ProductDetail() {
             
           
                         {/* Main Image */}
-            <div className="relative w-full aspect-square md:aspect-[4/3] max-h-[500px] bg-zinc-50 dark:bg-zinc-900 overflow-hidden">
+            <div className="relative w-full aspect-square md:aspect-4/3 max-h-125 bg-zinc-50 dark:bg-zinc-900 overflow-hidden">
             <img 
             src={activeImg} 
             alt={product.name} 
