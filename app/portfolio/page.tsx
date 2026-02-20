@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useMemo, useState } from "react"; // Added useState
-import { motion } from "framer-motion";
+import React, { useMemo, useState, useEffect } from "react"; // Added useState
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { projectsData } from "../data/project"; 
+//import { projectsData } from "../data/project"; 
+import Image from "next/image";
 
 /* ================= ANIMATION VARIANTS ================= */
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -14,7 +15,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
   show: {
     opacity: 1,
@@ -25,11 +26,23 @@ const item = {
 };
 
 /* ================= CONSTELLATIONS COMPONENT ================= */
-const Constellations = () => {
-  const count = 45; 
-  
-  const stars = useMemo(() => 
-    Array.from({ length: count }).map((_, i) => ({
+type Star = {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  driftX: number;
+  driftY: number;
+  duration: number;
+};
+
+
+  const Constellations = () => {
+  const count = 45;
+  const [stars, setStars] = useState<Star[]>([]);
+
+  useEffect(() => {
+    const generatedStars = Array.from({ length: count }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -37,18 +50,25 @@ const Constellations = () => {
       driftX: (Math.random() - 0.5) * 12,
       driftY: (Math.random() - 0.5) * 12,
       duration: Math.random() * 15 + 10,
-    })), []);
+    }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setStars(generatedStars);
+  }, []);
 
   const connections = useMemo(() => {
     const lines = [];
     for (let i = 0; i < stars.length - 1; i++) {
-      if (i % 3 === 0) { 
+      if (i % 3 === 0) {
         lines.push({ from: stars[i], to: stars[i + 1] });
       }
     }
     return lines;
   }, [stars]);
 
+  if (stars.length === 0) return null;
+
+
+  
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       <svg className="w-full h-full opacity-40">
@@ -196,10 +216,12 @@ export default function Contact() {
               variants={item}
               className="relative rounded-3xl overflow-hidden group cursor-pointer aspect-square"
             >
-              <img
+              <Image
                 src={project.img}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                fill
+                unoptimized // Bypasses the hostname config error
+                className="object-cover group-hover:scale-110 transition duration-500"
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-6">

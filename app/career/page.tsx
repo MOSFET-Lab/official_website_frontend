@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useMemo } from "react";
-import { motion } from "framer-motion";
+import React, { useMemo, useState, useEffect } from "react";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 
 /* ================= ANIMATION VARIANTS ================= */
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -14,7 +15,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
   show: {
     opacity: 1,
@@ -25,11 +26,23 @@ const item = {
 };
 
 /* ================= CONSTELLATIONS COMPONENT ================= */
-const Constellations = () => {
-  const count = 45; 
-  
-  const stars = useMemo(() => 
-    Array.from({ length: count }).map((_, i) => ({
+type Star = {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  driftX: number;
+  driftY: number;
+  duration: number;
+};
+
+
+  const Constellations = () => {
+  const count = 45;
+  const [stars, setStars] = useState<Star[]>([]);
+
+  useEffect(() => {
+    const generatedStars = Array.from({ length: count }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -37,17 +50,24 @@ const Constellations = () => {
       driftX: (Math.random() - 0.5) * 12,
       driftY: (Math.random() - 0.5) * 12,
       duration: Math.random() * 15 + 10,
-    })), []);
+    }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setStars(generatedStars);
+  }, []);
 
   const connections = useMemo(() => {
     const lines = [];
     for (let i = 0; i < stars.length - 1; i++) {
-      if (i % 3 === 0) { 
+      if (i % 3 === 0) {
         lines.push({ from: stars[i], to: stars[i + 1] });
       }
     }
     return lines;
   }, [stars]);
+
+  if (stars.length === 0) return null;
+
+
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -123,23 +143,25 @@ export default function Contact() {
 {/* Wrapper to match MOSFET margin (lg:px-37 as you requested) */}
 <div className="w-full px-6 sm:px-12 lg:px-[148px] py-10"> 
   
-  <motion.div
-    className="
-      /* 1. Square Shape & Size */
-      aspect-square w-full max-w-[400px] sm:max-w-[350px]
-      
-      /* 2. CENTER EVERYTHING INSIDE THE CARD */
-      flex flex-col items-center justify-between
-      
-      /* 3. Styling */
-      rounded-3xl bg-white shadow-xl
-      border border-gray-100
-      hover:shadow-2xl transition-all duration-300
-      
-      /* 4. Padding */
-      p-8 sm:p-10
-    "
-  >
+  <motion.div 
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="w-full px-6 sm:px-12 lg:px-[148px] py-10"
+      > 
+        <motion.div
+          variants={item} // Item variant used here to fix the ESLint error
+          className="
+            aspect-square w-full max-w-[400px] sm:max-w-[350px]
+            flex flex-col items-center justify-between
+            rounded-3xl bg-white shadow-xl
+            border border-gray-100
+            hover:shadow-2xl transition-all duration-300
+            p-8 sm:p-10
+          "
+        >
+
+    
     {/* Title - Centered */}
     <h3 className="text-2xl sm:text-2xl font-bold text-gray-800 text-center leading-tight">
      Product Designer
@@ -155,11 +177,15 @@ export default function Contact() {
       rounded-3xl bg-gray-50 border border-gray-100
       overflow-hidden
     ">
-      <img
+     <Image
         src="https://static.vecteezy.com/system/resources/previews/014/768/945/non_2x/product-design-line-icon-vector.jpg"
         alt="Product Design Icon"
+        width={64}
+        height={64}
         className="w-14 h-14 sm:w-16 sm:h-16 object-contain mix-blend-multiply"
       />
+
+
     </div>
 
     {/* Button - Spans full width inside the square */}
@@ -173,6 +199,7 @@ export default function Contact() {
       Apply Now
     </button></Link>
     
+  </motion.div>
   </motion.div>
 </div>
 

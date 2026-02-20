@@ -14,7 +14,7 @@ export default function Footer() {
           </h2>
 
           <p className="mt-4 text-sm leading-relaxed">
-            At MOSFET, we're passionate about IT, technology and innovation.
+            At MOSFET, we&apos;re passionate about IT, technology and innovation.
           </p>
 
           {/* SOCIAL ICONS - Now with real icons */}
