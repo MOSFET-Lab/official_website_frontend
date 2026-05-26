@@ -1,8 +1,60 @@
+"use client";
+
 // 1. Import the icons at the very top
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from "react-icons/fa";
-import Link from 'next/link';
+import React, { useState } from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
+
+  /* ================= EMAIL STATE ================= */
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  /* ================= SUBMIT FUNCTION ================= */
+  const handleSubmit = async () => {
+
+    // Validation
+    if (!email.trim()) {
+      alert("Please enter your email");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbygx_pMnZa07co0hG5cMzD1o6cuGj2W0P7DsELDTMu8u8G3bcrFoOAifOZfwJ7G5TJw/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+          }),
+        }
+      );
+
+      setEmail("");
+
+      alert("Subscribed Successfully!");
+
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <footer className="bg-white dark:bg-zinc-950 text-zinc-700 dark:text-zinc-300">
       <div className="max-w-7xl mx-auto px-10 py-20 grid gap-16 md:grid-cols-4">
@@ -17,8 +69,9 @@ export default function Footer() {
             A leading product manufacturer in AI, IoT, and advanced R&D prototypes.
           </p>
 
-          {/* SOCIAL ICONS - Now with real icons */}
+          {/* SOCIAL ICONS */}
           <div className="flex flex-wrap gap-2 mt-6">
+
             {/* Facebook */}
             <a
               href="https://web.facebook.com/MosfetOfficial"
@@ -27,7 +80,6 @@ export default function Footer() {
               className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
               title="Facebook"
             >
-              {/* Replaced 'f' with the icon component and added size class */}
               <FaFacebookF className="text-xl" />
             </a>
 
@@ -74,22 +126,22 @@ export default function Footer() {
             >
               <FaYoutube className="text-xl" />
             </a>
+
           </div>
         </div>
-
-        
 
         {/* SERVICES */}
         <div>
           <h3 className="text-lg font-semibold text-black dark:text-white">
             Services
           </h3>
+
           <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
 
           <ul className="space-y-3 text-sm">
             <li>IoT Embedded System</li>
             <li>3D-Printed Manufacturing</li>
-            <li>AI-Intergrations</li>
+            <li>AI-Integrations</li>
             <li>Research & Development</li>
             <li>Mobile App Development</li>
             <li>Web App Development</li>
@@ -101,15 +153,16 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-black dark:text-white">
             Quick Links
           </h3>
+
           <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
 
           <ul className="space-y-3 text-sm">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/services">Our Services</Link></li>
-          <li><Link href="/portfolio">Portfolio</Link></li>
-          <li><Link href="/career">Career</Link></li>
-          <li><Link href="/about">About Us</Link></li>
-          <li><Link href="/contact">Contact Us</Link></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/services">Our Services</Link></li>
+            <li><Link href="/portfolio">Portfolio</Link></li>
+            <li><Link href="/career">Career</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
 
@@ -118,21 +171,31 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-black dark:text-white">
             Subscribe Us
           </h3>
+
           <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
 
           <p className="text-sm mb-4">
-            Stay Updated with the Latest! <br />
+            Stay Updated with the Latest!
+            <br />
             Subscribe Now for Exclusive Updates and Offers.
           </p>
 
+          {/* EMAIL INPUT */}
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full px-4 py-3 rounded-lg bg-zinc-200 dark:bg-zinc-800 outline-none mb-4"
           />
 
-          <button className="bg-blue-400 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-500 transition">
-            Submit
+          {/* SUBMIT BUTTON */}
+          <button
+            onClick={handleSubmit}
+            disabled={loading}
+            className="bg-blue-400 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-500 transition disabled:opacity-50"
+          >
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </div>
       </div>
