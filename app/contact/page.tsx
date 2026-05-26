@@ -201,7 +201,7 @@ export default function Contact() {
                 Follow us
               </p>
 
-              <div className="flex justify-center gap-4 flex-wrap">
+              <div className="flex justify-center gap-3 flex-wrap">
                 {socialLinks.map((social, i) => (
                   <motion.a
                     key={i}

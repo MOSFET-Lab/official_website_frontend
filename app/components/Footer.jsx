@@ -90,6 +90,7 @@ export default function Footer() {
             <li>IoT Embedded System</li>
             <li>3D-Printed Manufacturing</li>
             <li>AI-Intergrations</li>
+            <li>Research & Development</li>
             <li>Mobile App Development</li>
             <li>Web App Development</li>
           </ul>
