@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-zinc-950 text-zinc-700 dark:text-zinc-300 mt-10">
+    <footer className="bg-white dark:bg-zinc-950 text-zinc-700 dark:text-zinc-300">
       <div className="max-w-7xl mx-auto px-10 py-20 grid gap-16 md:grid-cols-4">
 
         {/* BRAND */}
@@ -14,7 +14,7 @@ export default function Footer() {
           </h2>
 
           <p className="mt-4 text-sm leading-relaxed">
-            At MOSFET, we're passionate about IT, technology and innovation.
+            A leading product manufacturer in AI, IoT, and advanced R&D prototypes.
           </p>
 
           {/* SOCIAL ICONS - Now with real icons */}
@@ -87,14 +87,11 @@ export default function Footer() {
           <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
 
           <ul className="space-y-3 text-sm">
-            <li>IoT</li>
-            <li>AI & Machine Learning</li>
-            <li>Mobile App Development</li>
-            <li>Web Development</li>
-            <li>Desktop Applications</li>
-            <li>Graphic Design</li>
-            <li>UI/UX</li>
-            <li>3D Modeling & 3D Printing</li>
+            <li>IoT Embedded System</li>
+            <li>3D-Printed Manufacturing</li>
+            <li>AI-Intergrations (ML)</li>
+            <li>Mobile App Dashboard</li>
+            <li>Web App Dashboard</li>
           </ul>
         </div>
 
@@ -133,7 +130,7 @@ export default function Footer() {
             className="w-full px-4 py-3 rounded-lg bg-zinc-200 dark:bg-zinc-800 outline-none mb-4"
           />
 
-          <button className="bg-blue-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-purple-200 transition">
+          <button className="bg-blue-400 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-500 transition">
             Submit
           </button>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 
 
@@ -14,13 +14,13 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.7, ease: "easeOut" as const },
   },
 };
 
@@ -97,7 +97,7 @@ export default function Contact() {
     <>
       {/* ================= HERO SECTION ================= */}
      <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
         
         <Constellations />
 
@@ -208,7 +208,7 @@ export default function Contact() {
 
 
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
             <h3 className="text-white text-xl font-bold tracking-tight">
               {project.title}
             </h3>

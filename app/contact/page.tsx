@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import {
   FaPhoneAlt, FaEnvelope, FaMapMarkerAlt,
@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 /* ================= ANIMATION VARIANTS ================= */
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -17,7 +17,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
   show: {
     opacity: 1,
@@ -27,11 +27,11 @@ const item = {
   },
 };
 
-/* ================= CONSTELLATIONS COMPONENT ================= */
+/* ================= CONSTELLATIONS (UNCHANGED) ================= */
 const Constellations = () => {
-  const count = 45; 
-  
-  const stars = useMemo(() => 
+  const count = 45;
+
+  const stars = useMemo(() =>
     Array.from({ length: count }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -45,7 +45,7 @@ const Constellations = () => {
   const connections = useMemo(() => {
     const lines = [];
     for (let i = 0; i < stars.length - 1; i++) {
-      if (i % 3 === 0) { 
+      if (i % 3 === 0) {
         lines.push({ from: stars[i], to: stars[i + 1] });
       }
     }
@@ -54,12 +54,12 @@ const Constellations = () => {
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      <svg className="w-full h-full opacity-40">
+      <svg className="w-full h-full opacity-30">
         {connections.map((line, i) => (
           <motion.line
             key={`line-${i}`}
-            stroke="white"
-            strokeWidth="0.6"
+            stroke="#60a5fa"
+            strokeWidth="0.5"
             animate={{
               x1: [`${line.from.x}%`, `${line.from.x + line.from.driftX}%`, `${line.from.x}%`],
               y1: [`${line.from.y}%`, `${line.from.y + line.from.driftY}%`, `${line.from.y}%`],
@@ -74,7 +74,7 @@ const Constellations = () => {
       {stars.map((star) => (
         <motion.div
           key={star.id}
-          className="absolute rounded-full bg-white shadow-[0_0_10px_#fff,0_0_15px_#fff]"
+          className="absolute rounded-full bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.8)]"
           style={{
             width: star.size,
             height: star.size,
@@ -84,7 +84,7 @@ const Constellations = () => {
           animate={{
             x: [0, `${star.driftX}vw`, 0],
             y: [0, `${star.driftY}vh`, 0],
-            opacity: [0.4, 1, 0.4],
+            opacity: [0.3, 0.9, 0.3],
             scale: [1, 1.4, 1],
           }}
           transition={{ duration: star.duration, repeat: Infinity, ease: "easeInOut" }}
@@ -94,6 +94,7 @@ const Constellations = () => {
   );
 };
 
+/* ================= MAIN ================= */
 export default function Contact() {
   const socialLinks = [
     { Icon: FaFacebookF, href: "https://web.facebook.com/MosfetOfficial", label: "Facebook" },
@@ -104,115 +105,91 @@ export default function Contact() {
   ];
 
   return (
-    <>
-      {/* ================= HERO SECTION ================= */}
-  <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
-        
-        <Constellations />
+    <div className="relative min-h-screen bg-linear-to-b from-zinc-950 via-zinc-900 to-black text-white overflow-hidden">
 
+      <Constellations />
+
+      {/* ================= TITLE ================= */}
+      <motion.h1
+        initial={{ opacity: 0, scale: 0.8, rotateX: 40 }}
+        animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-bold text-center pt-16 md:pt-24"
+      >
+        Let’s Get In Touch
+        <br />
+        <span className="text-blue-400">to talk about your project</span>
+      </motion.h1>
+
+      {/* ================= CONTENT ================= */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="mt-20 grid md:grid-cols-2 gap-8 px-6 max-w-6xl mx-auto"
+      >
+
+        {/* ================= FORM ================= */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative z-10 text-center text-white"
+          variants={item}
+          whileHover={{ scale: 1.02 }}
+          className="relative rounded-3xl p-px bg-linear-to-r from-blue-500/30 via-cyan-400/20 to-purple-500/30"
         >
-          <h1 className="text-5xl md:text-4xl font-bold tracking-tight">Contact</h1>
-          <div className="mt-2 flex items-center justify-center gap-2 text-sm font-light tracking-widest uppercase">
-            <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
-            <span className="text-white/20">|</span>
-            <span className="text-blue-400 font-medium">Contact</span>
-          </div>
-        </motion.div>
-      </section>
+          <div className="bg-white/10 backdrop-blur-xl text-white rounded-3xl p-8 shadow-2xl border border-white/10">
 
-      {/* ================= CONTACT CONTENT ================= */}
-      <div className=" md:px-[150px] min-h-screen bg-zinc-950 py-5 text-white overflow-hidden">
-        {/* TITLE */}
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.8, rotateX: 40 }}
-          animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-center"
-        >
-          Let’s Get In Touch
-          <br />
-          <span className="text-blue-400">to talk about your project</span>
-        </motion.h1>
-
-        {/* CONTENT */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="mt-20 grid md:grid-cols-2 gap-8"
-        >
-          {/* FORM */}
-          <motion.div
-            variants={item}
-            whileHover={{ scale: 1.02 }}
-            className="bg-white text-black rounded-2xl p-8 shadow-2xl"
-          >
             <form className="space-y-4">
               {["Name", "Phone", "Email", "Subject"].map((f) => (
                 <motion.input
                   key={f}
-                  whileFocus={{ scale: 1.03 }}
-                  className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
+                  whileFocus={{ scale: 1.02 }}
+                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/60 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
                   placeholder={f}
                 />
               ))}
 
               <motion.textarea
-                whileFocus={{ scale: 1.03 }}
-                className="w-full border rounded-lg px-4 py-3 h-28 outline-none focus:ring-2 focus:ring-blue-400"
+                whileFocus={{ scale: 1.02 }}
+                className="w-full bg-white/10 border border-white/20 text-white placeholder-white/60 rounded-xl px-4 py-3 h-28 outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Message"
               />
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full bg-blue-400 hover:bg-purple-400 transition rounded-lg py-3 font-semibold text-white"
+                className="w-full bg-blue-500 hover:bg-blue-600 transition rounded-xl py-3 font-semibold text-white shadow-lg"
               >
                 Send Message
               </motion.button>
             </form>
-          </motion.div>
 
-          {/* INFO */}
-          <motion.div
-            variants={item}
-            
-            className="bg-white text-black rounded-2xl p-8 shadow-2xl flex flex-col justify-between"
-          >
+          </div>
+        </motion.div>
+
+        {/* ================= INFO ================= */}
+        <motion.div
+          variants={item}
+          className="relative rounded-3xl p-px bg-linear-to-r from-blue-500/30 via-cyan-400/20 to-purple-500/30"
+        >
+          <div className="bg-white/10 h-full backdrop-blur-xl text-white rounded-3xl p-8 shadow-2xl border border-white/10 flex flex-col justify-between">
+
             <div className="space-y-6">
               {[
-                {
-                  icon: <FaPhoneAlt />,
-                  title: "Call Anytime",
-                  text:  "+94 76 786 5190",
-                },
-                {
-                  icon: <FaEnvelope />,
-                  title: "Send Email",
-                  text: "contact@mosfet.com",
-                },
-                {
-                  icon: <FaMapMarkerAlt />,
-                  title: "Visit Us",
-                  text: "No 23, Kandy-Jaffna Hwy, Anuradhapura, Sri Lanka, 50100",
-                },
+                { icon: <FaPhoneAlt />, title: "Call Anytime", text: "+94 76 786 5190" },
+                { icon: <FaPhoneAlt />, title: "Call WhatsApp", text: "+94 76 786 5190" },
+                { icon: <FaEnvelope />, title: "Send Email", text: "contact@mosfet.com" },
+                { icon: <FaMapMarkerAlt />, title: "Visit Us", text: "Anuradhapura, Sri Lanka" },
               ].map((i, idx) => (
                 <motion.div
                   key={idx}
                   whileHover={{ x: 10 }}
                   className="flex items-center gap-4 cursor-pointer"
                 >
-                  <div className="bg-blue-400 p-3 rounded-xl text-white text-lg">
+                  <div className="bg-blue-500 p-3 rounded-xl text-white shadow-lg">
                     {i.icon}
                   </div>
                   <div>
                     <p className="font-semibold">{i.title}</p>
-                    <p className="text-sm">{i.text}</p>
+                    <p className="text-sm text-white/70">{i.text}</p>
                   </div>
                 </motion.div>
               ))}
@@ -220,27 +197,30 @@ export default function Contact() {
 
             {/* SOCIAL */}
             <div className="mt-10">
-              <p className="font-semibold mb-6 text-center">Follow us</p>
-              <div className="flex justify-center mb-20 gap-4">
+              <p className="font-semibold text-center mb-6 text-white/80">
+                Follow us
+              </p>
+
+              <div className="flex justify-center gap-4 flex-wrap">
                 {socialLinks.map((social, i) => (
                   <motion.a
                     key={i}
                     href={social.href}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    whileHover={{ scale: 1.15, rotate: 8 }}
                     whileTap={{ scale: 0.9 }}
-                    className="bg-blue-400 p-3 rounded-xl cursor-pointer text-white flex items-center justify-center shadow-lg"
-                    title={social.label}
+                    className="bg-blue-500/20 border border-blue-400/30 p-3 rounded-xl text-white shadow-lg hover:bg-blue-500/40 transition"
                   >
-                    <social.Icon size={20} />
+                    <social.Icon size={18} />
                   </motion.a>
                 ))}
               </div>
             </div>
-          </motion.div>
+
+          </div>
         </motion.div>
-      </div>
-    </>
+
+      </motion.div>
+    </div>
   );
 }

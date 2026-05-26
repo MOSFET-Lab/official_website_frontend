@@ -148,22 +148,7 @@ export const projectsData = [
   },
  
 
-  {
-    // ----35----
-    id: "cactus",
-    title: "Cactus",
-    description: "A smart doorbell system using Raspberry Pi that detects visitors without physical touch, ensuring hygiene and safety using ultrasonic sensors.",
-    image: "https://c10.patreonusercontent.com/4/patreon-media/p/post/108015814/2a1ad709523849acad6bd9b1da9d741a/eyJ3IjoxMDgwfQ%3D%3D/1.jpg?token-hash=jYV1JmHSEQD61zW2JBBuo4K61v9PH3wcCg2IvFRpKFA%3D&token-time=1771459200",
-    category: "3D"
-  },
-  {
-    // ----36----
-    id: "metal",
-    title: "Metal",
-    description: "An intelligent chatbot designed to provide preliminary medical diagnoses and health advice using Natural Language Processing.",
-    image: "https://www.3dnatives.com/en/wp-content/uploads/sites/2/perfum_cover-1.jpg",
-    category: "3D"
-  },
+  
   
   
 ];

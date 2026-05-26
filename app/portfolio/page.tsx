@@ -27,9 +27,9 @@ const item = {
 
 /* ================= CONSTELLATIONS COMPONENT ================= */
 const Constellations = () => {
-  const count = 45; 
-  
-  const stars = useMemo(() => 
+  const count = 45;
+
+  const stars = useMemo(() =>
     Array.from({ length: count }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -43,7 +43,7 @@ const Constellations = () => {
   const connections = useMemo(() => {
     const lines = [];
     for (let i = 0; i < stars.length - 1; i++) {
-      if (i % 3 === 0) { 
+      if (i % 3 === 0) {
         lines.push({ from: stars[i], to: stars[i + 1] });
       }
     }
@@ -100,84 +100,79 @@ export default function Contact() {
   // 2. Your project array with categories added
   const allProjects = [
     { title: "Expressway Vehicle Monitoring System for Speed Limit Violations", img: "./one.jpg", category: "IOT" },
-    { title: "Smart Home Water Quality Monitor Unit", img: "./two.jpg", category: "IOT" },
+    { title: "NFC based Dual-Factor Authentication Device", img: "./NFC based Dual-Factor Authentication Device.jpg", category: "IOT" },
     { title: "Smart Home Hub", img: "./three.jpg", category: "IOT" },
+    { title: "SafeZone Obstacle Alert System - Smart Home", img: "./SafeZone Obstacle Alert System - Smart Home.jpg", category: "IOT" },
 
-    { title: "AI-based spaghetti failure detection system for 3D printers", img: "/four.jpg", category: "AI" },
-    { title: "AI-based IoT Greenhouse", img: "/five.jpg", category: "AI" },
+    { title: "AI-Powered Smart Fitness Wear for Sports", img: "/AI-Powered Smart Fitness Wear for Sports.jpg", category: "AI" },
+    { title: "Geer Wheel", img: "/Geer Wheel.jpg", category: "threeD" },
     { title: "Fake Banknote Recognition AI model", img: "/six.jpg", category: "AI" },
-    { title: "SmartVision: Multi-Class Segmentation AI", img: "/thirteen.jpg", category: "AI" },
+    { title: "AI-Based Plant Leaf Disease Detection System", img: "/AI-Based Plant Leaf Disease Detection System.jpg", category: "AI" },
 
-    { title: "Raspberry Pi 4 Enclosure", img: "./seven.jpg", category: "threeD" },
+    { title: "Gear Box Parts", img: "./Gear Box Parts.jpg", category: "threeD" },
     { title: "Gear Mount Bracket", img: "./eight.jpg", category: "threeD" },
     { title: "Raspberry Pi 5 Desktop Enclosure", img: "./nine.jpg", category: "threeD" },
     { title: "Wearable Device Enclosure", img: "./ten.jpg", category: "threeD" },
     { title: "Mechanical Part with Servo Mount", img: "./eleven.jpg", category: "threeD" },
     { title: "Smart Sun Tracking System", img: "/twelve.jpg", category: "threeD" },
-    { title: "Leaf Lamp", img: "https://preview.redd.it/i-designed-those-3d-printed-lamps-and-thought-some-of-you-v0-kgq2lu4t6sae1.jpg?width=640&crop=smart&auto=webp&s=60254865b65cbf6d29abc808299680a331a416f5", category: "threeD" },
-    { title: "Night Lamp", img: "https://giftmebazar.com/uploads/items/19672/largeNight-Lamp-Base-Leaf-Rgb-red.jpg", category: "threeD" },
-    { title: "MushRoom", img: "https://loxidesign.com/cdn/shop/products/image-1_1ff43f84-f6e5-411e-9192-6b0f5c6a58cf.png?v=1681856511", category: "threeD" },
-    { title: "Cactus", img: "https://c10.patreonusercontent.com/4/patreon-media/p/post/108015814/2a1ad709523849acad6bd9b1da9d741a/eyJ3IjoxMDgwfQ%3D%3D/1.jpg?token-hash=jYV1JmHSEQD61zW2JBBuo4K61v9PH3wcCg2IvFRpKFA%3D&token-time=1771459200", category: "threeD" },
-    { title: "Metal", img: "https://www.3dnatives.com/en/wp-content/uploads/sites/2/perfum_cover-1.jpg", category: "threeD" },
   ];
 
   // 3. Filter Logic
-  const filteredProjects = filter === "ALL" 
-    ? allProjects 
+  const filteredProjects = filter === "ALL"
+    ? allProjects
     : allProjects.filter(project => project.category === filter);
 
 
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
-        <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
-        
-        <Constellations />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative z-10 text-center text-white"
-        >
-          <h1 className="text-5xl md:text-4xl font-bold tracking-tight">Portfolio</h1>
-          <div className="mt-2 flex items-center justify-center gap-2 text-sm font-light tracking-widest uppercase">
-            <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
-            <span className="text-white/20">|</span>
-            <span className="text-blue-400 font-medium">Portfolio</span>
-          </div>
-        </motion.div>
-      </section>
+      {/* TITLE */}
+      <motion.h1
+        initial={{ opacity: 0, scale: 0.8, rotateX: 40 }}
+        animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl pt-6 font-bold text-center text-white md:pt-20"
+      >
+        Portfolio
+      </motion.h1>
 
       {/* ================= Top Buttons ================= */}
-      <div className="mt-10 flex flex-wrap gap-3 justify-center mb-10">
-        <button 
-          onClick={() => setFilter("ALL")}
-          className={`px-6 py-2 rounded-full font-medium transition ${filter === "ALL" ? "bg-blue-400 text-white" : "bg-white text-black"}`}
-        >
-          ALL
-        </button>
+      {/* ================= Top Buttons ================= */}
+      <div className="mt-8 md:mt-10 mb-8 md:mb-10 px-2">
 
-        <button 
-          onClick={() => setFilter("IOT")}
-          className={`px-6 py-2 rounded-full font-medium transition ${filter === "IOT" ? "bg-blue-400 text-white" : "bg-white text-black"}`}
-        >
-          IOT
-        </button>
+        <div className="flex justify-center">
+          <div className="flex gap-2 sm:gap-3 overflow-x-auto no-scrollbar max-w-full">
 
-        <button 
-          onClick={() => setFilter("AI")}
-          className={`px-6 py-2 rounded-full font-medium transition ${filter === "AI" ? "bg-blue-400 text-white" : "bg-white text-black"}`}
-        >
-          AI and ML
-        </button>
+            {[
+              { key: "ALL", label: "ALL" },
+              { key: "IOT", label: "IOT" },
+              { key: "AI", label: "AI & ML" },
+              { key: "threeD", label: "3D" },
+            ].map((btn) => (
+              <button
+                key={btn.key}
+                onClick={() => setFilter(btn.key)}
+                className={`
+            whitespace-nowrap
+            px-4 sm:px-5 md:px-6
+            py-2 sm:py-2.5
+            text-xs sm:text-sm md:text-base
+            rounded-full font-medium
+            transition-all duration-300
+            ${filter === btn.key
+                    ? "bg-sky-500 text-white shadow-lg shadow-sky-500/30"
+                    : "bg-white/90 text-black hover:bg-white"
+                  }
+          `}
+              >
+                {btn.label}
+              </button>
+            ))}
 
-        <button 
-          onClick={() => setFilter("threeD")}
-          className={`px-6 py-2 rounded-full font-medium transition ${filter === "threeD" ? "bg-blue-400 text-white" : "bg-white text-black"}`}
-        >
-          3D
-        </button>
+          </div>
+        </div>
+
       </div>
 
       {/* ================= PORTFOLIO GRID ================= */}
@@ -186,11 +181,11 @@ export default function Contact() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="container mx-auto px-4 sm:px-5 md:px-6 lg:px-37 mt-12 mb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 lg:gap-8"
+        className="container mx-auto px-4 sm:px-5 md:px-6 lg:px-37 mt-12 mb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8"
       >
         {filteredProjects.map((project, index) => (
-          <Link 
-            key={index} 
+          <Link
+            key={index}
             href={`/portfolio/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
           >
             <motion.div
@@ -202,7 +197,7 @@ export default function Contact() {
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
               />
-              
+
               <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex items-end p-6">
                 <h3 className="text-white text-xl font-bold tracking-tight">
                   {project.title}

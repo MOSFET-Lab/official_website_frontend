@@ -8,13 +8,13 @@ export default function FrontendJobPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Optional: Simple Header to get back */}
-      <nav className="py-6 px-6 sm:px-12 lg:px-[148px] border-b border-gray-100">
-        <Link href="/career" className="text-blue-600 flex items-center gap-2 hover:underline">
+      <nav className="py-6 px-6 sm:px-12 border-b border-gray-100">
+        <Link href="/career" className="px-4 mt-6 md:px-15 inline-flex items-center gap-2 text-[15px] font-bold tracking-[0.3em] uppercase text-black/50 hover:text-[#00bbff] transition-colors mb-16">
           ← Back to Careers
         </Link>
       </nav>
 
-      <main className="py-12 px-6 sm:px-12 lg:px-[148px]">
+      <main className="py-12 px-6 sm:px-12 lg:px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* LEFT COLUMN: Text Content */}
@@ -24,44 +24,53 @@ export default function FrontendJobPage() {
             className="space-y-10"
           >
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Requirements :</h2>
-              <ul className="space-y-4 text-gray-700 text-lg leading-relaxed">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Responsibilities:</h2>
+              <ul className="space-y-4 text-gray-700 text-sm leading-relaxed">
                 <li className="flex gap-2">
                   <span>-</span>
-                  <span>Proven 1+ years of experience with Fusion 360, SolidWorks.</span>
+                  <span>Assist in planning, organizing, and managing ongoing software, AI, IoT, and embedded system projects.</span>
                 </li>
                 <li className="flex gap-2">
                   <span>-</span>
-                  <span>Design high-quality 3D models for consumer products, enclosures, and mechanical parts.</span>
+                  <span>Coordinate with developers, designers, and stakeholders to ensure smooth project execution and timely delivery.</span>
                 </li>
                 <li className="flex gap-2">
                   <span>-</span>
-                  <span>Prepare 3D printable files (STL, STEP, OBJ) optimized for FDM/SLA printing.</span>
+                  <span>Monitor project progress, task assignments, milestones, and deadlines using project management tools.</span>
                 </li>
                  <li className="flex gap-2">
                   <span>-</span>
-                  <span>Proficiency in creating dimensionally accurate and optimized models.</span>
+                  <span>Support daily stand-ups, sprint planning, and team progress reporting.</span>
                 </li>
                 <li className="flex gap-2">
                   <span>-</span>
-                  <span>Create visual mockups, product renders, and working prototypes.</span>
+                  <span>Maintain project documentation, reports, and workflow updates.</span>
                 </li>
                 <li className="flex gap-2">
                   <span>-</span>
-                  <span>Bonus: Knowledge of electronics and integration with PCBs, microcontrollers, sensors etc.</span>
+                  <span>Assist in task prioritization, backlog management, and resource coordination.</span>
+                </li>
+                <li className="flex gap-2">
+                  <span>-</span>
+                  <span>Track risks, dependencies, and project blockers and escalate when necessary.</span>
+                </li>
+                <li className="flex gap-2">
+                  <span>-</span>
+                  <span>Support GitHub workflow management including issues, branches, and task tracking integration.</span>
                 </li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Responsibilities:</h2>
-              <ul className="space-y-3 text-gray-700 text-lg leading-relaxed">
-                <li>- API implementation</li>
-                <li>- Experience in html, CSS, ReactJS and Angular Framework</li>
-                <li>- Experience in using Git</li>
-                <li>- Strong logical and analytical thinking</li>
-                <li>- Willing to learn new technology</li>
-                <li>- Fresh Graduated are welcome</li>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Requirements:</h2>
+              <ul className="space-y-3 text-gray-700 text-sm leading-relaxed">
+                <li>- Bachelor’s Degree in Information Technology, Software Engineering, Computer Science, or a related IT field.</li>
+                <li>- Basic understanding of software development lifecycle (SDLC) and Agile methodologies.</li>
+                <li>- Familiarity with project management tools such as Jira, Trello, ClickUp, or Notion.</li>
+                <li>- Strong understanding of GitHub workflows and task tracking systems.</li>
+                <li>- Excellent communication, leadership, problem-solving, and teamwork skills.</li>
+                <li>- Ability to manage multiple tasks and work in a fast-paced environment.</li>
+                <li>- Strong attention to detail and organizational skills.</li>
               </ul>
             </section>
           </motion.div>
@@ -70,15 +79,15 @@ export default function FrontendJobPage() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white p-10 rounded-[40px] border border-gray-200 shadow-2xl shadow-gray-200/50"
+            className="bg-white p-6 md:p-2 lg:p-10 rounded-[40px] border border-gray-200 shadow-2xl shadow-gray-200/50"
           >
-            <h2 className="text-3xl font-medium text-gray-900 text-center mb-10">
+            <h2 className="text-lg md:text-lg lg:text-3xl font-medium text-gray-900 text-center mb-10">
               Submit Your Application
             </h2>
             
             <form className="space-y-6">
               <div>
-                <label className="block text-lg text-gray-800 mb-2">Full Name</label>
+                <label className="block text-sm text-gray-800 mb-2">Full Name</label>
                 <input 
                   type="text" 
                   className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
@@ -86,7 +95,7 @@ export default function FrontendJobPage() {
               </div>
 
               <div>
-                <label className="block text-lg text-gray-800 mb-2">Email</label>
+                <label className="block text-sm text-gray-800 mb-2">Email</label>
                 <input 
                   type="email" 
                   className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
@@ -94,7 +103,7 @@ export default function FrontendJobPage() {
               </div>
 
               <div>
-                <label className="block text-lg text-gray-800 mb-2">Phone</label>
+                <label className="block text-sm text-gray-800 mb-2">Phone</label>
                 <input 
                   type="tel" 
                   className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
@@ -107,9 +116,9 @@ export default function FrontendJobPage() {
                     type="text" 
                     placeholder="Attach your resume/CV .Pdf" 
                     readOnly 
-                    className="flex-1 p-4 text-gray-400 bg-transparent outline-none"
+                    className="flex-1 p-4 text-sm text-gray-400 bg-transparent outline-none"
                   />
-                  <label className="bg-[#E5E5E5] px-8 py-4 text-gray-800 font-medium cursor-pointer hover:bg-gray-300 transition-colors">
+                  <label className="bg-[#E5E5E5] px-1 md:px-8 py-4 text-sm text-gray-800 font-medium cursor-pointer hover:bg-gray-300 transition-colors">
                     Browse
                     <input type="file" className="hidden" accept=".pdf" />
                   </label>
@@ -118,7 +127,7 @@ export default function FrontendJobPage() {
 
               <button 
                 type="submit" 
-                className="w-full py-5 bg-[#4299e1] hover:bg-[#7cde9b] text-gray-900 font-bold text-xl rounded-2xl shadow-lg transition-transform active:scale-[0.98] mt-4"
+                className="w-full bg-blue-400 hover:bg-blue-500 transition rounded-lg py-3 font-semibold text-white"
               >
                 Submit
               </button>

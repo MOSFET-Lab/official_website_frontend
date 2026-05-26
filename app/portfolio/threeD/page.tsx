@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 
 
@@ -14,13 +14,13 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.7, ease: "easeOut" as const },
   },
 };
 
@@ -97,7 +97,7 @@ export default function Contact() {
     <>
       {/* ================= HERO SECTION ================= */}
      <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030014] via-[#588be8] to-[#030014]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
         
         <Constellations />
 
@@ -180,8 +180,7 @@ export default function Contact() {
         { title: "Leaf Lamp", img: "https://preview.redd.it/i-designed-those-3d-printed-lamps-and-thought-some-of-you-v0-kgq2lu4t6sae1.jpg?width=640&crop=smart&auto=webp&s=60254865b65cbf6d29abc808299680a331a416f5" },
         { title: "Night Lamp", img: "https://giftmebazar.com/uploads/items/19672/largeNight-Lamp-Base-Leaf-Rgb-red.jpg" },
         { title: "Yoga Poses Detection using OpenPose", img: "https://loxidesign.com/cdn/shop/products/image-1_1ff43f84-f6e5-411e-9192-6b0f5c6a58cf.png?v=1681856511" },
-        { title: "Cactus", img: "https://c10.patreonusercontent.com/4/patreon-media/p/post/108015814/2a1ad709523849acad6bd9b1da9d741a/eyJ3IjoxMDgwfQ%3D%3D/1.jpg?token-hash=jYV1JmHSEQD61zW2JBBuo4K61v9PH3wcCg2IvFRpKFA%3D&token-time=1771459200" },
-        { title: "Metal", img: "https://www.3dnatives.com/en/wp-content/uploads/sites/2/perfum_cover-1.jpg" },
+      
 
 
         
@@ -205,7 +204,7 @@ export default function Contact() {
 
 
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
             <h3 className="text-white text-xl font-bold tracking-tight">
               {project.title}
             </h3>
