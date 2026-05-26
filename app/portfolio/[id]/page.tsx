@@ -103,16 +103,29 @@ export default function ProjectDetails({ params }: { params: Promise<{ id: strin
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                  <Button className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 hover:scale-105 active:scale-95">
+
+                  {/* SEND MESSAGE */}
+                  <Button
+                    onClick={() => window.location.href = "/contact"}
+                    className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 hover:scale-105 active:scale-95"
+                  >
                     Send us a message
                   </Button>
 
+                  {/* SCHEDULE CALL */}
                   <Button
                     variant="outline"
+                    onClick={() =>
+                      window.open(
+                        "https://wa.me/message/KRFV3QRCXYJFG1",
+                        "_blank"
+                      )
+                    }
                     className="border-2 border-sky-500/50 text-sky-400 font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     Schedule a call
                   </Button>
+
                 </div>
 
               </div>
