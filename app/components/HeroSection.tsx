@@ -70,6 +70,35 @@ const products = [
     },
 ];
 
+const scrollToBottom = () => {
+    const start = window.scrollY;
+    const end = document.body.scrollHeight;
+    const duration = 20000; // slower scroll (4 seconds)
+
+    let startTime: number | null = null;
+
+    const animateScroll = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        // easeInOut effect
+        const ease =
+            progress < 0.5
+                ? 2 * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        window.scrollTo(0, start + (end - start) * ease);
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animateScroll);
+        }
+    };
+
+    requestAnimationFrame(animateScroll);
+};
+
 /* ================= HERO ================= */
 export default function HeroSection() {
     const [screen, setScreen] = useState<"mobile" | "tablet" | "desktop">("desktop");
@@ -174,15 +203,17 @@ export default function HeroSection() {
 
                             {/* Subtitle */}
                             <p className="text-base md:text-xl text-zinc-700 mb-8">
-                                A leading product manufacturer in AI, IoT, and advanced research & development prototypes
+                                A leading product manufacturer in AI, IoT, and advanced research & development prototypes.
                             </p>
 
                             {/* CTA */}
-                            <Button className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-6 md:px-8 py-5 md:py-6 rounded-xl">
+                            <Button
+                                onClick={scrollToBottom}
+                                className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-6 md:px-8 py-5 md:py-6 rounded-xl"
+                            >
                                 Get Started
                                 <ArrowRight className="ml-2 size-5" />
                             </Button>
-
                         </div>
                     </div>
                 </div>
