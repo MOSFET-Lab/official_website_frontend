@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import {
@@ -96,6 +96,40 @@ const Constellations = () => {
 
 /* ================= MAIN ================= */
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSendMessage = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const subject = encodeURIComponent(formData.subject);
+
+    const body = encodeURIComponent(
+      `Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+
+Message:
+${formData.message}`
+    );
+
+    window.location.href = `mailto:contact@mosfet.com?subject=${subject}&body=${body}`;
+  };
+
   const socialLinks = [
     { Icon: FaFacebookF, href: "https://web.facebook.com/MosfetOfficial", label: "Facebook" },
     { Icon: FaInstagram, href: "https://www.instagram.com/mosfet_official/", label: "Instagram" },
@@ -137,23 +171,38 @@ export default function Contact() {
         >
           <div className="bg-white/10 backdrop-blur-xl text-white rounded-3xl p-8 shadow-2xl border border-white/10">
 
-            <form className="space-y-4">
-              {["Name", "Phone", "Email", "Subject"].map((f) => (
+            <form onSubmit={handleSendMessage}
+              className="space-y-4">
+              {[
+                { label: "Name", name: "name" },
+                { label: "Phone", name: "phone" },
+                { label: "Email", name: "email" },
+                { label: "Subject", name: "subject" },
+              ].map((f) => (
                 <motion.input
-                  key={f}
+                  key={f.name}
+                  name={f.name}
+                  value={formData[f.name as keyof typeof formData]}
+                  onChange={handleChange}
                   whileFocus={{ scale: 1.02 }}
                   className="w-full bg-white/10 border border-white/20 text-white placeholder-white/60 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
-                  placeholder={f}
+                  placeholder={f.label}
+                  required
                 />
               ))}
 
               <motion.textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 whileFocus={{ scale: 1.02 }}
                 className="w-full bg-white/10 border border-white/20 text-white placeholder-white/60 rounded-xl px-4 py-3 h-28 outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Message"
+                required
               />
 
               <motion.button
+                type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full bg-blue-500 hover:bg-blue-600 transition rounded-xl py-3 font-semibold text-white shadow-lg"
