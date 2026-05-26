@@ -89,9 +89,9 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li>IoT Embedded System</li>
             <li>3D-Printed Manufacturing</li>
-            <li>AI-Intergrations (ML)</li>
-            <li>Mobile App Dashboard</li>
-            <li>Web App Dashboard</li>
+            <li>AI-Intergrations</li>
+            <li>Mobile App Development</li>
+            <li>Web App Development</li>
           </ul>
         </div>
 
