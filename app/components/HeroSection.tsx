@@ -174,7 +174,7 @@ export default function HeroSection() {
 
                             {/* Subtitle */}
                             <p className="text-base md:text-xl text-zinc-700 mb-8">
-                                A leading product manufacturer in AI, IoT, and advanced research & development prototypes.
+                                A leading product manufacturer in AI, IoT, and advanced research & development prototypes
                             </p>
 
                             {/* CTA */}
