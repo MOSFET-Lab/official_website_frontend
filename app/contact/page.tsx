@@ -291,7 +291,7 @@ ${formData.message}`
                 <div>
                   <p className="font-semibold">Visit Us</p>
                   <p className="text-sm text-white/70">
-                    Anuradhapura, Sri Lanka
+                    No 23, Kandy-Jaffna Hwy, Anuradhapura, Sri Lanka
                   </p>
                 </div>
               </motion.div>
