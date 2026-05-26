@@ -69,7 +69,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">About Our Company</h2>
               <p className="text-zinc-600 text-lg leading-relaxed">
                 MOSFET is a dynamic startup company revolutionizing product manufacturing through the seamless integration of Artificial Intelligence (AI) and Internet of Things (IoT).
-                Founded with a vision to bridge the gap between ideation and realization, we empower businesses and innovators to transform concepts into tangible, intelligent products faster and more efficiently than ever before.
+                Founded with a vision to bridge the gap between ideation and realization, we empower businesses and innovators to transform concepts into tangible, intelligent products faster and more efficiently than ever before
               </p>
             </div>
           </div>
