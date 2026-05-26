@@ -173,26 +173,80 @@ export default function Contact() {
           <div className="bg-white/10 h-full backdrop-blur-xl text-white rounded-3xl p-8 shadow-2xl border border-white/10 flex flex-col justify-between">
 
             <div className="space-y-6">
-              {[
-                { icon: <FaPhoneAlt />, title: "Call Anytime", text: "+94 76 786 5190" },
-                { icon: <FaPhoneAlt />, title: "Call WhatsApp", text: "+94 76 786 5190" },
-                { icon: <FaEnvelope />, title: "Send Email", text: "contact@mosfet.com" },
-                { icon: <FaMapMarkerAlt />, title: "Visit Us", text: "Anuradhapura, Sri Lanka" },
-              ].map((i, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-4 cursor-pointer"
-                >
-                  <div className="bg-blue-500 p-3 rounded-xl text-white shadow-lg">
-                    {i.icon}
-                  </div>
-                  <div>
-                    <p className="font-semibold">{i.title}</p>
-                    <p className="text-sm text-white/70">{i.text}</p>
-                  </div>
-                </motion.div>
-              ))}
+
+              {/* CALL */}
+              <motion.a
+                href="tel:+94767865190"
+                whileHover={{ x: 10 }}
+                className="flex items-center gap-4 cursor-pointer"
+              >
+                <div className="bg-blue-500 p-3 rounded-xl text-white shadow-lg">
+                  <FaPhoneAlt />
+                </div>
+
+                <div>
+                  <p className="font-semibold">Call Anytime</p>
+                  <p className="text-sm text-white/70">
+                    +94 76 786 5190
+                  </p>
+                </div>
+              </motion.a>
+
+              {/* WHATSAPP */}
+              <motion.a
+                href="https://wa.me/message/KRFV3QRCXYJFG1"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 10 }}
+                className="flex items-center gap-4 cursor-pointer"
+              >
+                <div className="bg-blue-500 p-3 rounded-xl text-white shadow-lg">
+                  <FaPhoneAlt />
+                </div>
+
+                <div>
+                  <p className="font-semibold">Call WhatsApp</p>
+                  <p className="text-sm text-white/70">
+                    +94 76 786 5190
+                  </p>
+                </div>
+              </motion.a>
+
+              {/* EMAIL */}
+              <motion.a
+                href={`mailto:contact@mosfet.com?subject=Project Inquiry&body=Hello MOSFET,%0D%0A%0D%0AI would like to discuss my project with your team.`}
+                whileHover={{ x: 10 }}
+                className="flex items-center gap-4 cursor-pointer"
+              >
+                <div className="bg-blue-500 p-3 rounded-xl text-white shadow-lg">
+                  <FaEnvelope />
+                </div>
+
+                <div>
+                  <p className="font-semibold">Send Email</p>
+                  <p className="text-sm text-white/70">
+                    contact@mosfet.com
+                  </p>
+                </div>
+              </motion.a>
+
+              {/* LOCATION */}
+              <motion.div
+                whileHover={{ x: 10 }}
+                className="flex items-center gap-4"
+              >
+                <div className="bg-blue-500 p-3 rounded-xl text-white shadow-lg">
+                  <FaMapMarkerAlt />
+                </div>
+
+                <div>
+                  <p className="font-semibold">Visit Us</p>
+                  <p className="text-sm text-white/70">
+                    Anuradhapura, Sri Lanka
+                  </p>
+                </div>
+              </motion.div>
+
             </div>
 
             {/* SOCIAL */}
