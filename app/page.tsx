@@ -1,65 +1,430 @@
-import Image from "next/image";
+import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import WorkingProcess from "./components/WorkingProcess";
+import HeroSection from "./components/HeroSection";
 
-export default function Home() {
+import {
+  CheckCircle,
+  Users,
+  Clock,
+  Search,
+  Palette,
+  Code,
+  Rocket,
+  Quote,
+  ArrowRight,
+  Globe,
+  Smartphone,
+  Server,
+  Layers,
+} from "lucide-react"
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 underline">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="min-h-screen bg-white text-zinc-900">
+      {/* Section 1 - Hero */}
+      {/* <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-50/50 to-zinc-400 pointer-events-none" />
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <div className="mb-8">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/MOSFET_logo.png"
+              alt="MOSFET Logo"
+              width={200}
+              height={200}
+              className="mx-auto rounded-2xl shadow-lg"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 text-balance">
+            {"We're"} <span className="text-sky-500">MOSFET</span>,
+          </h1>
+          <p className="text-2xl md:text-4xl font-medium text-zinc-600 mb-10">
+            {"Let's talk about your project"}
+          </p>
+          <Button size="lg" className="bg-sky-500 hover:bg-sky-600 text-white text-lg px-8 py-6 rounded-xl">
+            Get Started
+            <ArrowRight className="ml-2 size-5" />
+          </Button>
         </div>
-      </main>
-    </div>
-  );
+      </section> */}
+      <>
+        <HeroSection />
+      </>
+
+      {/* Section 2 - About Company */}
+      <section className="py-20 px-6 bg-zinc-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <Image
+                src="/MOSFET_logo.png"
+                alt="MOSFET Company"
+                width={300}
+                height={300}
+                className="rounded-2xl shadow-xl mx-auto md:mx-0"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">About Our Company</h2>
+              <p className="text-zinc-600 text-lg leading-relaxed">
+                MOSFET is a dynamic startup company revolutionizing product manufacturing through the seamless integration of Artificial Intelligence (AI) and Internet of Things (IoT).
+                Founded with a vision to bridge the gap between ideation and realization, we empower businesses and innovators to transform concepts into tangible, intelligent products faster and more efficiently than ever before.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">
+                <CheckCircle className="size-8 text-sky-400 group-hover:text-sky-300 transition-colors duration-300" />
+              </div>
+              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">80+</h3>
+              <p className="text-sky-200/80 font-medium tracking-wide">Completed Projects</p>
+            </div>
+            <div className="group bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">
+                <Users className="size-8 text-sky-400 group-hover:text-sky-300 transition-colors duration-300" />
+              </div>
+              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">60+</h3>
+              <p className="text-sky-200/80 font-medium tracking-wide">Happy Customers</p>
+            </div>
+            <div className="group bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">
+                <Clock className="size-8 text-sky-400 group-hover:text-sky-300 transition-colors duration-300" />
+              </div>
+              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">1+</h3>
+              <p className="text-sky-200/80 font-medium tracking-wide">Years of Experience</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3 - Clients Who Trust Us */}
+      {/* <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Clients Who Trust Us</h2>
+          <p className="text-zinc-600 text-center mb-12 max-w-2xl mx-auto">
+            We are proud to work with industry-leading companies worldwide
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {["Amazon", "Google", "Microsoft", "Apple", "Meta", "Netflix"].map((client) => (
+              <div
+                key={client}
+                className="w-32 h-20 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-400 font-bold text-lg hover:bg-sky-50 hover:text-sky-500 transition-colors"
+              >
+                {client}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* Section 4 - What We Do (Services) */}
+      <section className="py-20 px-6 bg-zinc-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">What We Do</h2>
+              <p className="text-zinc-600">Our Services</p>
+            </div>
+            <Link href="/services">
+              <Button variant="outline" className="mt-4 md:mt-0 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white">
+                See All
+                <ArrowRight className="ml-2 size-4" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/service/IoT services.jpg"
+                alt="Web Development"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">IoT & Embedded Systems</h3>
+                  <p className="text-zinc-300 text-sm">Smart automation, sensors, and real-time connected device systems.</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/service/3D prints services.jpg"
+                alt="Mobile Apps"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">3D Product Manufacturing</h3>
+                  <p className="text-zinc-300 text-sm">Rapid prototyping and high-precision 3D printed hardware.</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/service/AI integratio services.jpg"
+                alt="Cloud Solutions"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">AI Integration</h3>
+                  <p className="text-zinc-300 text-sm">Embed intelligent AI into apps, systems, and IoT devices.</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/service/IoT 3.jpg"
+                alt="UI/UX Design"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">Research & Development</h3>
+                  <p className="text-zinc-300 text-sm">Turning innovative ideas into scalable real-world solutions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5 - Our Process */}
+      {/* <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Process</h2>
+          <p className="text-zinc-600 text-center mb-12 max-w-2xl mx-auto">
+            A proven methodology that delivers results
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
+              <div className="absolute -top-4 left-6 w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                1
+              </div>
+              <div className="mt-4">
+                <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
+                  <Search className="size-6 text-sky-500" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Research</h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">
+                  Delve into in-depth analysis and exploration to identify opportunities and solutions that shape the foundation.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
+              <div className="absolute -top-4 left-6 w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                2
+              </div>
+              <div className="mt-4">
+                <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
+                  <Palette className="size-6 text-sky-500" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Design</h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">
+                  Transforming insights into user-centric blueprints and aesthetic interfaces that define your brand identity.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
+              <div className="absolute -top-4 left-6 w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                3
+              </div>
+              <div className="mt-4">
+                <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
+                  <Code className="size-6 text-sky-500" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Develop</h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">
+                  Bringing the vision to life with robust development practices and high-performance, scalable code.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
+              <div className="absolute -top-4 left-6 w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                4
+              </div>
+              <div className="mt-4">
+                <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
+                  <Rocket className="size-6 text-sky-500" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Launch</h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">
+                  Final deployment and ongoing technical support to ensure your product thrives and evolves.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <div className="py-20 px-6 bg-zinc-50">
+        <WorkingProcess />
+      </div>
+
+      {/* Section 6 - Portfolio */}
+      <section className="py-20 px-6 bg-zinc-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Portfolio</h2>
+              <p className="text-zinc-600">Recent projects we are proud of</p>
+            </div>
+            <Link href="/portfolio">
+              <Button variant="outline" className="mt-4 md:mt-0 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white">
+                See All
+                <ArrowRight className="ml-2 size-4" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/portfolio/Smart Hydroponic Nutrient Monitoring AI System.jpg"
+                alt="Dashboard Project"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">Analytics Dashboard</h3>
+                  <p className="text-zinc-300 text-sm">Web Application</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/portfolio/NFC based Dual-Factor Authentication Device .jpg"
+                alt="E-commerce App"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">E-commerce Platform</h3>
+                  <p className="text-zinc-300 text-sm">Mobile Application</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/portfolio/4x4 KeyPad Enclosure.jpg"
+                alt="Corporate Website"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">Corporate Website</h3>
+                  <p className="text-zinc-300 text-sm">Website Design</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/portfolio/Raspberry Pi 4 Enclosure.jpg"
+                alt="SaaS Platform"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">SaaS Platform</h3>
+                  <p className="text-zinc-300 text-sm">Cloud Solution</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7 - Testimonials */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Client Testimonials</h2>
+          <p className="text-zinc-600 text-center mb-12 max-w-2xl mx-auto">
+            What our clients say about working with us
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="group relative overflow-hidden rounded-2xl">
+              <Image
+                src="/review/MOSFET Client Testimonial - Ushan Nilindu.png"
+                alt="Client Testimonial"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl">
+              <Image
+                src="/review/MOSFET Client Testimonial - Rusith Nirmana.png"
+                alt="Client Testimonial"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl">
+              <Image
+                src="/review/MOSFET Client Testimonial - Ravindu Lakshan.png"
+                alt="Client Testimonial"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8 - CTA (Hey Let's Talk) */}
+      <section className="py-20 px-6 bg-zinc-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="group bg-zinc-900 p-12 md:p-16 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-2">
+            <div className="w-20 h-20 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">
+              <ArrowRight className="size-10 text-sky-400 group-hover:text-sky-300 transition-colors duration-300" />
+            </div>
+            <h2 className="text-sky-100 text-4xl md:text-5xl font-black mb-4 transition-transform duration-300 group-hover:scale-105">
+              {"Hey! Let's Talk"}
+            </h2>
+            <p className="text-sky-200/80 font-medium tracking-wide mb-8 max-w-xl mx-auto">
+              Ready to gain competitive advantage by harnessing data and modernising your technology?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-6 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-105 active:scale-95">
+                Send us a message
+              </Button>
+              <Button
+                variant="outline"
+                className="border-2 border-sky-500/50 text-sky-400 font-bold py-6 px-8 rounded-xl text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                Schedule a call
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
 }

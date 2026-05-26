@@ -1,26 +1,137 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+JP:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* moving ticker */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
+
+/* This creates the high-tech grid background */
+.bg-grid-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+
+
+/* Optional: Add a soft pulse to the AI background glow */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+
+
+@keyframes border-spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        /* Slower spin for a premium feel */
+        .animate-border-spin {
+          animation: border-spin 4s linear infinite;
+        }
+
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+.abc {
+  font-family: 'inter';
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.xyz{
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+.hero-circuit-floor {
+  background-image: 
+    linear-gradient(to right, rgba(255, 77, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 77, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(500px) rotateX(60deg);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
+
+
+/* three D lamps */
+@keyframes lampFloat {
+  0%   { transform: translateY(0) rotateY(0deg); }
+  50%  { transform: translateY(-20px) rotateY(20deg); }
+  100% { transform: translateY(0) rotateY(0deg); }
+}
+
+@keyframes lampFloatSlow {
+  0%   { transform: translateY(0) rotateY(0deg); }
+  50%  { transform: translateY(-30px) rotateY(-25deg); }
+  100% { transform: translateY(0) rotateY(0deg); }
+}
+
+.lamp-3d {
+  animation: lampFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.4));
+}
+
+.lamp-3d-slow {
+  animation: lampFloatSlow 8s ease-in-out infinite;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.35));
+}
+
+
+
+
+.animated-bg {
+  background: linear-gradient(
+    120deg,
+    #050816,
+    #3a0ca3,
+    #7209b7,
+    #00f5d4
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+

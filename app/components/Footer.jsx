@@ -1,0 +1,145 @@
+// 1. Import the icons at the very top
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from "react-icons/fa";
+import Link from 'next/link';
+
+export default function Footer() {
+  return (
+    <footer className="bg-white dark:bg-zinc-950 text-zinc-700 dark:text-zinc-300">
+      <div className="max-w-7xl mx-auto px-10 py-20 grid gap-16 md:grid-cols-4">
+
+        {/* BRAND */}
+        <div>
+          <h2 className="text-2xl font-bold text-black dark:text-white flex items-center gap-2">
+            MOSFET
+          </h2>
+
+          <p className="mt-4 text-sm leading-relaxed">
+            A leading product manufacturer in AI, IoT, and advanced R&D prototypes.
+          </p>
+
+          {/* SOCIAL ICONS - Now with real icons */}
+          <div className="flex flex-wrap gap-2 mt-6">
+            {/* Facebook */}
+            <a
+              href="https://web.facebook.com/MosfetOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              title="Facebook"
+            >
+              {/* Replaced 'f' with the icon component and added size class */}
+              <FaFacebookF className="text-xl" />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/mosfet_official/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              title="Instagram"
+            >
+              <FaInstagram className="text-2xl" />
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/company/mosfetofficial/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              title="LinkedIn"
+            >
+              <FaLinkedinIn className="text-xl" />
+            </a>
+
+            {/* TikTok */}
+            <a
+              href="https://www.tiktok.com/@MosfetOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg border border-zinc-700"
+              title="TikTok"
+            >
+              <FaTiktok className="text-xl" />
+            </a>
+
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/@MosfetOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              title="YouTube"
+            >
+              <FaYoutube className="text-xl" />
+            </a>
+          </div>
+        </div>
+
+        
+
+        {/* SERVICES */}
+        <div>
+          <h3 className="text-lg font-semibold text-black dark:text-white">
+            Services
+          </h3>
+          <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
+
+          <ul className="space-y-3 text-sm">
+            <li>IoT Embedded System</li>
+            <li>3D-Printed Manufacturing</li>
+            <li>AI-Intergrations (ML)</li>
+            <li>Mobile App Dashboard</li>
+            <li>Web App Dashboard</li>
+          </ul>
+        </div>
+
+        {/* QUICK LINKS */}
+        <div>
+          <h3 className="text-lg font-semibold text-black dark:text-white">
+            Quick Links
+          </h3>
+          <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
+
+          <ul className="space-y-3 text-sm">
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/services">Our Services</Link></li>
+          <li><Link href="/portfolio">Portfolio</Link></li>
+          <li><Link href="/career">Career</Link></li>
+          <li><Link href="/about">About Us</Link></li>
+          <li><Link href="/contact">Contact Us</Link></li>
+          </ul>
+        </div>
+
+        {/* SUBSCRIBE */}
+        <div>
+          <h3 className="text-lg font-semibold text-black dark:text-white">
+            Subscribe Us
+          </h3>
+          <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
+
+          <p className="text-sm mb-4">
+            Stay Updated with the Latest! <br />
+            Subscribe Now for Exclusive Updates and Offers.
+          </p>
+
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full px-4 py-3 rounded-lg bg-zinc-200 dark:bg-zinc-800 outline-none mb-4"
+          />
+
+          <button className="bg-blue-400 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-500 transition">
+            Submit
+          </button>
+        </div>
+      </div>
+
+      {/* COPYRIGHT */}
+      <div className="border-t border-zinc-200 dark:border-zinc-800 py-6 text-center text-sm">
+        © 2026 MOSFET (Pvt) Ltd
+      </div>
+    </footer>
+  );
+}

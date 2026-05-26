@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "projectName": "",
+    "title": "IoT Smart Water Monitor",
+    "type": "IoT",
+    "description": "An integrated IoT-based platform designed to monitor water quality, flow, and usage for sustainable management.",
+    "image": "/one.jpg"
+  },
+  {
+    "id": 2,
+    "projectName": "",
+    "title": "EVC Website",
+    "type": "Web Development",
+    "description": "EVC Website offers a comprehensive platform for visa applications and immigration services for all countries.",
+    "image": "/seven.jpg"
+  },
+  {
+    "id": 3,
+    "projectName": "",
+    "title": "Atendee Mobile App",
+    "type": "Mobile App Development",
+    "description": "The Attendee Mobile App enhances efficiency in university attendance management through secure QR code verification.",
+    "image": "/three.jpg"
+  },
+  {
+    "id": 4,
+    "projectName": "",
+    "title": "ZPoS System",
+    "type": "Web Development",
+    "description": "ZPoS System: A comprehensive tool for managing sales, transactions, and stock in retail and service businesses",
+    "image": "/ten.jpg"
+  },
+  {
+    "id": 5,
+    "projectName": "",
+    "title": "ZPoS System",
+    "type": "Web Development",
+    "description": "ZPoS System: A comprehensive tool for managing sales, transactions, and stock in retail and service businesses",
+    "image": "/eleven.jpg"
+  },
+  {
+    "id": 6,
+    "projectName": "",
+    "title": "ZPoS System",
+    "type": "Web Development",
+    "description": "ZPoS System: A comprehensive tool for managing sales, transactions, and stock in retail and service businesses",
+    "image": "/eleven.jpg"
+  }
+]
