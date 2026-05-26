@@ -454,7 +454,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 8 - CTA (Hey Let's Talk) */}
-      <section className="py-20 px-6 bg-zinc-50">
+      <section id="cta-section" className="py-20 px-6 bg-zinc-50">
         <div className="max-w-4xl mx-auto">
           <div className="group bg-zinc-900 p-12 md:p-16 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-2">
             <div className="w-20 h-20 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">

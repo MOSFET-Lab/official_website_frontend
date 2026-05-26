@@ -71,9 +71,13 @@ const products = [
 ];
 
 const scrollToBottom = () => {
+    const target = document.getElementById("cta-section");
+
+    if (!target) return;
+
     const start = window.scrollY;
-    const end = document.body.scrollHeight;
-    const duration = 20000; // slower scroll (4 seconds)
+    const end = target.offsetTop;
+    const duration = 20000;
 
     let startTime: number | null = null;
 
@@ -83,15 +87,10 @@ const scrollToBottom = () => {
         const timeElapsed = currentTime - startTime;
         const progress = Math.min(timeElapsed / duration, 1);
 
-        // easeInOut effect
-        const ease =
-            progress < 0.5
-                ? 2 * progress * progress
-                : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+        // constant speed
+        window.scrollTo(0, start + (end - start) * progress);
 
-        window.scrollTo(0, start + (end - start) * ease);
-
-        if (timeElapsed < duration) {
+        if (progress < 1) {
             requestAnimationFrame(animateScroll);
         }
     };
