@@ -121,82 +121,137 @@ export default function HomePage() {
       </section> */}
 
       {/* Section 4 - What We Do (Services) */}
-      <section className="py-20 px-6 bg-zinc-50">
+      <section className="py-20 px-6 bg-zinc-50 overflow-hidden">
         <div className="max-w-6xl mx-auto">
+
+          {/* HEADER */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">What We Do</h2>
-              <p className="text-zinc-600">Our Services</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                What We Do
+              </h2>
+              <p className="text-zinc-600">
+                Our Services
+              </p>
             </div>
+
             <Link href="/services">
-              <Button variant="outline" className="mt-4 md:mt-0 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white">
+              <Button
+                variant="outline"
+                className="mt-4 md:mt-0 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white"
+              >
                 See All
                 <ArrowRight className="ml-2 size-4" />
               </Button>
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+          {/* SERVICES GRID */}
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {/* CARD 1 */}
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
               <Image
                 src="/service/IoT services.jpg"
-                alt="Web Development"
-                width={600}
-                height={600}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                alt="IoT & Embedded Systems"
+                width={1200}
+                height={1200}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div>
-                  <h3 className="text-white font-semibold text-lg">IoT & Embedded Systems</h3>
-                  <p className="text-zinc-300 text-sm">Smart automation, sensors, and real-time connected device systems.</p>
-                </div>
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
+
+              {/* CONTENT */}
+              <div className="absolute bottom-0 p-6 z-10">
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  IoT & Embedded Systems
+                </h3>
+
+                <p className="text-zinc-300 text-sm">
+                  Smart automation, sensors, and real-time connected device systems.
+                </p>
               </div>
+
+              {/* GLOW */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+
+            {/* CARD 2 */}
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
               <Image
                 src="/service/3D prints services.jpg"
-                alt="Mobile Apps"
-                width={600}
-                height={600}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                alt="3D Product Manufacturing"
+                width={1200}
+                height={1200}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div>
-                  <h3 className="text-white font-semibold text-lg">3D Product Manufacturing</h3>
-                  <p className="text-zinc-300 text-sm">Rapid prototyping and high-precision 3D printed hardware.</p>
-                </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
+
+              <div className="absolute bottom-0 p-6 z-10">
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  3D Product Manufacturing
+                </h3>
+
+                <p className="text-zinc-300 text-sm">
+                  Rapid prototyping and high-precision 3D printed hardware.
+                </p>
               </div>
+
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+
+            {/* CARD 3 */}
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
               <Image
                 src="/service/AI integratio services.jpg"
-                alt="Cloud Solutions"
-                width={600}
-                height={600}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                alt="AI Integration"
+                width={1200}
+                height={1200}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div>
-                  <h3 className="text-white font-semibold text-lg">AI Integration</h3>
-                  <p className="text-zinc-300 text-sm">Embed intelligent AI into apps, systems, and IoT devices.</p>
-                </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
+
+              <div className="absolute bottom-0 p-6 z-10">
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  AI Integration
+                </h3>
+
+                <p className="text-zinc-300 text-sm">
+                  Embed intelligent AI into apps, systems, and IoT devices.
+                </p>
               </div>
+
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+
+            {/* CARD 4 */}
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
               <Image
                 src="/service/IoT 3.jpg"
-                alt="UI/UX Design"
-                width={600}
-                height={600}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                alt="Research & Development"
+                width={1200}
+                height={1200}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div>
-                  <h3 className="text-white font-semibold text-lg">Research & Development</h3>
-                  <p className="text-zinc-300 text-sm">Turning innovative ideas into scalable real-world solutions.</p>
-                </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
+
+              <div className="absolute bottom-0 p-6 z-10">
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  Research & Development
+                </h3>
+
+                <p className="text-zinc-300 text-sm">
+                  Turning innovative ideas into scalable real-world solutions.
+                </p>
               </div>
+
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
             </div>
+
           </div>
         </div>
       </section>
@@ -412,15 +467,32 @@ export default function HomePage() {
               Ready to gain competitive advantage by harnessing data and modernising your technology?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-6 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-105 active:scale-95">
-                Send us a message
-              </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-sky-500/50 text-sky-400 font-bold py-6 px-8 rounded-xl text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
+
+              {/* SEND MESSAGE */}
+              <a
+                href="https://wa.me/message/KRFV3QRCXYJFG1"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Schedule a call
-              </Button>
+                <Button className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-6 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-105 active:scale-95">
+                  Send us a message
+                </Button>
+              </a>
+
+              {/* SCHEDULE CALL */}
+              <a
+                href="https://wa.me/message/KRFV3QRCXYJFG1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-2 border-sky-500/50 text-sky-400 font-bold py-6 px-8 rounded-xl text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  Schedule a call
+                </Button>
+              </a>
+
             </div>
           </div>
         </div>
