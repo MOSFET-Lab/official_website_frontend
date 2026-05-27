@@ -77,7 +77,7 @@ const scrollToBottom = () => {
 
     const start = window.scrollY;
     const end = target.offsetTop;
-    const duration = 20000;
+    const duration = 30000;
 
     let startTime: number | null = null;
 

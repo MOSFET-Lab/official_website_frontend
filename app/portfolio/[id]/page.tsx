@@ -69,7 +69,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ id: strin
 
         {/* ================= SECTION A (IMAGE) ================= */}
         <div className="flex justify-center lg:justify-start w-full">
-          <div className="inline-block rounded-[40px] border border-white/50 overflow-hidden bg-[#111] p-2 md:p-10">
+          <div className="inline-block rounded-2xl border border-white/50 overflow-hidden bg-[#111] p-2 md:p-10">
             <div className="w-65 sm:w-[320px] md:w-105 lg:w-full aspect-square overflow-hidden rounded-2xl">
               <img
                 src={project.image}
@@ -114,18 +114,14 @@ export default function ProjectDetails({ params }: { params: Promise<{ id: strin
                   </Button>
 
                   {/* SCHEDULE CALL */}
-                  <Button
-                    variant="outline"
-                    onClick={() =>
-                      window.open(
-                        "https://wa.me/message/KRFV3QRCXYJFG1",
-                        "_blank"
-                      )
-                    }
-                    className="border-2 border-sky-500/50 text-sky-400 font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
-                  >
-                    Schedule a call
-                  </Button>
+                  <a href="tel:+94767865190">
+                    <Button
+                      variant="outline"
+                      className="border-2 border-sky-500/50 text-sky-400 font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
+                    >
+                      Schedule a call
+                    </Button>
+                  </a>
 
                 </div>
 

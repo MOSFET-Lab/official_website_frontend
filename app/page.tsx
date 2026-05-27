@@ -620,9 +620,7 @@ export default function HomePage() {
 
               {/* SCHEDULE CALL */}
               <a
-                href="https://wa.me/message/KRFV3QRCXYJFG1"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+94767865190"
               >
                 <Button
                   variant="outline"
