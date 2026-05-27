@@ -102,21 +102,28 @@ export default function ProjectDetails({ params }: { params: Promise<{ id: strin
                   ? Let's discuss how we can implement something similar for you.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
                   {/* SEND MESSAGE */}
-                  <Button
-                    onClick={() => (window.location.href = "/contact")}
-                    className="w-full sm:w-auto bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 hover:scale-105 active:scale-95"
+                  <a
+                    href="https://wa.me/message/KRFV3QRCXYJFG1"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Send us a message
-                  </Button>
+                    <Button className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-6 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-105 active:scale-95">
+                      Send us a message
+                    </Button>
+                  </a>
 
                   {/* SCHEDULE CALL */}
-                  <a href="tel:+94767865190" className="w-full sm:w-auto">
+                  <a
+                    href="tel:+94767865190"
+
+
+                  >
                     <Button
                       variant="outline"
-                      className="w-full border-2 border-sky-500/50 text-sky-400 font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
+                      className="border-2 border-sky-500/50 text-sky-400 font-bold py-6 px-8 rounded-xl text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
                     >
                       Schedule a call
                     </Button>
