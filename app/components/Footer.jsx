@@ -12,7 +12,6 @@ import {
 import Link from "next/link";
 
 export default function Footer() {
-
   /* ================= EMAIL STATE ================= */
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,7 +20,6 @@ export default function Footer() {
 
   /* ================= AUTO HIDE MESSAGE ================= */
   useEffect(() => {
-
     if (message) {
       const timer = setTimeout(() => {
         setMessage("");
@@ -30,41 +28,28 @@ export default function Footer() {
 
       return () => clearTimeout(timer);
     }
-
   }, [message]);
 
   /* ================= SUBMIT FUNCTION ================= */
   const handleSubmit = async () => {
-
-    // Reset messages
     setMessage("");
     setMessageType("");
 
-    // Remove spaces
     const trimmedEmail = email.trim();
 
-    // Empty validation
     if (!trimmedEmail) {
       setMessage("Please enter your email");
       setMessageType("error");
-
-      // Clear input
       setEmail("");
-
       return;
     }
 
-    // Email validation
-    const emailRegex =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(trimmedEmail)) {
       setMessage("Please enter a valid email address");
       setMessageType("error");
-
-      // Clear input
       setEmail("");
-
       return;
     }
 
@@ -85,13 +70,9 @@ export default function Footer() {
         }
       );
 
-      // Clear input
       setEmail("");
-
-      // Success message
       setMessage("Subscribed Successfully!");
       setMessageType("success");
-
     } catch (error) {
       console.error(error);
 
@@ -103,16 +84,16 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white dark:bg-zinc-950 text-zinc-700 dark:text-zinc-300">
+    <footer className="bg-black text-zinc-300">
       <div className="max-w-7xl mx-auto px-10 py-20 grid gap-16 md:grid-cols-4">
 
         {/* BRAND */}
         <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-white flex items-center gap-2">
             MOSFET
           </h2>
 
-          <p className="mt-4 text-sm leading-relaxed">
+          <p className="mt-4 text-sm leading-relaxed text-zinc-400">
             A leading product manufacturer in AI, IoT, and advanced R&D prototypes.
           </p>
 
@@ -124,7 +105,7 @@ export default function Footer() {
               href="https://web.facebook.com/MosfetOfficial"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              className="w-10 h-10 rounded-lg bg-sky-500 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
               title="Facebook"
             >
               <FaFacebookF className="text-xl" />
@@ -135,7 +116,7 @@ export default function Footer() {
               href="https://www.instagram.com/mosfet_official/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              className="w-10 h-10 rounded-lg bg-sky-500 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
               title="Instagram"
             >
               <FaInstagram className="text-2xl" />
@@ -146,7 +127,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/mosfetofficial/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              className="w-10 h-10 rounded-lg bg-sky-500 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
               title="LinkedIn"
             >
               <FaLinkedinIn className="text-xl" />
@@ -157,7 +138,7 @@ export default function Footer() {
               href="https://www.tiktok.com/@MosfetOfficial"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              className="w-10 h-10 rounded-lg bg-sky-500 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
               title="TikTok"
             >
               <FaTiktok className="text-xl" />
@@ -168,7 +149,7 @@ export default function Footer() {
               href="https://www.youtube.com/@MosfetOfficial"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
+              className="w-10 h-10 rounded-lg bg-sky-500 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
               title="YouTube"
             >
               <FaYoutube className="text-xl" />
@@ -179,13 +160,13 @@ export default function Footer() {
 
         {/* SERVICES */}
         <div>
-          <h3 className="text-lg font-semibold text-black dark:text-white">
+          <h3 className="text-lg font-semibold text-white">
             Services
           </h3>
 
-          <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
+          <div className="w-12 h-1 bg-white rounded mt-2 mb-6"></div>
 
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 text-sm text-zinc-400">
             <li>IoT Embedded System</li>
             <li>3D-Printed Manufacturing</li>
             <li>AI-Integrations</li>
@@ -197,13 +178,13 @@ export default function Footer() {
 
         {/* QUICK LINKS */}
         <div>
-          <h3 className="text-lg font-semibold text-black dark:text-white">
+          <h3 className="text-lg font-semibold text-white">
             Quick Links
           </h3>
 
-          <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
+          <div className="w-12 h-1 bg-white rounded mt-2 mb-6"></div>
 
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 text-sm text-zinc-400">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/services">Our Services</Link></li>
             <li><Link href="/portfolio">Portfolio</Link></li>
@@ -215,13 +196,13 @@ export default function Footer() {
 
         {/* SUBSCRIBE */}
         <div>
-          <h3 className="text-lg font-semibold text-black dark:text-white">
+          <h3 className="text-lg font-semibold text-white">
             Subscribe Us
           </h3>
 
-          <div className="w-12 h-1 bg-black dark:bg-white rounded mt-2 mb-6"></div>
+          <div className="w-12 h-1 bg-white rounded mt-2 mb-6"></div>
 
-          <p className="text-sm mb-4">
+          <p className="text-sm mb-4 text-zinc-400">
             Stay Updated with the Latest!
             <br />
             Subscribe Now for Exclusive Updates and Offers.
@@ -233,7 +214,7 @@ export default function Footer() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg bg-zinc-200 dark:bg-zinc-800 outline-none mb-4 border border-transparent focus:border-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-zinc-900 text-white outline-none mb-4 border border-zinc-700 focus:border-sky-500"
             required
           />
 
@@ -241,8 +222,8 @@ export default function Footer() {
           {message && (
             <p
               className={`text-sm mb-4 font-medium ${messageType === "success"
-                ? "text-green-500"
-                : "text-red-500"
+                  ? "text-green-500"
+                  : "text-red-500"
                 }`}
             >
               {message}
@@ -253,7 +234,7 @@ export default function Footer() {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="bg-blue-400 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-500 transition disabled:opacity-50"
+            className="bg-sky-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-sky-600 transition disabled:opacity-50"
           >
             {loading ? "Submitting..." : "Submit"}
           </button>
@@ -261,7 +242,7 @@ export default function Footer() {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="border-t bg-sky-500/20 border-zinc-200 dark:border-zinc-800 py-6 text-center text-[10px] sm:text-sm px-4">
+      <div className="border-t bg-sky-500/20 border-zinc-800 dark:border-zinc-800 py-6 text-center text-[10px] sm:text-sm px-4">
         Copyright © 2026 MOSFET (Pvt) Ltd | All Rights Reserved.
       </div>
     </footer>

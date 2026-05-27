@@ -8,7 +8,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-50 dark:bg-black" suppressHydrationWarning>
+      <body className="bg-black" suppressHydrationWarning>
 
         <Navbar />
 

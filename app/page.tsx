@@ -621,6 +621,8 @@ export default function HomePage() {
               {/* SCHEDULE CALL */}
               <a
                 href="tel:+94767865190"
+
+
               >
                 <Button
                   variant="outline"

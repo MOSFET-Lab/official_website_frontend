@@ -170,9 +170,17 @@ export default function HeroSection() {
                 transition={{ duration: 0.8 }}
                 className="relative z-10 w-[90%] md:w-[50%] lg:w-[30%]"
             >
-                <div className="p-px rounded-3xl bg-linear-to-r from-cyan-400/40 via-blue-400/30 to-purple-500/40">
+                <div className="p-px rounded-3xl" style={{
+                    background:
+                        "linear-gradient(90deg, rgba(34,211,238,0.4), rgba(96,165,250,0.3), rgba(168,85,247,0.4))",
+                }}>
 
-                    <div className="relative group backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-3xl px-8 md:px-10 py-10 md:py-12 text-center overflow-hidden">
+                    <div className="relative group backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-3xl px-8 md:px-10 py-10 md:py-12 text-center overflow-hidden"
+                        style={{
+                            background: "rgba(255,255,255,0.08)",
+                            WebkitBackdropFilter: "blur(20px)",
+                            backdropFilter: "blur(20px)",
+                        }}>
 
                         {/* 💫 GLOW LAYER (CIRCLE + HOVER EFFECT) */}
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

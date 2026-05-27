@@ -102,29 +102,27 @@ export default function ProjectDetails({ params }: { params: Promise<{ id: strin
                   ? Let's discuss how we can implement something similar for you.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-
+                <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
 
                   {/* SEND MESSAGE */}
                   <Button
-                    onClick={() => window.location.href = "/contact"}
-                    className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 hover:scale-105 active:scale-95"
+                    onClick={() => (window.location.href = "/contact")}
+                    className="w-full sm:w-auto bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     Send us a message
                   </Button>
 
                   {/* SCHEDULE CALL */}
-                  <a href="tel:+94767865190">
+                  <a href="tel:+94767865190" className="w-full sm:w-auto">
                     <Button
                       variant="outline"
-                      className="border-2 border-sky-500/50 text-sky-400 font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
+                      className="w-full border-2 border-sky-500/50 text-sky-400 font-bold py-4 md:py-6 px-6 md:px-8 rounded-xl text-sm md:text-lg hover:border-sky-400 hover:bg-sky-500/10 transition-all duration-300 hover:scale-105 active:scale-95"
                     >
                       Schedule a call
                     </Button>
                   </a>
 
                 </div>
-
               </div>
             </div>
           </section>
