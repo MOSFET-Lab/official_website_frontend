@@ -176,7 +176,7 @@ export default function Contact() {
           { title: "AI-Based Plant Leaf Disease Detection System", img: "/AI-Based Plant Leaf Disease Detection System.jpg", category: "AI" },
           { title: "Tomato Leaf Disease Detection Using YOLO", img: "/Tomato Leaf Disease Detection Using YOLO.jpg", category: "AI" },
           { title: "Water LeakageDetection for Greenhouse  Underground Pipe", img: "/Water LeakageDetection for Greenhouse  Underground Pipe.jpg", category: "AI" },
-          { title: "Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe", img: "/Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe.jpg", category: "AI" },
+          { title: "Real Time Bicep Curl Pose Correction using OpenCV and MediaPipe", img: "/Real Time Bicep Curl Pose Correction using OpenCV and MediaPipe.jpg", category: "AI" },
           { title: "SmartVision Multi-Class Segmentation AI for IoT-Based Automation", img: "/SmartVision Multi-Class Segmentation AI for IoT-Based Automation.jpg", category: "AI" },
           { title: "Machine Learning-Based Time Series Weather  Forecasting AI Model for Greenhouse Automation", img: "/Machine Learning-Based Time Series Weather  Forecasting AI Model for Greenhouse Automation.jpg", category: "AI" },
 

@@ -505,8 +505,8 @@ export default function HomePage() {
 
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
-                src="/Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe.jpg"
-                alt="Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe"
+                src="/Real Time Bicep Curl Pose Correction using OpenCV and MediaPipe.jpg"
+                alt="Real Time Bicep Curl Pose Correction using OpenCV and MediaPipe"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

@@ -343,10 +343,10 @@ export const projectsData = [
 
   {
   id: "real-time-bicep-curl-pose-correction-using-opencv-and-mediapipe",
-  title: "Real-Time Bicep Curl Pose Correction using OpenCV and MediaPipe",
+  title: "Real Time Bicep Curl Pose Correction using OpenCV and MediaPipe",
   description:
     "An AI-powered fitness monitoring system that uses OpenCV and MediaPipe to perform real-time bicep curl pose detection and correction. The solution analyzes body posture, joint angles, and movement accuracy through computer vision techniques, providing instant feedback to users for improving workout form, reducing injury risk, and enhancing exercise performance in smart fitness and rehabilitation applications.",
-  image: "/Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe.jpg",
+  image: "/Real Time Bicep Curl Pose Correction using OpenCV and MediaPipe.jpg",
   category: "AI",
   },
 
