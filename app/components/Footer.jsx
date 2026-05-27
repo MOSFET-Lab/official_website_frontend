@@ -261,8 +261,8 @@ export default function Footer() {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="border-t border-zinc-200 dark:border-zinc-800 py-6 text-center text-sm">
-        Copyright © 2026 MOSFET (Pvt) Ltd  |  All Rights Reserved.
+      <div className="border-t bg-sky-500/20 border-zinc-200 dark:border-zinc-800 py-6 text-center text-[10px] sm:text-sm px-4">
+        Copyright © 2026 MOSFET (Pvt) Ltd | All Rights Reserved.
       </div>
     </footer>
   );

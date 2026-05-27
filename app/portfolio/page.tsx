@@ -143,8 +143,8 @@ export default function Contact() {
     { title: "Water Pump Screw", img: "/Water Pump Screw.jpg", category: "3D" },
     { title: "Raspberry Pi Camera Enclosure", img: "/Raspberry Pi Camera Enclosure.jpg", category: "3D" },
     { title: "Mechanical Part", img: "/Mechanical Part 2.jpg", category: "3D" },
-    
-    
+
+
   ];
 
   // 3. Filter Logic
@@ -154,17 +154,21 @@ export default function Contact() {
 
 
   return (
-    <>
+    <main className="md:pt-20 pt-6 px-6 md:px-2 lg:px-38 min-h-screen py-6 relative bg-[#030014] text-white overflow-hidden">
+
+      {/* BACKGROUND */}
+      <Constellations />
       {/* ================= HERO SECTION ================= */}
 
       {/* TITLE */}
       <motion.h1
-        initial={{ opacity: 0, scale: 0.8, rotateX: 40 }}
-        animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl md:text-5xl pt-6 font-bold text-center text-white md:pt-20"
+        initial={{ opacity: 0, scale: 0.85, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-4xl md:text-6xl text-center font-bold mb-4"
       >
         Portfolio
+
       </motion.h1>
 
       {/* ================= Top Buttons ================= */}
@@ -237,6 +241,6 @@ export default function Contact() {
           </Link>
         ))}
       </motion.div>
-    </>
+    </main>
   );
 }
