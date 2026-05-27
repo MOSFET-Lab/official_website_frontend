@@ -26,9 +26,9 @@ const item: Variants = {
 
 /* ================= CONSTELLATIONS COMPONENT ================= */
 const Constellations = () => {
-  const count = 45; 
-  
-  const stars = useMemo(() => 
+  const count = 45;
+
+  const stars = useMemo(() =>
     Array.from({ length: count }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -42,7 +42,7 @@ const Constellations = () => {
   const connections = useMemo(() => {
     const lines = [];
     for (let i = 0; i < stars.length - 1; i++) {
-      if (i % 3 === 0) { 
+      if (i % 3 === 0) {
         lines.push({ from: stars[i], to: stars[i + 1] });
       }
     }
@@ -96,9 +96,9 @@ export default function Contact() {
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-     <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
+      <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
         <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
-        
+
         <Constellations />
 
         <motion.div
@@ -118,8 +118,8 @@ export default function Contact() {
 
 
 
- {/* ================= Top Buttons ================= */}
-{/* <div className="mt-10 flex flex-wrap gap-3 justify-center mb-10">
+      {/* ================= Top Buttons ================= */}
+      {/* <div className="mt-10 flex flex-wrap gap-3 justify-center mb-10">
   
   <Link href="/portfolio/">
     <button className="px-6 py-2 rounded-full bg-blue-400 font-medium">
@@ -139,7 +139,7 @@ export default function Contact() {
     </button>
   </Link>
 
-  <Link href="/portfolio/threeD">
+  <Link href="/portfolio/3D">
     <button className="px-6 py-2 rounded-full bg-white font-medium">
       3D
     </button>
@@ -151,12 +151,12 @@ export default function Contact() {
 
 
 
-       {/* ================= PORTFOLIO GRID ================= */}
-   <motion.div
-  variants={container}
-  initial="hidden"
-  animate="show"
-  className="
+      {/* ================= PORTFOLIO GRID ================= */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="
     container mx-auto
     px-4 sm:px-5 md:px-6 lg:px-37
     mt-12 mb-20
@@ -167,59 +167,66 @@ export default function Contact() {
     lg:grid-cols-4
     gap-5 sm:gap-6 md:gap-7 lg:gap-8
   "
->
+      >
 
-      {[
-        { title: "Expressway Vehicle Monitoring System for Speed Limit Violations", img: "/one.jpg" },
-        { title: "Smart Home Water Quality Monitor Unit", img: "/two.jpg" },
-        { title: "Smart Home Hub", img: "/three.jpg" },
-        
-
-        
-        // { title: "IOT Smart Parking System", img: "https://nevonprojects.com/wp-content/uploads/2022/04/iot-smart-parking-smpg.jpg" },
-        // { title: "IOT Temperature Mask Scan Entry Barrier", img: "https://nevonprojects.com/wp-content/uploads/2021/10/iot-temp-mask-scan-barrier.jpg" },
-        // { title: "IOT IV Bag Monitor and Alerting System", img: "https://nevonprojects.com/wp-content/uploads/2022/04/iot-iv-bag-measure-alert-sm.jpg" },
-
-        // { title: "IOT Weather Reporting System using Adruino and Ras Pi", img: "https://nevonprojects.com/wp-content/uploads/2022/08/iot-weather-reporting-web-main.jpg" },
-        // { title: "IOT Home Automation", img: "https://nevonprojects.com/wp-content/uploads/2019/02/IOT-based-Home-Automation.jpg" },
-        // { title: "IOT Based Fire Department Alerting System", img: "https://nevonprojects.com/wp-content/uploads/2021/06/iot-fire-dept-alert-web-main.jpg" },
-        // { title: "IOT Streetlight Controller System", img: "https://nevonprojects.com/wp-content/uploads/2018/11/IOT-Paralysis-Patient-Healtcare-System-WhiteBK.png" },
-        // { title: "IOT Industry Automation Using Raspberry Pi", img: "https://nevonprojects.com/wp-content/uploads/2016/07/IOT-Industry-automation-Raspberry-pi.jpg" },
+        {[
+          { title: "Expressway Vehicle Monitoring System for Speed Limit Violations", img: "./one.jpg", category: "IOT" },
+          { title: "NFC based Dual-Factor Authentication Device", img: "./NFC based Dual-Factor Authentication Device.jpg", category: "IOT" },
+          { title: "Smart Home Hub", img: "./three.jpg", category: "IOT" },
+          { title: "SafeZone Obstacle Alert System Smart Home", img: "./SafeZone Obstacle Alert System Smart Home.jpg", category: "IOT" },
+          { title: "Automated Crop Vitality Monitoring System", img: "./Automated Crop Vitality Monitoring System.jpg", category: "IOT" },
+          { title: "IntelliDose Smart IoT Pill Dispenser", img: "./IntelliDose Smart IoT Pill Dispenser.jpg", category: "IOT" },
+          { title: "Smart Home Device", img: "./Smart Home Device.jpg", category: "IOT" },
+          { title: "Smart Hydroponic Nutrient Monitoring AI System", img: "./Smart Hydroponic Nutrient Monitoring AI System.jpg", category: "IOT" },
+          { title: "Smart Water Quality Analysis System", img: "./Smart Water Quality Analysis System.jpg", category: "IOT" },
+          { title: "Smart Power Controller", img: "./Smart Power Controller.jpg", category: "IOT" },
+          { title: "Automatic 360 Turntable for Product Photography", img: "./Automatic 360 Turntable for Product Photography.jpg", category: "IOT" },
 
 
-        
-      ].map((project, index) => (
-        <motion.div
-          key={index}
-          variants={item}
-          className="relative rounded-3xl overflow-hidden group cursor-pointer"
-        >
-         <img
-  src={project.img}
-  alt={project.title}
-  className="
+          // { title: "IOT Smart Parking System", img: "https://nevonprojects.com/wp-content/uploads/2022/04/iot-smart-parking-smpg.jpg" },
+          // { title: "IOT Temperature Mask Scan Entry Barrier", img: "https://nevonprojects.com/wp-content/uploads/2021/10/iot-temp-mask-scan-barrier.jpg" },
+          // { title: "IOT IV Bag Monitor and Alerting System", img: "https://nevonprojects.com/wp-content/uploads/2022/04/iot-iv-bag-measure-alert-sm.jpg" },
+
+          // { title: "IOT Weather Reporting System using Adruino and Ras Pi", img: "https://nevonprojects.com/wp-content/uploads/2022/08/iot-weather-reporting-web-main.jpg" },
+          // { title: "IOT Home Automation", img: "https://nevonprojects.com/wp-content/uploads/2019/02/IOT-based-Home-Automation.jpg" },
+          // { title: "IOT Based Fire Department Alerting System", img: "https://nevonprojects.com/wp-content/uploads/2021/06/iot-fire-dept-alert-web-main.jpg" },
+          // { title: "IOT Streetlight Controller System", img: "https://nevonprojects.com/wp-content/uploads/2018/11/IOT-Paralysis-Patient-Healtcare-System-WhiteBK.png" },
+          // { title: "IOT Industry Automation Using Raspberry Pi", img: "https://nevonprojects.com/wp-content/uploads/2016/07/IOT-Industry-automation-Raspberry-pi.jpg" },
+
+
+
+        ].map((project, index) => (
+          <motion.div
+            key={index}
+            variants={item}
+            className="relative rounded-3xl overflow-hidden group cursor-pointer"
+          >
+            <img
+              src={project.img}
+              alt={project.title}
+              className="
     w-full
     aspect-square
     object-cover
     group-hover:scale-110
     transition duration-300
   "
-/>
+            />
 
 
 
-          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
-            <h3 className="text-white text-xl font-bold tracking-tight">
-              {project.title}
-            </h3>
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+              <h3 className="text-white text-xl font-bold tracking-tight">
+                {project.title}
+              </h3>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </>
   );
 
 
 
-  
+
 }

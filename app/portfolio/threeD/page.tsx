@@ -26,9 +26,9 @@ const item: Variants = {
 
 /* ================= CONSTELLATIONS COMPONENT ================= */
 const Constellations = () => {
-  const count = 45; 
-  
-  const stars = useMemo(() => 
+  const count = 45;
+
+  const stars = useMemo(() =>
     Array.from({ length: count }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -42,7 +42,7 @@ const Constellations = () => {
   const connections = useMemo(() => {
     const lines = [];
     for (let i = 0; i < stars.length - 1; i++) {
-      if (i % 3 === 0) { 
+      if (i % 3 === 0) {
         lines.push({ from: stars[i], to: stars[i + 1] });
       }
     }
@@ -96,9 +96,9 @@ export default function Contact() {
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-     <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
+      <section className="relative h-[20vh] sm:h-[22vh] md:h-[35vh] w-full overflow-hidden flex items-center justify-center bg-[#030014]">
         <div className="absolute inset-0 bg-linear-to-b from-[#030014] via-[#588be8] to-[#030014]" />
-        
+
         <Constellations />
 
         <motion.div
@@ -118,8 +118,8 @@ export default function Contact() {
 
 
 
- {/* ================= Top Buttons ================= */}
-{/* <div className="mt-10 flex flex-wrap gap-3 justify-center mb-10">
+      {/* ================= Top Buttons ================= */}
+      {/* <div className="mt-10 flex flex-wrap gap-3 justify-center mb-10">
   
   <Link href="/portfolio/">
     <button className="px-6 py-2 rounded-full bg-blue-400 font-medium">
@@ -139,7 +139,7 @@ export default function Contact() {
     </button>
   </Link>
 
-  <Link href="/portfolio/threeD">
+  <Link href="/portfolio/3D">
     <button className="px-6 py-2 rounded-full bg-white font-medium">
       3D
     </button>
@@ -151,12 +151,12 @@ export default function Contact() {
 
 
 
-       {/* ================= PORTFOLIO GRID ================= */}
-   <motion.div
-  variants={container}
-  initial="hidden"
-  animate="show"
-  className="
+      {/* ================= PORTFOLIO GRID ================= */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="
     container mx-auto
     px-4 sm:px-5 md:px-6 lg:px-37
     mt-12 mb-20
@@ -167,51 +167,64 @@ export default function Contact() {
     lg:grid-cols-4
     gap-5 sm:gap-6 md:gap-7 lg:gap-8
   "
->
+      >
 
-      {[
-        { title: "Raspberry Pi 4 Enclosure", img: "/seven.jpg" },
-        { title: "Gear Mount Bracket | 3D-Printed Manufacturing", img: "/eight.jpg" },
-        { title: "Raspberry Pi 5 Desktop Enclosure", img: "/nine.jpg" },
-        { title: "Wearable Device Enclosure", img: "/ten.jpg" },
-        
-        { title: "Mechanical Part with Servo Mount", img: "/eleven.jpg" },
-        { title: "Smart Sun Tracking System", img: "/twelve.jpg" },
-        { title: "Leaf Lamp", img: "https://preview.redd.it/i-designed-those-3d-printed-lamps-and-thought-some-of-you-v0-kgq2lu4t6sae1.jpg?width=640&crop=smart&auto=webp&s=60254865b65cbf6d29abc808299680a331a416f5" },
-        { title: "Night Lamp", img: "https://giftmebazar.com/uploads/items/19672/largeNight-Lamp-Base-Leaf-Rgb-red.jpg" },
-        { title: "Yoga Poses Detection using OpenPose", img: "https://loxidesign.com/cdn/shop/products/image-1_1ff43f84-f6e5-411e-9192-6b0f5c6a58cf.png?v=1681856511" },
-      
+        {[
+          { title: "Gear Box Parts", img: "./Gear Box Parts.jpg", category: "3D" },
+          { title: "Gear Mount Bracket", img: "./eight.jpg", category: "3D" },
+          { title: "Raspberry Pi 5 Desktop Enclosure", img: "./nine.jpg", category: "3D" },
+          { title: "Servo Motor Mount", img: "/Servo Motor Mount.jpg", category: "3D" },
+          { title: "Wearable Device Enclosure", img: "./ten.jpg", category: "3D" },
+          { title: "Mechanical Part with Servo Mount", img: "./eleven.jpg", category: "3D" },
+          { title: "Smart Sun Tracking System", img: "/twelve.jpg", category: "3D" },
+          { title: "Raspberry Pi 4 Enclosure", img: "/Raspberry Pi 4 Enclosure.jpg", category: "3D" },
+          { title: "Gear Wheel", img: "/Gear Wheel.jpg", category: "3D" },
+          { title: "LCD Display Housing", img: "/LCD Display Housing.jpg", category: "3D" },
+          { title: "Electronic Enclosure Box", img: "/Electronic Enclosure Box.jpg", category: "3D" },
+          { title: "Raspberry Pi 4 Enclosure 2", img: "/Raspberry Pi 4 Enclosure 2.jpg", category: "3D" },
+          { title: "Mechanical Part", img: "/Mechanical Part.jpg", category: "3D" },
+          { title: "Turntable Base", img: "/Turntable Base.jpg", category: "3D" },
+          { title: "Servo Motor Bracket", img: "/Servo Motor Bracket.jpg", category: "3D" },
+          { title: "Raspberry Pi Cam Module Bracket", img: "/Raspberry Pi Cam Module Bracket.jpg", category: "3D" },
+          { title: "4x4 KeyPad Enclosure", img: "/4x4 KeyPad Enclosure.jpg", category: "3D" },
+          { title: "Gear Box Part", img: "/Gear Box Part.jpg", category: "3D" },
+          { title: "Water Pump Screw", img: "/Water Pump Screw.jpg", category: "3D" },
+          { title: "Raspberry Pi Camera Enclosure", img: "/Raspberry Pi Camera Enclosure.jpg", category: "3D" },
+          { title: "Mechanical Part", img: "/Mechanical Part 2.jpg", category: "3D" },
+          
+    
 
 
-        
-      ].map((project, index) => (
-        <motion.div
-          key={index}
-          variants={item}
-          className="relative rounded-3xl overflow-hidden group cursor-pointer"
-        >
-         <img
-  src={project.img}
-  alt={project.title}
-  className="
+
+
+        ].map((project, index) => (
+          <motion.div
+            key={index}
+            variants={item}
+            className="relative rounded-3xl overflow-hidden group cursor-pointer"
+          >
+            <img
+              src={project.img}
+              alt={project.title}
+              className="
     w-full
     aspect-square
     object-cover
     group-hover:scale-110
     transition duration-300
   "
-/>
+            />
 
 
 
-          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
-            <h3 className="text-white text-xl font-bold tracking-tight">
-              {project.title}
-            </h3>
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
+              <h3 className="text-white text-xl font-bold tracking-tight">
+                {project.title}
+              </h3>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </>
   );
 
