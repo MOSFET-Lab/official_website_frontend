@@ -104,6 +104,7 @@ export default function ProjectDetails({ params }: { params: Promise<{ id: strin
 
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
 
+
                   {/* SEND MESSAGE */}
                   <Button
                     onClick={() => window.location.href = "/contact"}
