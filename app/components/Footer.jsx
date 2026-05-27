@@ -1,7 +1,7 @@
 "use client";
 
 // 1. Import the icons at the very top
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -16,20 +16,62 @@ export default function Footer() {
   /* ================= EMAIL STATE ================= */
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+
+  /* ================= AUTO HIDE MESSAGE ================= */
+  useEffect(() => {
+
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+        setMessageType("");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+
+  }, [message]);
 
   /* ================= SUBMIT FUNCTION ================= */
   const handleSubmit = async () => {
 
-    // Validation
-    if (!email.trim()) {
-      alert("Please enter your email");
+    // Reset messages
+    setMessage("");
+    setMessageType("");
+
+    // Remove spaces
+    const trimmedEmail = email.trim();
+
+    // Empty validation
+    if (!trimmedEmail) {
+      setMessage("Please enter your email");
+      setMessageType("error");
+
+      // Clear input
+      setEmail("");
+
+      return;
+    }
+
+    // Email validation
+    const emailRegex =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(trimmedEmail)) {
+      setMessage("Please enter a valid email address");
+      setMessageType("error");
+
+      // Clear input
+      setEmail("");
+
       return;
     }
 
     try {
       setLoading(true);
 
-      const response = await fetch(
+      await fetch(
         "https://script.google.com/macros/s/AKfycbygx_pMnZa07co0hG5cMzD1o6cuGj2W0P7DsELDTMu8u8G3bcrFoOAifOZfwJ7G5TJw/exec",
         {
           method: "POST",
@@ -38,18 +80,23 @@ export default function Footer() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: email,
+            email: trimmedEmail,
           }),
         }
       );
 
+      // Clear input
       setEmail("");
 
-      alert("Subscribed Successfully!");
+      // Success message
+      setMessage("Subscribed Successfully!");
+      setMessageType("success");
 
     } catch (error) {
       console.error(error);
-      alert("Something went wrong");
+
+      setMessage("Something went wrong");
+      setMessageType("error");
     } finally {
       setLoading(false);
     }
@@ -110,7 +157,7 @@ export default function Footer() {
               href="https://www.tiktok.com/@MosfetOfficial"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg border border-zinc-700"
+              className="w-10 h-10 rounded-lg bg-blue-400 flex items-center justify-center text-white cursor-pointer hover:scale-110 transition shadow-lg"
               title="TikTok"
             >
               <FaTiktok className="text-xl" />
@@ -186,8 +233,21 @@ export default function Footer() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg bg-zinc-200 dark:bg-zinc-800 outline-none mb-4"
+            className="w-full px-4 py-3 rounded-lg bg-zinc-200 dark:bg-zinc-800 outline-none mb-4 border border-transparent focus:border-blue-400"
+            required
           />
+
+          {/* MESSAGE */}
+          {message && (
+            <p
+              className={`text-sm mb-4 font-medium ${messageType === "success"
+                ? "text-green-500"
+                : "text-red-500"
+                }`}
+            >
+              {message}
+            </p>
+          )}
 
           {/* SUBMIT BUTTON */}
           <button
@@ -202,7 +262,7 @@ export default function Footer() {
 
       {/* COPYRIGHT */}
       <div className="border-t border-zinc-200 dark:border-zinc-800 py-6 text-center text-sm">
-        © 2026 MOSFET (Pvt) Ltd
+        Copyright © 2026 MOSFET (Pvt) Ltd  |  All Rights Reserved.
       </div>
     </footer>
   );

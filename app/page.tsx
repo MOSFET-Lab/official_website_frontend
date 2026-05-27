@@ -1,26 +1,39 @@
+"use client";
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import WorkingProcess from "./components/WorkingProcess";
 import HeroSection from "./components/HeroSection";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import { testimonials, getReviewImage } from "@/components/testimonial";
+import { useEffect, useState } from "react"
 
 import {
   CheckCircle,
   Users,
   Clock,
-  Search,
-  Palette,
-  Code,
-  Rocket,
-  Quote,
   ArrowRight,
-  Globe,
-  Smartphone,
-  Server,
-  Layers,
 } from "lucide-react"
 
 export default function HomePage() {
+
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Section 1 - Hero */}
@@ -74,28 +87,59 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div
+            ref={ref}
+            className="grid md:grid-cols-3 gap-8"
+          >
+
+            {/* PROJECTS */}
             <div className="group bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2">
+
               <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">
                 <CheckCircle className="size-8 text-sky-400 group-hover:text-sky-300 transition-colors duration-300" />
               </div>
-              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">80+</h3>
-              <p className="text-sky-200/80 font-medium tracking-wide">Completed Projects</p>
+
+              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">
+                {inView && <CountUp end={80} duration={3} />}+
+              </h3>
+
+              <p className="text-sky-200/80 font-medium tracking-wide">
+                Completed Projects
+              </p>
             </div>
+
+            {/* CUSTOMERS */}
             <div className="group bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2">
+
               <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">
                 <Users className="size-8 text-sky-400 group-hover:text-sky-300 transition-colors duration-300" />
               </div>
-              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">60+</h3>
-              <p className="text-sky-200/80 font-medium tracking-wide">Happy Customers</p>
+
+              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">
+                {inView && <CountUp end={60} duration={3} />}+
+              </h3>
+
+              <p className="text-sky-200/80 font-medium tracking-wide">
+                Happy Customers
+              </p>
             </div>
+
+            {/* EXPERIENCE */}
             <div className="group bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-800 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2">
+
               <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/30 transition-colors duration-300 group-hover:animate-pulse">
                 <Clock className="size-8 text-sky-400 group-hover:text-sky-300 transition-colors duration-300" />
               </div>
-              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">1+</h3>
-              <p className="text-sky-200/80 font-medium tracking-wide">Years of Experience</p>
+
+              <h3 className="text-sky-100 text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110">
+                {inView && <CountUp end={1} duration={3} />}+
+              </h3>
+
+              <p className="text-sky-200/80 font-medium tracking-wide">
+                Years of Experience
+              </p>
             </div>
+
           </div>
         </div>
       </section>
@@ -352,63 +396,129 @@ export default function HomePage() {
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
                 src="/portfolio/Smart Hydroponic Nutrient Monitoring AI System.jpg"
-                alt="Dashboard Project"
+                alt="Smart Hydroponic Nutrient Monitoring AI System"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h3 className="text-white font-semibold text-lg">Analytics Dashboard</h3>
-                  <p className="text-zinc-300 text-sm">Web Application</p>
+                  <h3 className="text-white font-semibold text-lg">Smart Hydroponic Nutrient Monitoring AI System</h3>
+                  <p className="text-zinc-300 text-sm">AI + IoT Embedded System</p>
                 </div>
               </div>
             </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/SafeZone Obstacle Alert System Smart Home.jpg"
+                alt="SafeZone Obstacle Alert System Smart Home"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">SafeZone Obstacle Alert System Smart Home</h3>
+                  <p className="text-zinc-300 text-sm">AI + IoT Embedded Systems</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/AI-Powered Smart Fitness Wear for Sports.jpg"
+                alt="AI-Powered Smart Fitness Wear for Sports"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">AI-Powered Smart Fitness Wear for Sports</h3>
+                  <p className="text-zinc-300 text-sm">AI + Mobile Application for Android & iOS</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/Geer Wheel.jpg"
+                alt="Geer Wheel"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">3D Printed Geer Wheel</h3>
+                  <p className="text-zinc-300 text-sm">3D Printing</p>
+                </div>
+              </div>
+            </div>
+      
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
                 src="/portfolio/NFC based Dual-Factor Authentication Device .jpg"
-                alt="E-commerce App"
+                alt="NFC based Dual-Factor Authentication Device"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h3 className="text-white font-semibold text-lg">E-commerce Platform</h3>
-                  <p className="text-zinc-300 text-sm">Mobile Application</p>
+                  <h3 className="text-white font-semibold text-lg">NFC based Dual-Factor Authentication Device</h3>
+                  <p className="text-zinc-300 text-sm">IoT Embedded System</p>
                 </div>
               </div>
             </div>
+
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
-                src="/portfolio/4x4 KeyPad Enclosure.jpg"
-                alt="Corporate Website"
+                src="/AI-Based Plant Leaf Disease Detection System.jpg"
+                alt="AI-Based Plant Leaf Disease Detection System"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h3 className="text-white font-semibold text-lg">Corporate Website</h3>
-                  <p className="text-zinc-300 text-sm">Website Design</p>
+                  <h3 className="text-white font-semibold text-lg">AI-Based Plant Leaf Disease Detection System</h3>
+                  <p className="text-zinc-300 text-sm">AI + Flutter Application for Android, iOS, Windows, MacOS and Web App</p>
                 </div>
               </div>
             </div>
+
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
-                src="/portfolio/Raspberry Pi 4 Enclosure.jpg"
-                alt="SaaS Platform"
+                src="/Gear Box Parts.jpg"
+                alt="Gear Box Parts"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h3 className="text-white font-semibold text-lg">SaaS Platform</h3>
-                  <p className="text-zinc-300 text-sm">Cloud Solution</p>
+                  <h3 className="text-white font-semibold text-lg">Gear Box Parts</h3>
+                  <p className="text-zinc-300 text-sm">3D Printing</p>
                 </div>
               </div>
             </div>
+
+            <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
+              <Image
+                src="/Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe.jpg"
+                alt="Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 className="text-white font-semibold text-lg">Real-Time Bicep Curl Pose Correction using  OpenCV and MediaPipe</h3>
+                  <p className="text-zinc-300 text-sm">AI/ML</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -416,38 +526,67 @@ export default function HomePage() {
       {/* Section 7 - Testimonials */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Client Testimonials</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Client Testimonials
+          </h2>
+
           <p className="text-zinc-600 text-center mb-12 max-w-2xl mx-auto">
             What our clients say about working with us
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/review/MOSFET Client Testimonial - Ushan Nilindu.png"
-                alt="Client Testimonial"
-                width={400}
-                height={400}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+          {/* DESKTOP GRID */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
+            {testimonials.map((img, i) => (
+              <div
+                key={i}
+                className="relative overflow-hidden rounded-2xl group"
+              >
+                <Image
+                  src={getReviewImage(img)}
+                  alt="Client Testimonial"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* MOBILE AUTO CAROUSEL */}
+          <div className="md:hidden relative overflow-hidden rounded-2xl">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+              }}
+            >
+              {testimonials.map((img, i) => (
+                <div key={i} className="min-w-full px-2">
+                  <div className="relative overflow-hidden rounded-2xl">
+                    <Image
+                      src={getReviewImage(img)}
+                      alt="Client Testimonial"
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/review/MOSFET Client Testimonial - Rusith Nirmana.png"
-                alt="Client Testimonial"
-                width={400}
-                height={400}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="group relative overflow-hidden rounded-2xl">
-              <Image
-                src="/review/MOSFET Client Testimonial - Ravindu Lakshan.png"
-                alt="Client Testimonial"
-                width={400}
-                height={400}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+
+            {/* DOTS */}
+            <div className="flex justify-center gap-2 mt-4">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${currentSlide === i
+                    ? "bg-sky-500 w-6"
+                    : "bg-zinc-300 w-2"
+                    }`}
+                />
+              ))}
             </div>
           </div>
         </div>
