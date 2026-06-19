@@ -63,27 +63,43 @@ const Constellations = () => {
   );
 };
 
-/* ================= SERVICES ================= */
 const services = [
   {
-    title: "IoT & Embedded Systems",
+    title: "IoT & Embedded Systems & Robotic Projects",
     desc: "Smart automation, sensors, and real-time connected device systems.",
-    image: "/service/IoT services.jpg",
+    image: "/service/Robotic services.jpg",
+    price: "Starting from Rs. 1,500/hour | Minimum Rs. 20,000",
   },
   {
     title: "3D Product Manufacturing",
     desc: "Rapid prototyping and high-precision 3D printed hardware.",
     image: "/service/3D prints services.jpg",
+    price: "Starting from Rs. 20 per gram",
   },
   {
-    title: "AI Integration",
+    title: "AI & ML Projects",
     desc: "Embed intelligent AI into apps, systems, and IoT devices.",
     image: "/service/AI integratio services.jpg",
+    price: "Starting from Rs. 2,000/hour | Minimum Rs. 20,000",
   },
   {
-    title: "Research & Development",
+    title: "Research & Development Projects",
     desc: "Turning innovative ideas into scalable real-world solutions.",
-    image: "/service/IoT 3.jpg",
+    image: "/service/IoT services.jpg",
+    price: "Starting from Rs. 3,000/hour",
+  },
+  {
+    title: "3D Modeling",
+    desc:
+      "3D product design, CAD modeling, and simulation using SolidWorks, Blender, AutoCAD, and Fusion 360 for prototyping and manufacturing-ready solutions.",
+    image: "/service/3D services.jpg",
+    price: "Starting from Rs. 3,000/hour",
+  },
+  {
+    title: "PCB Designing",
+    desc: "PCB schematic design, layout, and prototyping for embedded systems.",
+    image: "/service/PCB services.jpg",
+    price: "Starting from Rs. 1,500/hour",
   },
 ];
 
@@ -142,7 +158,7 @@ export default function ServicesPage() {
             <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
 
             {/* CONTENT */}
-            <div className="absolute bottom-0 p-6 z-10">
+            <div className="absolute bottom-0 p-6 z-10 w-full">
               <h3 className="text-white text-xl font-semibold mb-1">
                 {service.title}
               </h3>
@@ -151,9 +167,12 @@ export default function ServicesPage() {
                 {service.desc}
               </p>
 
-              {/* <span className="text-sky-400 text-sm opacity-0 group-hover:opacity-100 transition">
-                Explore Service →
-              </span> */}
+              {/* PRICING LABEL */}
+              <div className="mt-3">
+                <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+                  {service.price}
+                </span>
+              </div>
             </div>
 
             {/* GLOW EFFECT */}
