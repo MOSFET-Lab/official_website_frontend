@@ -165,6 +165,7 @@ export default function HomePage() {
       </section> */}
 
       {/* Section 4 - What We Do (Services) */}
+      {/* Section 4 - What We Do (Services) */}
       <section className="py-20 px-6 bg-zinc-50 overflow-hidden">
         <div className="max-w-6xl mx-auto">
 
@@ -195,34 +196,40 @@ export default function HomePage() {
 
             {/* CARD 1 */}
             <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
+
               <Image
-                src="/service/IoT services.jpg"
+                src="/service/Robotic services.jpg"
                 alt="IoT & Embedded Systems"
                 width={1200}
                 height={1200}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
-              {/* OVERLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
 
-              {/* CONTENT */}
               <div className="absolute bottom-0 p-6 z-10">
                 <h3 className="text-white text-xl font-semibold mb-2">
-                  IoT & Embedded Systems
+                  IoT & Embedded System & Robotic Projects
                 </h3>
 
                 <p className="text-zinc-300 text-sm">
                   Smart automation, sensors, and real-time connected device systems.
                 </p>
+
+                {/* PRICING LABEL */}
+                <div className="mt-3">
+                  <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+                    Starting from Rs. 1,500/hour | Minimum Rs. 20,000
+                  </span>
+                </div>
               </div>
 
-              {/* GLOW */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
             </div>
 
             {/* CARD 2 */}
             <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
+
               <Image
                 src="/service/3D prints services.jpg"
                 alt="3D Product Manufacturing"
@@ -241,6 +248,13 @@ export default function HomePage() {
                 <p className="text-zinc-300 text-sm">
                   Rapid prototyping and high-precision 3D printed hardware.
                 </p>
+
+                {/* PRICING LABEL */}
+                <div className="mt-3">
+                  <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+                    Starting from Rs. 20 per gram
+                  </span>
+                </div>
               </div>
 
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
@@ -248,6 +262,7 @@ export default function HomePage() {
 
             {/* CARD 3 */}
             <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
+
               <Image
                 src="/service/AI integratio services.jpg"
                 alt="AI Integration"
@@ -260,12 +275,19 @@ export default function HomePage() {
 
               <div className="absolute bottom-0 p-6 z-10">
                 <h3 className="text-white text-xl font-semibold mb-2">
-                  AI Integration
+                  AI & ML Projects
                 </h3>
 
                 <p className="text-zinc-300 text-sm">
                   Embed intelligent AI into apps, systems, and IoT devices.
                 </p>
+
+                {/* PRICING LABEL */}
+                <div className="mt-3">
+                  <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+                    Starting from Rs. 2,000/hour | Minimum Rs. 20,000
+                  </span>
+                </div>
               </div>
 
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
@@ -273,8 +295,9 @@ export default function HomePage() {
 
             {/* CARD 4 */}
             <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
+
               <Image
-                src="/service/IoT 3.jpg"
+                src="/service/IoT services.jpg"
                 alt="Research & Development"
                 width={1200}
                 height={1200}
@@ -285,12 +308,85 @@ export default function HomePage() {
 
               <div className="absolute bottom-0 p-6 z-10">
                 <h3 className="text-white text-xl font-semibold mb-2">
-                  Research & Development
+                  Research & Development Projects
                 </h3>
 
                 <p className="text-zinc-300 text-sm">
                   Turning innovative ideas into scalable real-world solutions.
                 </p>
+
+                {/* PRICING LABEL */}
+                <div className="mt-3">
+                  <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+                    Starting from Rs. 3,000/hour
+                  </span>
+                </div>
+              </div>
+
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
+            </div>
+
+            {/* CARD 5 */}
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
+
+              <Image
+                src="/service/3D services.jpg"
+                alt="Research & Development"
+                width={1200}
+                height={1200}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
+
+              <div className="absolute bottom-0 p-6 z-10">
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  3D Modeling
+                </h3>
+
+                <p className="text-zinc-300 text-sm">
+                  3D product design, CAD modeling, and simulation using SolidWorks, Blender, AutoCAD, and Fusion 360 for prototyping and manufacturing-ready solutions.
+                </p>
+
+                {/* PRICING LABEL */}
+                <div className="mt-3">
+                  <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+                    Starting from Rs. 3,000/hour
+                  </span>
+                </div>
+              </div>
+
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
+            </div>
+
+            {/* CARD 6 */}
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer border border-zinc-200 bg-white shadow-sm">
+
+              <Image
+                src="/service/PCB services.jpg"
+                alt="Research & Development"
+                width={1200}
+                height={1200}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
+
+              <div className="absolute bottom-0 p-6 z-10">
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  PCB Designing
+                </h3>
+
+                <p className="text-zinc-300 text-sm">
+                    PCB schematic design, layout, and prototyping for embedded systems.
+                </p>
+
+                {/* PRICING LABEL */}
+                <div className="mt-3">
+                  <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+                    Starting from Rs. 1,500/hour
+                  </span>
+                </div>
               </div>
 
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-sky-500/20 to-purple-500/20 blur-xl" />
@@ -423,7 +519,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
                 src="/AI-Powered Smart Fitness Wear for Sports.jpg"
@@ -454,7 +550,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-      
+
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
                 src="/portfolio/NFC based Dual-Factor Authentication Device .jpg"
