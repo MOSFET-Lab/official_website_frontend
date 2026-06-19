@@ -65,10 +65,10 @@ const Constellations = () => {
 
 const services = [
   {
-    title: "IoT & Embedded Systems & Robotic Projects",
+    title: "IoT & Embedded Systems",
     desc: "Smart automation, sensors, and real-time connected device systems.",
     image: "/service/Robotic services.jpg",
-    price: "Starting from Rs. 1,500/hour | Minimum Rs. 20,000",
+    price: "Starting from Rs. 1,500/hour | Minimum Rs. 15,000",
   },
   {
     title: "3D Product Manufacturing",
@@ -83,7 +83,7 @@ const services = [
     price: "Starting from Rs. 2,000/hour | Minimum Rs. 20,000",
   },
   {
-    title: "Research & Development Projects",
+    title: "Research & Development",
     desc: "Turning innovative ideas into scalable real-world solutions.",
     image: "/service/IoT services.jpg",
     price: "Starting from Rs. 3,000/hour",
