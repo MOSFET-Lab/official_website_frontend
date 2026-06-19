@@ -345,7 +345,7 @@ export default function HomePage() {
                 </h3>
 
                 <p className="text-zinc-300 text-sm">
-                  3D product design, CAD modeling, and simulation using SolidWorks, Blender, AutoCAD, and Fusion 360 for prototyping and manufacturing-ready solutions.
+                  3D product design, CAD modeling, and simulation using industry-standard tools.
                 </p>
 
                 {/* PRICING LABEL */}

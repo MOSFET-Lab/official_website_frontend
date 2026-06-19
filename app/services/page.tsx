@@ -91,7 +91,7 @@ const services = [
   {
     title: "3D Modeling",
     desc:
-      "3D product design, CAD modeling, and simulation using SolidWorks, Blender, AutoCAD, and Fusion 360 for prototyping and manufacturing-ready solutions.",
+      "3D product design, CAD modeling, and simulation using industry-standard tools.",
     image: "/service/3D services.jpg",
     price: "Starting from Rs. 3,000/hour",
   },
