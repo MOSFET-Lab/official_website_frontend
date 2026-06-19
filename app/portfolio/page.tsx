@@ -99,12 +99,13 @@ export default function Contact() {
 
   // 2. Your project array with categories added
   const allProjects = [
-    { title: "Expressway Vehicle Monitoring System for Speed Limit Violations", img: "./one.jpg", category: "IOT" },
+    { title: "Smart Hydroponic Nutrient Monitoring AI System", img: "./Smart Hydroponic Nutrient Monitoring AI System.jpg", category: "IOT" },
+    { title: "AI Solar Panels Cleaning Robot", img: "./AI Solar Panels Cleaning Robot.jpg", category: "IOT" },
     { title: "NFC based Dual-Factor Authentication Device", img: "./NFC based Dual-Factor Authentication Device.jpg", category: "IOT" },
     { title: "Smart Home Hub", img: "./three.jpg", category: "IOT" },
     { title: "SafeZone Obstacle Alert System Smart Home", img: "./SafeZone Obstacle Alert System Smart Home.jpg", category: "IOT" },
+    { title: "Expressway Vehicle Monitoring System for Speed Limit Violations", img: "./one.jpg", category: "IOT" },
     { title: "Automated Crop Vitality Monitoring System", img: "./Automated Crop Vitality Monitoring System.jpg", category: "IOT" },
-    { title: "Smart Hydroponic Nutrient Monitoring AI System", img: "./Smart Hydroponic Nutrient Monitoring AI System.jpg", category: "IOT" },
     { title: "IntelliDose Smart IoT Pill Dispenser", img: "./IntelliDose Smart IoT Pill Dispenser.jpg", category: "IOT" },
     { title: "Smart Home Device", img: "./Smart Home Device.jpg", category: "IOT" },
     { title: "Smart Water Quality Analysis System", img: "./Smart Water Quality Analysis System.jpg", category: "IOT" },

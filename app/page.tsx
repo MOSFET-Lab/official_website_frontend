@@ -209,7 +209,7 @@ export default function HomePage() {
 
               <div className="absolute bottom-0 p-6 z-10">
                 <h3 className="text-white text-xl font-semibold mb-2">
-                  IoT & Embedded System & Robotic Projects
+                  IoT & Embedded Systems
                 </h3>
 
                 <p className="text-zinc-300 text-sm">
@@ -219,7 +219,7 @@ export default function HomePage() {
                 {/* PRICING LABEL */}
                 <div className="mt-3">
                   <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
-                    Starting from Rs. 1,500/hour | Minimum Rs. 20,000
+                    Starting from Rs. 1,500/hour | Minimum Rs. 15,000
                   </span>
                 </div>
               </div>
@@ -308,7 +308,7 @@ export default function HomePage() {
 
               <div className="absolute bottom-0 p-6 z-10">
                 <h3 className="text-white text-xl font-semibold mb-2">
-                  Research & Development Projects
+                  Research & Development
                 </h3>
 
                 <p className="text-zinc-300 text-sm">
@@ -553,15 +553,15 @@ export default function HomePage() {
 
             <div className="group relative overflow-hidden rounded-2xl border-1 border-gray-200">
               <Image
-                src="/portfolio/NFC based Dual-Factor Authentication Device .jpg"
-                alt="NFC based Dual-Factor Authentication Device"
+                src="/AI Solar Panels Cleaning Robot.jpg"
+                alt="AI Solar Panels Cleaning Robot"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h3 className="text-white font-semibold text-lg">NFC based Dual-Factor Authentication Device</h3>
+                  <h3 className="text-white font-semibold text-lg">AI Solar Panels Cleaning Robot</h3>
                   <p className="text-zinc-300 text-sm">IoT Embedded System</p>
                 </div>
               </div>
