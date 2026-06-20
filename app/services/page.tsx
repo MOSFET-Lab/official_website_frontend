@@ -93,7 +93,7 @@ const services = [
     desc:
       "3D product design, CAD modeling, and simulation using industry-standard tools.",
     image: "/service/3D services.jpg",
-    price: "Starting from Rs. 3,000/hour",
+    price: "Starting from Rs. 2,500/hour",
   },
   {
     title: "PCB Designing",
