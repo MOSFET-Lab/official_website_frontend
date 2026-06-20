@@ -351,7 +351,7 @@ export default function HomePage() {
                 {/* PRICING LABEL */}
                 <div className="mt-3">
                   <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
-                    Starting from Rs. 3,000/hour
+                    Starting from Rs. 2,500/hour
                   </span>
                 </div>
               </div>
