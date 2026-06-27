@@ -74,7 +74,7 @@ const services = [
     title: "3D Product Manufacturing",
     desc: "Rapid prototyping and high-precision 3D printed hardware.",
     image: "/service/3D prints services.jpg",
-    price: "Starting from Rs. 20 per gram",
+    price: "Starting from Rs. 12 per gram",
   },
   {
     title: "AI & ML Projects",
