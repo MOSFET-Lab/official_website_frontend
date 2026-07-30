@@ -68,19 +68,19 @@ const services = [
     title: "IoT & Embedded Systems",
     desc: "Smart automation, sensors, and real-time connected device systems.",
     image: "/service/Robotic services.jpg",
-    price: "Starting from Rs. 1,500/hour | Minimum Rs. 15,000",
+    price: "Starting from Rs. 2,000/hour | Minimum Rs. 20,000",
   },
   {
     title: "3D Product Manufacturing",
     desc: "Rapid prototyping and high-precision 3D printed hardware.",
     image: "/service/3D prints services.jpg",
-    price: "Starting from Rs. 12 per gram",
+    price: "Starting from Rs. 14 per gram",
   },
   {
     title: "AI & ML Projects",
     desc: "Embed intelligent AI into apps, systems, and IoT devices.",
     image: "/service/AI integratio services.jpg",
-    price: "Starting from Rs. 2,000/hour | Minimum Rs. 20,000",
+    price: "Starting from Rs. 2,500/hour | Minimum Rs. 20,000",
   },
   {
     title: "Research & Development",
@@ -99,7 +99,7 @@ const services = [
     title: "PCB Designing",
     desc: "PCB schematic design, layout, and prototyping for embedded systems.",
     image: "/service/PCB services.jpg",
-    price: "Starting from Rs. 1,500/hour",
+    price: "Starting from Rs. 2,000/hour",
   },
 ];
 
