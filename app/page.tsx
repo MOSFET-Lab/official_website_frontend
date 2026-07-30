@@ -219,7 +219,7 @@ export default function HomePage() {
                 {/* PRICING LABEL */}
                 <div className="mt-3">
                   <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
-                    Starting from Rs. 1,500/hour | <br/> Minimum Rs. 15,000
+                    Starting from Rs. 2,000/hour | <br/> Minimum Rs. 20,000
                   </span>
                 </div>
               </div>
@@ -252,7 +252,7 @@ export default function HomePage() {
                 {/* PRICING LABEL */}
                 <div className="mt-3">
                   <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
-                    Starting from Rs. 12 per gram
+                    Starting from Rs. 14 per gram
                   </span>
                 </div>
               </div>
@@ -285,7 +285,7 @@ export default function HomePage() {
                 {/* PRICING LABEL */}
                 <div className="mt-3">
                   <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
-                    Starting from Rs. 2,000/hour | <br/> Minimum Rs. 20,000
+                    Starting from Rs. 2,500/hour | <br/> Minimum Rs. 20,000
                   </span>
                 </div>
               </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
                 {/* PRICING LABEL */}
                 <div className="mt-3">
                   <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
-                    Starting from Rs. 1,500/hour
+                    Starting from Rs. 2,000/hour
                   </span>
                 </div>
               </div>
