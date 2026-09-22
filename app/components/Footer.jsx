@@ -177,6 +177,7 @@ export default function Footer() {
         </div>
 
         {/* QUICK LINKS */}
+
         <div>
           <h3 className="text-lg font-semibold text-white">
             Quick Links
@@ -185,14 +186,90 @@ export default function Footer() {
           <div className="w-12 h-1 bg-white rounded mt-2 mb-6"></div>
 
           <ul className="space-y-3 text-sm text-zinc-400">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/services">Our Services</Link></li>
-            <li><Link href="/portfolio">Portfolio</Link></li>
-            <li><Link href="/career">Career</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/contact">Contact Us</Link></li>
+            <li>
+              <Link
+                href="/"
+                className="hover:text-sky-400 transition"
+              >
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/services"
+                className="hover:text-sky-400 transition"
+              >
+                Our Services
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/portfolio"
+                className="hover:text-sky-400 transition"
+              >
+                Portfolio
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/career"
+                className="hover:text-sky-400 transition"
+              >
+                Career
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/about"
+                className="hover:text-sky-400 transition"
+              >
+                About Us
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/contact"
+                className="hover:text-sky-400 transition"
+              >
+                Contact Us
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/privacy-policy"
+                className="hover:text-sky-400 transition"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/refund-returns-policy"
+                className="hover:text-sky-400 transition"
+              >
+                Refund & Returns Policy
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/terms-conditions"
+                className="hover:text-sky-400 transition"
+              >
+                Terms & Conditions
+              </Link>
+            </li>
+
           </ul>
         </div>
+
 
         {/* SUBSCRIBE */}
         <div>
@@ -222,8 +299,8 @@ export default function Footer() {
           {message && (
             <p
               className={`text-sm mb-4 font-medium ${messageType === "success"
-                  ? "text-green-500"
-                  : "text-red-500"
+                ? "text-green-500"
+                : "text-red-500"
                 }`}
             >
               {message}
